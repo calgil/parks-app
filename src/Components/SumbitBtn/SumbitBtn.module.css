@@ -1,0 +1,18 @@
+.submitBtn {
+  margin-top: 10px;
+  width: 100%;
+  max-width: 250px;
+  background-color: darkgreen;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  line-height: 2;
+  font-size: 1rem;
+  transition: all 200ms ease-in-out;
+}
+
+.submitBtn:hover,
+.submitBtn:active,
+.submitBtn:focus {
+  transform: scale(1.05);
+  outline: 2px solid white;
+}

@@ -1,0 +1,21 @@
+.stateContainer {
+  margin: 0 10px;
+}
+
+svg {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.state > text {
+  color: red;
+}
+
+.state {
+  cursor: pointer;
+}
+
+.marker {
+  color: red;
+}
