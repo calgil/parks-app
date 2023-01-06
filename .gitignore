@@ -23,4 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
-REACT_APP_PARKS_API_KEY=FfvlSPMVKMlRSYSfF7MmnQN0E4G7WMgP9SWifGjp
+.env
