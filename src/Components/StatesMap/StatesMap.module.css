@@ -1,5 +1,6 @@
 .stateContainer {
-  margin: 0 10px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 svg {
