@@ -11,7 +11,6 @@ export const getParksFromAPI = async (stateCode) => {
       throw new Error("Error Fetching Parks");
     }
     const data = await response.json();
-    console.log("data", data);
     const parks = data.data.map(
       ({ id, description, designation, fullName, name, images, parkCode }) => ({
         id,

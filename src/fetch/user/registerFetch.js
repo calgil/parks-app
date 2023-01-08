@@ -12,7 +12,6 @@ export const registerFetch = async ({ username, password }) => {
     if (!response.ok) {
       throw new Error("cannot create user");
     }
-    console.log("res", response);
     return response.json();
   } catch (error) {
     throw new Error("cannot create user");

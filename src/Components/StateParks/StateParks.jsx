@@ -1,9 +1,9 @@
 import s from "./StateParks.module.css";
-import { useParks } from "../../providers/parks.provider";
 import { Park } from "../Park/Park";
+import { useLoaderData } from "react-router-dom";
 
 export const StateParks = () => {
-  const { parks } = useParks();
+  const parks = useLoaderData();
 
   return (
     <div className={s.parksContainer}>
