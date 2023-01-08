@@ -1,0 +1,42 @@
+.parkBody {
+  max-width: 250px;
+  text-align: center;
+  background-color: rgb(55, 55, 55);
+  border-radius: 10px;
+  box-shadow: rgb(81, 81, 81) 5px 5px 8px;
+  margin: 10px 15px;
+  transition: all 150ms ease-in-out;
+}
+
+.parkBody:hover {
+  transform: scale(1.03);
+  box-shadow: rgb(172, 170, 170) 5px 5px 8px;
+}
+
+.nameContainer {
+  height: 60px;
+  padding-bottom: 10px;
+}
+
+.imgContainer {
+  width: 250px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.parkImg {
+  object-fit: cover;
+  object-position: center;
+}
+
+.btnContainer {
+  padding: 10px;
+}
+
+.actionBtn {
+  margin: 0 5px;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+  background-color: grey;
+}

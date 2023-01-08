@@ -16,6 +16,8 @@ export const users = [
   },
 ];
 
+// these objects need an id, and a parkCode to fetch from API
+
 export const upNext = [
   { userId: 1, parkId: "D35004EF-5F5A-4DA4-8716-5141BE5C933C" },
   { userId: 2, parkId: "87F9EFC7-1951-4250-A367-644EC5C4E6A2" },

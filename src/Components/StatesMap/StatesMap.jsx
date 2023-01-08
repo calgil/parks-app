@@ -9,7 +9,9 @@ import {
 } from "react-simple-maps";
 import allStates from "../../../data/allStates.json";
 import { stateStyles } from "./stateStyles";
-import { usePark } from "../../providers/parks.provider";
+import { useParks } from "../../providers/parks.provider";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -26,17 +28,30 @@ const offsets = {
 };
 
 export const StatesMap = () => {
-  const { getStateParks } = usePark();
-  const handleStateClick = (id) => {
+  const { getStateParks } = useParks();
+  const navigate = useNavigate();
+
+  const getParks = async (stateCode) => {
+    try {
+      await getStateParks(stateCode);
+      navigate(`state/${stateCode}`);
+    } catch (e) {
+      console.error(e);
+      toast.error(e.message);
+    }
+  };
+
+  const handleStateClick = async (id) => {
     const cur = allStates.find((s) => s.val === id);
     if (!cur) {
       return;
     }
-    getStateParks(cur.id.toLowerCase());
+    getParks(cur.id.toLowerCase());
     console.log("state", cur.id.toLowerCase());
   };
 
   const handleMarkerClick = (id) => {
+    getParks(id.toLowerCase());
     console.log("marker", id.toLowerCase());
   };
   return (
