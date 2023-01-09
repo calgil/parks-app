@@ -35,14 +35,15 @@ export const Layout = () => {
               </NavLink>
             </li>
           )}
-          {/* <li className={s.link}>
-            link to something
-            <Link to="/dashboard">Dashboard</Link>
+          <li className={s.li}>
+            <NavLink
+              className={s.link}
+              to="up-next"
+              style={({ isActive }) => (isActive ? activeStyle : undefined)}
+            >
+              Up Next
+            </NavLink>
           </li>
-          <li className={s.link}>
-            link to something
-            <Link to="/nothing-here">Nothing Here</Link>
-          </li> */}
         </ul>
       </nav>
       <LogoutButton />

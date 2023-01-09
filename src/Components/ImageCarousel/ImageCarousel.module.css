@@ -1,0 +1,16 @@
+.carouselContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.imgContainer {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+img {
+  border-radius: 10px;
+}

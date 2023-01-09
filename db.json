@@ -29,6 +29,11 @@
       "username": "user4",
       "password": "password",
       "id": 6
+    },
+    {
+      "username": "new",
+      "password": "password",
+      "id": 7
     }
   ],
   "upNext": [

@@ -10,10 +10,19 @@ import { StateParks } from "./Components/StateParks/StateParks";
 import { Toaster } from "react-hot-toast";
 import { getParksFromAPI } from "./fetch/parks/getParksFromAPI";
 import { AuthProvider } from "./providers/auth.provider";
+import { ParkDetails } from "./Components/ParkDetails/ParkDetails";
+import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
+import { ProtectedRoute } from "./Components/ProtectedRoute";
+import { UpNext } from "./Components/UpNext/UpNext";
 
 export const parksLoader = async ({ params }) => {
   const parks = await getParksFromAPI(params.stateCode);
   return parks;
+};
+
+export const parkDetailsLoader = async ({ params }) => {
+  const parkDetails = await getParkByParkCode(params.parkCode);
+  return parkDetails;
 };
 
 const router = createBrowserRouter([
@@ -37,6 +46,19 @@ const router = createBrowserRouter([
         path: "state/:stateCode",
         element: <StateParks />,
         loader: parksLoader,
+      },
+      {
+        path: "state/:stateCode/park/:parkCode",
+        element: <ParkDetails />,
+        loader: parkDetailsLoader,
+      },
+      {
+        path: "up-next",
+        element: (
+          <ProtectedRoute>
+            <UpNext />
+          </ProtectedRoute>
+        ),
       },
     ],
   },

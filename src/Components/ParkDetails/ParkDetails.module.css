@@ -1,0 +1,9 @@
+.parkContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.description {
+  max-width: 600px;
+  margin: 10px auto;
+}
