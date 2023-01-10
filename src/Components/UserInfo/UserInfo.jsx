@@ -1,6 +1,7 @@
 import s from "./UserInfo.module.css";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../../providers/auth.provider";
+import { UserActions } from "../UserActions/UserActions";
 
 export const UserInfo = () => {
   const { user } = useAuth();
@@ -28,7 +29,7 @@ export const UserInfo = () => {
           Up Next
         </NavLink>
       </li>
-      <div>Hi, {user.username}!</div>
+      <UserActions />
     </ul>
   );
 };

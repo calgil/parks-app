@@ -38,7 +38,6 @@ export const Layout = () => {
           )}
         </ul>
       </nav>
-      <LogoutButton />
       <Outlet />
     </div>
   );
