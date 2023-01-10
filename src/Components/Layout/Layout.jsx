@@ -2,6 +2,7 @@ import s from "./Layout.module.css";
 import { Outlet, NavLink } from "react-router-dom";
 import { useAuth } from "../../providers/auth.provider";
 import { LogoutButton } from "../LogoutButton";
+import { UserInfo } from "../UserInfo/UserInfo";
 
 export const Layout = () => {
   const { user } = useAuth();
@@ -23,7 +24,7 @@ export const Layout = () => {
             </NavLink>
           </li>
           {user ? (
-            <div>Hi, {user.username}!</div>
+            <UserInfo />
           ) : (
             <li className={s.li}>
               <NavLink
@@ -35,15 +36,6 @@ export const Layout = () => {
               </NavLink>
             </li>
           )}
-          <li className={s.li}>
-            <NavLink
-              className={s.link}
-              to="up-next"
-              style={({ isActive }) => (isActive ? activeStyle : undefined)}
-            >
-              Up Next
-            </NavLink>
-          </li>
         </ul>
       </nav>
       <LogoutButton />

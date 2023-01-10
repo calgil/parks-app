@@ -14,6 +14,7 @@ import { ParkDetails } from "./Components/ParkDetails/ParkDetails";
 import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { UpNext } from "./Components/UpNext/UpNext";
+import { Visited } from "./Components/Visited/Visited";
 
 export const parksLoader = async ({ params }) => {
   const parks = await getParksFromAPI(params.stateCode);
@@ -57,6 +58,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <UpNext />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "visited",
+        element: (
+          <ProtectedRoute>
+            <Visited />
           </ProtectedRoute>
         ),
       },
