@@ -1,10 +1,8 @@
 import s from "./UserInfo.module.css";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../../providers/auth.provider";
 import { UserActions } from "../UserActions/UserActions";
 
 export const UserInfo = () => {
-  const { user } = useAuth();
   const activeStyle = {
     color: "darkGreen",
     textDecoration: "underline",

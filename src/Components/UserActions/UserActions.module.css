@@ -1,5 +1,11 @@
 .actionContainer {
   position: relative;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.actionContainer:hover {
+  text-decoration: underline;
 }
 
 .actionBtn {

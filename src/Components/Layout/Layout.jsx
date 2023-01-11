@@ -10,10 +10,10 @@ export const Layout = () => {
       {isLoading ? (
         <div> Loading ...</div>
       ) : (
-        <div>
+        <>
           <Navbar />
           <Outlet />
-        </div>
+        </>
       )}
     </>
   );

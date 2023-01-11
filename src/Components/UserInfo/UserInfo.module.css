@@ -18,3 +18,7 @@
 .link:visited {
   color: white;
 }
+
+.link:hover {
+  text-decoration: underline;
+}
