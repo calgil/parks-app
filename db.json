@@ -14,26 +14,6 @@
       "id": 3,
       "username": "user3",
       "password": "password"
-    },
-    {
-      "username": "new",
-      "password": "kak",
-      "id": 4
-    },
-    {
-      "username": "newuser",
-      "password": "knk",
-      "id": 5
-    },
-    {
-      "username": "user4",
-      "password": "password",
-      "id": 6
-    },
-    {
-      "username": "new",
-      "password": "password",
-      "id": 7
     }
   ],
   "upNext": [

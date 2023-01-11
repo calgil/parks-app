@@ -6,6 +6,7 @@ const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const register = async ({ username, password }) => {
     try {
@@ -24,7 +25,6 @@ export const AuthProvider = ({ children }) => {
     }
     localStorage.setItem("user", JSON.stringify(user));
     setUser(user);
-    console.log("user", user);
   };
 
   const logout = () => {
@@ -32,14 +32,29 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("user");
   };
 
-  useEffect(() => {
+  const findUserInStorage = async () => {
     const potentialUser = localStorage.getItem("user");
-    if (potentialUser) {
-      setUser(JSON.parse(potentialUser));
+    if (!potentialUser) {
+      return setIsLoading(false);
     }
+    const storedUser = JSON.parse(potentialUser);
+    const { username } = storedUser;
+    try {
+      const user = await getUserFetch({ username });
+      setUser(user);
+      setIsLoading(false);
+    } catch (error) {
+      localStorage.removeItem("user");
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    findUserInStorage();
   }, []);
+
   return (
-    <AuthContext.Provider value={{ user, register, login, logout }}>
+    <AuthContext.Provider value={{ user, register, login, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );
@@ -52,5 +67,6 @@ export const useAuth = () => {
     register: context.register,
     login: context.login,
     logout: context.logout,
+    isLoading: context.isLoading,
   };
 };

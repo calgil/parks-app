@@ -1,7 +1,7 @@
 import s from "./UserActions.module.css";
 import { useAuth } from "../../providers/auth.provider";
 import { useState } from "react";
-import { LogoutButton } from "../LogoutButton";
+import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 
 export const UserActions = () => {
   const { user } = useAuth();
@@ -21,15 +21,15 @@ export const UserActions = () => {
       </button>
       {showActions && (
         <div className={s.actionsDropdown}>
-          <div>
-            <button>Edit User</button>
-          </div>
-          <div>
-            <LogoutButton />
-          </div>
-          <div>
-            <button>Delete User</button>
-          </div>
+          {/* <div> */}
+          <button>Edit User</button>
+          {/* </div> */}
+          {/* <div> */}
+          <LogoutButton />
+          {/* </div> */}
+          {/* <div> */}
+          <button>Delete User</button>
+          {/* </div> */}
         </div>
       )}
     </div>
