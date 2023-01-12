@@ -18,7 +18,6 @@ export const LoginForm = () => {
         navigate("/");
       })
       .catch((e) => {
-        console.log("error caught", e.message);
         toast.error(e.message);
       });
     setUsernameInput("");

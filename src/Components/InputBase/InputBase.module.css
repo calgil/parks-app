@@ -17,7 +17,8 @@
 }
 
 .input:active,
-.input:focus {
+.input:focus,
+.input:hover {
   outline: 2px solid darkgreen;
   transform: scale(1.05);
 }

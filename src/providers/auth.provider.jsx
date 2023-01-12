@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { getUserFetch } from "../fetch/user/getUserFetch";
 import { registerFetch } from "../fetch/user/registerFetch";
 
@@ -39,14 +40,15 @@ export const AuthProvider = ({ children }) => {
     }
     const storedUser = JSON.parse(potentialUser);
     const { username } = storedUser;
-    try {
-      const user = await getUserFetch({ username });
-      setUser(user);
-      setIsLoading(false);
-    } catch (error) {
-      localStorage.removeItem("user");
-      setIsLoading(false);
-    }
+    getUserFetch({ username })
+      .then(setUser)
+      .catch((err) => {
+        localStorage.removeItem("user");
+        toast.error(err.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   useEffect(() => {

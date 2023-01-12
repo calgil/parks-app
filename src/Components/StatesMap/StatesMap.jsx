@@ -38,12 +38,10 @@ export const StatesMap = () => {
       return;
     }
     getParks(cur.id.toLowerCase());
-    console.log("state", cur.id.toLowerCase());
   };
 
   const handleMarkerClick = (id) => {
     getParks(id.toLowerCase());
-    console.log("marker", id.toLowerCase());
   };
   return (
     <div className={s.stateContainer}>

@@ -5,12 +5,10 @@ export const Park = ({
 }) => {
   const navigate = useNavigate();
   const openDetails = () => {
-    console.log("open details");
     navigate(`park/${parkCode}`);
   };
 
   const addToUpNext = (e) => {
-    console.log("btn click");
     e.stopPropagation();
   };
   return (
