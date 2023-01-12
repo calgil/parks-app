@@ -10,16 +10,19 @@ export const UserActions = () => {
   const actionContainerRef = useRef(null);
 
   const handleClickOutside = (e) => {
-    console.log("click outside");
+    console.log("click");
     if (
       actionContainerRef.current &&
       !actionContainerRef.current.contains(e.target)
     ) {
+      console.log("click inside");
       setShowActions(false);
     }
+    console.log("click outside");
   };
 
   useEffect(() => {
+    console.log("use effect triggered");
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [setShowActions, actionContainerRef]);
@@ -28,7 +31,7 @@ export const UserActions = () => {
     <div
       ref={actionContainerRef}
       className={s.actionContainer}
-      onClick={() => setShowActions(!showActions)}
+      onClick={() => setShowActions(true)}
     >
       Hi, {capitalizeFirstLetter(user.username)}!
       <button className={s.actionBtn}>

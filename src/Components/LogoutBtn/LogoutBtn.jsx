@@ -4,8 +4,9 @@ export const LogoutButton = () => {
   const { logout } = useAuth();
   return (
     <button
-      onClick={() => {
+      onClick={(e) => {
         logout();
+        e.stopPropagation();
       }}
     >
       Logout

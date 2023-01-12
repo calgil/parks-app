@@ -12,7 +12,7 @@
   background-color: transparent;
   border: none;
   margin-left: 5px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: white;
 }
 
@@ -31,6 +31,9 @@
   text-align: left;
   background-color: transparent;
   border: none;
+  line-height: 1.5;
+  font-size: 1.01rem;
+  border-radius: 5px;
 }
 
 .actionsDropdown button:hover {
