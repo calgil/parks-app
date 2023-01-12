@@ -16,10 +16,20 @@ import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { UpNext } from "./Components/UpNext/UpNext";
 import { Visited } from "./Components/Visited/Visited";
+import { VisitedProvider } from "./providers/visited.provider";
+import { getAllVisitedAPI } from "./fetch/parks/visited/getAllVisitedAPI";
 
 export const parksLoader = async ({ params }) => {
   const parks = await getParksFromAPI(params.stateCode);
   return parks;
+};
+
+export const visitedLoader = async () => {
+  return await getAllVisitedAPI();
+  // const visited = await getAllVisitedAPI();
+  // return await Promise.all(
+  //   visited.map(async (park) => await getParkByParkCode(park.parkCode))
+  // );
 };
 
 export const parkDetailsLoader = async ({ params }) => {
@@ -69,6 +79,7 @@ const router = createBrowserRouter([
             <Visited />
           </ProtectedRoute>
         ),
+        loader: visitedLoader,
       },
     ],
   },
@@ -77,7 +88,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <VisitedProvider>
+        <RouterProvider router={router} />
+      </VisitedProvider>
     </AuthProvider>
     <Toaster />
   </React.StrictMode>

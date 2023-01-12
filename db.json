@@ -14,364 +14,136 @@
       "id": 3,
       "username": "user3",
       "password": "password"
-    },
-    {
-      "username": "kuhtellin",
-      "password": "123456",
-      "id": 4
-    },
-    {
-      "username": "jon",
-      "password": "123",
-      "id": 5
     }
   ],
   "upNext": [
     {
+      "id": 1,
       "userId": 1,
-      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C"
+      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C",
+      "parkCode": "amch"
     },
     {
+      "id": 2,
       "userId": 2,
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2"
+      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2",
+      "parkCode": "beol"
     },
     {
+      "id": 3,
       "userId": 3,
-      "parkId": "E0F4D5E3-3E4A-4345-B86A-1B0CAD7461F1"
+      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A",
+      "parkCode": "blca"
     },
     {
+      "id": 4,
       "userId": 1,
-      "parkId": "C08AD828-98FF-478E-A63C-614E7534274B"
+      "parkId": "E0F4D5E3-3E4A-4345-B86A-1B0CAD7461F1",
+      "parkCode": "bicy"
     },
     {
+      "id": 5,
       "userId": 2,
-      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C"
+      "parkId": "FBF9F793-5114-4B61-A5BA-6F9ADDFDF459",
+      "parkCode": "bisc"
     },
     {
+      "id": 6,
       "userId": 3,
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2"
+      "parkId": "FFD294C0-8027-42EC-B395-9C3BF2B80F49",
+      "parkCode": "cana"
     },
     {
+      "id": 7,
       "userId": 1,
-      "parkId": "E0F4D5E3-3E4A-4345-B86A-1B0CAD7461F1"
+      "parkId": "C08AD828-98FF-478E-A63C-614E7534274B",
+      "parkCode": "alca"
     },
     {
+      "id": 8,
       "userId": 2,
-      "parkId": "C08AD828-98FF-478E-A63C-614E7534274B"
+      "parkId": "2DB09FB7-0408-44C9-8083-8F50039BD6DA",
+      "parkCode": "cabr"
     },
     {
+      "id": 9,
       "userId": 3,
-      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C"
+      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB",
+      "parkCode": "cali"
     },
     {
+      "id": 10,
       "userId": 1,
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2"
-    },
-    {
-      "userId": 2,
-      "parkId": "C08AD828-98FF-478E-A63C-614E7534274B"
-    },
-    {
-      "userId": 3,
-      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C"
-    },
-    {
-      "userId": 1,
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2"
-    },
-    {
-      "userId": 2,
-      "parkId": "E0F4D5E3-3E4A-4345-B86A-1B0CAD7461F1"
-    },
-    {
-      "userId": 3,
-      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB"
-    },
-    {
-      "userId": 1,
-      "parkId": "2DB09FB7-0408-44C9-8083-8F50039BD6DA"
-    },
-    {
-      "userId": 2,
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2"
-    },
-    {
-      "userId": 3,
-      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A"
-    },
-    {
-      "userId": 1,
-      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB"
-    },
-    {
-      "userId": 2,
-      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A"
-    },
-    {
-      "userId": 3,
-      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB"
-    },
-    {
-      "userId": 1,
-      "parkId": "6E71B72E-4F2F-495D-9225-A6634E6C2EB1"
-    },
-    {
-      "userId": 2,
-      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A"
-    },
-    {
-      "userId": 3,
-      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB"
-    },
-    {
-      "userId": 1,
-      "parkId": "6E71B72E-4F2F-495D-9225-A6634E6C2EB1"
-    },
-    {
-      "userId": 2,
-      "parkId": "6E71B72E-4F2F-495D-9225-A6634E6C2EB1"
-    },
-    {
-      "userId": 3,
-      "parkId": "C4E1A9A4-D121-4734-94FA-7788A93C2AAA"
-    },
-    {
-      "userId": 1,
-      "parkId": "7D6098F9-3F75-4775-A56D-CD9C7F9A9488"
-    },
-    {
-      "userId": 2,
-      "parkId": "C4E1A9A4-D121-4734-94FA-7788A93C2AAA"
-    },
-    {
-      "userId": 3,
-      "parkId": "7D6098F9-3F75-4775-A56D-CD9C7F9A9488"
-    },
-    {
-      "userId": 1,
-      "parkId": "94B046DC-2AFD-4ECB-A60D-CE210A8550B1"
-    },
-    {
-      "userId": 2,
-      "parkId": "C4E1A9A4-D121-4734-94FA-7788A93C2AAA"
-    },
-    {
-      "userId": 3,
-      "parkId": "7D6098F9-3F75-4775-A56D-CD9C7F9A9488"
-    },
-    {
-      "userId": 1,
-      "parkId": "94B046DC-2AFD-4ECB-A60D-CE210A8550B1"
-    },
-    {
-      "userId": 2,
-      "parkId": "C4E1A9A4-D121-4734-94FA-7788A93C2AAA"
-    },
-    {
-      "userId": 3,
-      "parkId": "94B046DC-2AFD-4ECB-A60D-CE210A8550B1"
-    },
-    {
-      "userId": 1,
-      "parkId": "7FF37F14-88C8-469E-A447-ACE6D9AF44D2"
-    },
-    {
-      "userId": 2,
-      "parkId": "EE1F4878-00FB-4760-A77F-EA76DB8DEFD9"
-    },
-    {
-      "userId": 3,
-      "parkId": "77566B98-D9CC-40FB-AA6E-FAA0F56E2059"
-    },
-    {
-      "userId": 1,
-      "parkId": "7FF37F14-88C8-469E-A447-ACE6D9AF44D2"
-    },
-    {
-      "userId": 2,
-      "parkId": "EE1F4878-00FB-4760-A77F-EA76DB8DEFD9"
-    },
-    {
-      "userId": 3,
-      "parkId": "77566B98-D9CC-40FB-AA6E-FAA0F56E2059"
-    },
-    {
-      "userId": 1,
-      "parkId": "7FF37F14-88C8-469E-A447-ACE6D9AF44D2"
-    },
-    {
-      "userId": 2,
-      "parkId": "EE1F4878-00FB-4760-A77F-EA76DB8DEFD9"
-    },
-    {
-      "userId": 3,
-      "parkId": "77566B98-D9CC-40FB-AA6E-FAA0F56E2059"
-    },
-    {
-      "userId": 1,
-      "parkId": "7FF37F14-88C8-469E-A447-ACE6D9AF44D2"
-    },
-    {
-      "userId": 2,
-      "parkId": "C0BF2A42-E353-4FAE-B4C4-AA0676B58100"
-    },
-    {
-      "userId": 3,
-      "parkId": "C0BF2A42-E353-4FAE-B4C4-AA0676B58100"
-    },
-    {
-      "userId": 1,
-      "parkId": "BC195D18-71C8-4A99-BF8E-10BFAB849679"
-    },
-    {
-      "userId": 2,
-      "parkId": "BC195D18-71C8-4A99-BF8E-10BFAB849679"
-    },
-    {
-      "userId": 3,
-      "parkId": "BC195D18-71C8-4A99-BF8E-10BFAB849679"
+      "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
+      "parkCode": "camo"
     }
   ],
   "visited": [
     {
+      "id": 1,
       "userId": 1,
-      "parkId": "5D443C5F-19A0-4A06-9CE4-30534A3DD81A"
+      "parkId": "C4E1A9A4-D121-4734-94FA-7788A93C2AAA",
+      "parkCode": "alag"
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "parkId": "94B046DC-2AFD-4ECB-A60D-CE210A8550B1",
+      "parkCode": "aleu"
+    },
+    {
+      "id": 4,
+      "userId": 1,
+      "parkId": "7FF37F14-88C8-469E-A447-ACE6D9AF44D2",
+      "parkCode": "ania"
+    },
+    {
+      "id": 6,
+      "userId": 3,
+      "parkId": "3262234F-A56A-447D-AE6C-F5C734ABD3A4",
+      "parkCode": "biho"
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "parkId": "7568A0D8-73B1-44E6-82C7-E10BA1872209",
+      "parkCode": "bica"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "parkId": "60B1534B-5C3A-402A-ABC6-700B756F69A2",
+      "parkCode": "fous"
+    },
+    {
+      "id": 9,
+      "userId": 3,
+      "parkId": "2B5178C6-2446-488C-AC31-47E3CEBF7159",
+      "parkCode": "glac"
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "parkId": "72A30002-12FA-4738-BCA7-1FA8062214CB",
+      "parkCode": "grko"
     },
     {
       "userId": 2,
-      "parkId": "FF52F034-53E3-4F36-AA31-4BEBCC5F007A"
-    },
-    {
-      "userId": 3,
-      "parkId": "5D443C5F-19A0-4A06-9CE4-30534A3DD81A"
-    },
-    {
-      "userId": 1,
-      "parkId": "FF52F034-53E3-4F36-AA31-4BEBCC5F007A"
+      "parkId": "F4D44F29-3F67-498F-B05B-0783473D2708",
+      "parkCode": "cuva",
+      "id": 11
     },
     {
       "userId": 2,
-      "parkId": "AD731EF0-685F-4397-88C1-A9BB21EBF034"
-    },
-    {
-      "userId": 3,
-      "parkId": "E4C7784E-66A0-4D44-87D0-3E072F5FEF43"
-    },
-    {
-      "userId": 1,
-      "parkId": "AD731EF0-685F-4397-88C1-A9BB21EBF034"
-    },
-    {
-      "userId": 3,
-      "parkId": "FAEF5684-83A4-4CF2-A701-60CF8D4014BD"
-    },
-    {
-      "userId": 1,
-      "parkId": "E4C7784E-66A0-4D44-87D0-3E072F5FEF43"
+      "parkId": "35CB040E-765C-47D0-A594-05943E64EF3E",
+      "parkCode": "fila",
+      "id": 12
     },
     {
       "userId": 2,
-      "parkId": "FAEF5684-83A4-4CF2-A701-60CF8D4014BD"
-    },
-    {
-      "userId": 3,
-      "parkId": "A36366E7-5663-4531-B0CE-D58928C6D01B"
-    },
-    {
-      "userId": 1,
-      "parkId": "FAEF5684-83A4-4CF2-A701-60CF8D4014BD"
-    },
-    {
-      "userId": 2,
-      "parkId": "A36366E7-5663-4531-B0CE-D58928C6D01B"
-    },
-    {
-      "userId": 3,
-      "parkId": "6DA17C86-088E-4B4D-B862-7C1BD5CF236B"
-    },
-    {
-      "userId": 1,
-      "parkId": "FAEF5684-83A4-4CF2-A701-60CF8D4014BD"
-    },
-    {
-      "userId": 2,
-      "parkId": "6DA17C86-088E-4B4D-B862-7C1BD5CF236B"
-    },
-    {
-      "userId": 3,
-      "parkId": "FAEF5684-83A4-4CF2-A701-60CF8D4014BD"
-    },
-    {
-      "userId": 1,
-      "parkId": "406F7D87-F34F-41C9-9CCE-9FD53ABBA9A7"
-    },
-    {
-      "userId": 2,
-      "parkId": "406F7D87-F34F-41C9-9CCE-9FD53ABBA9A7"
-    },
-    {
-      "userId": 3,
-      "parkId": "A609887A-BB48-47AA-A6F6-4C7F77346FC6"
-    },
-    {
-      "userId": 1,
-      "parkId": "A609887A-BB48-47AA-A6F6-4C7F77346FC6"
-    },
-    {
-      "userId": 2,
-      "parkId": "05106DE8-D6F2-4088-9834-79462FBDDA21"
-    },
-    {
-      "userId": 3,
-      "parkId": "05106DE8-D6F2-4088-9834-79462FBDDA21"
-    },
-    {
-      "userId": 1,
-      "parkId": "57B2D95A-6D3E-49D6-BF73-623D6BD33D06"
-    },
-    {
-      "userId": 2,
-      "parkId": "57B2D95A-6D3E-49D6-BF73-623D6BD33D06"
-    },
-    {
-      "userId": 3,
-      "parkId": "0F6893CF-FC15-4AC5-8C95-E70FC9C21B1A"
-    },
-    {
-      "userId": 1,
-      "parkId": "0F6893CF-FC15-4AC5-8C95-E70FC9C21B1A"
-    },
-    {
-      "userId": 2,
-      "parkId": "E25D6277-11D8-425F-8498-718C98B13854"
-    },
-    {
-      "userId": 3,
-      "parkId": "E25D6277-11D8-425F-8498-718C98B13854"
-    },
-    {
-      "userId": 1,
-      "parkId": "4BE453C2-6527-484F-90D6-98057901EBDF"
-    },
-    {
-      "userId": 2,
-      "parkId": "4BE453C2-6527-484F-90D6-98057901EBDF"
-    },
-    {
-      "userId": 3,
-      "parkId": "8D803E2F-FB28-4DC3-9EDC-7FDAE185C092"
-    },
-    {
-      "userId": 1,
-      "parkId": "8D803E2F-FB28-4DC3-9EDC-7FDAE185C092"
-    },
-    {
-      "userId": 2,
-      "parkId": "0AEC82D5-0D49-492A-9936-DBE44AF69F09"
-    },
-    {
-      "userId": 3,
-      "parkId": "0AEC82D5-0D49-492A-9936-DBE44AF69F09"
+      "parkId": "C62B89CF-F912-46F4-878C-8EEBD843CEC6",
+      "parkCode": "daav",
+      "id": 13
     }
   ]
 }

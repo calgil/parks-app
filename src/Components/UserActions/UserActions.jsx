@@ -10,19 +10,19 @@ export const UserActions = () => {
   const actionContainerRef = useRef(null);
 
   const handleClickOutside = (e) => {
-    console.log("click");
+    // console.log("click");
     if (
       actionContainerRef.current &&
       !actionContainerRef.current.contains(e.target)
     ) {
-      console.log("click inside");
+      // console.log("click inside");
       setShowActions(false);
     }
-    console.log("click outside");
+    // console.log("click outside");
   };
 
   useEffect(() => {
-    console.log("use effect triggered");
+    // console.log("use effect triggered");
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [setShowActions, actionContainerRef]);

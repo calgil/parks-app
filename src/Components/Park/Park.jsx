@@ -1,11 +1,21 @@
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../providers/auth.provider";
+import { useVisited } from "../../providers/visited.provider";
 import s from "./Park.module.css";
 export const Park = ({
   park: { id, description, designation, fullName, name, images, parkCode },
+  isVisited,
 }) => {
+  const { user } = useAuth();
+  const { toggleVisited } = useVisited();
   const navigate = useNavigate();
   const openDetails = () => {
     navigate(`park/${parkCode}`);
+  };
+
+  const handleVisitedClick = (e) => {
+    e.stopPropagation();
+    toggleVisited({ userId: user.id, parkId: id, parkCode });
   };
 
   const addToUpNext = (e) => {
@@ -27,7 +37,15 @@ export const Park = ({
         <button onClick={addToUpNext} className={s.actionBtn}>
           Add to Up Next
         </button>
-        <button className={s.actionBtn}>Add to Visited</button>
+        {isVisited && user ? (
+          <button onClick={handleVisitedClick} className={s.actionBtn}>
+            Remove from Visited
+          </button>
+        ) : (
+          <button onClick={handleVisitedClick} className={s.actionBtn}>
+            Add to Visited
+          </button>
+        )}
       </div>
     </div>
   );
