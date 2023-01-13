@@ -9,9 +9,11 @@ export const toggleVisitedAPI = async ({ userId, parkId, parkCode }) => {
     (visited) => visited.userId === userId && visited.parkId === parkId
   );
   if (!matchingVisited) {
+    console.log(`add new visited ${parkCode}`);
     return await createVisitedAPI({ userId, parkId, parkCode });
     // return create new visited
   }
-  return await deleteVisitedAPI(matchingVisited.id);
+  console.log(`delete visited ${parkCode}`);
+  return deleteVisitedAPI(matchingVisited.id);
   // return delete visited
 };

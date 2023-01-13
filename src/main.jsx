@@ -26,12 +26,12 @@ export const parksLoader = async ({ params }) => {
   return parks;
 };
 
-export const visitedLoader = async ({ params }) => {
-  const { userId } = params;
-  const allVisitedParks = await getAllVisitedAPI();
-  const userParks = filterById(allVisitedParks, +userId);
-  return await getParksData(userParks);
-};
+// export const visitedLoader = async ({ params }) => {
+//   const { userId } = params;
+//   const allVisitedParks = await getAllVisitedAPI();
+//   const userParks = filterById(allVisitedParks, +userId);
+//   return await getParksData(userParks);
+// };
 
 export const parkDetailsLoader = async ({ params }) => {
   const parkDetails = await getParkByParkCode(params.parkCode);
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
             <Visited />
           </ProtectedRoute>
         ),
-        loader: visitedLoader,
+        // loader: visitedLoader,
       },
     ],
   },

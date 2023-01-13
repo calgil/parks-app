@@ -15,10 +15,9 @@ export const VisitedProvider = ({ children }) => {
     refetch();
   }, []);
 
-  const toggleVisited = ({ userId, parkId, parkCode }) => {
-    return toggleVisitedAPI({ userId, parkId, parkCode }).then(() => {
-      refetch();
-    });
+  const toggleVisited = async ({ userId, parkId, parkCode }) => {
+    await toggleVisitedAPI({ userId, parkId, parkCode });
+    refetch();
   };
 
   return (

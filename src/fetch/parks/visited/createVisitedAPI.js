@@ -9,7 +9,6 @@ export const createVisitedAPI = ({ userId, parkId, parkCode }) => {
     if (!response.ok) {
       throw new Error("Could not create Visited");
     }
-    console.log("res", response);
     return response;
   });
 };
