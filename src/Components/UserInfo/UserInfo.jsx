@@ -2,7 +2,7 @@ import s from "./UserInfo.module.css";
 import { NavLink } from "react-router-dom";
 import { UserActions } from "../UserActions/UserActions";
 
-export const UserInfo = () => {
+export const UserInfo = ({ userId }) => {
   const activeStyle = {
     color: "darkGreen",
     textDecoration: "underline",
@@ -12,7 +12,7 @@ export const UserInfo = () => {
       <li className={s.li}>
         <NavLink
           className={s.link}
-          to="/visited"
+          to={`/visited/${userId}`}
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
           Visited

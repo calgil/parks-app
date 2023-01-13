@@ -22,7 +22,7 @@ export const Navbar = () => {
           </NavLink>
         </li>
         {user ? (
-          <UserInfo />
+          <UserInfo userId={user.id} />
         ) : (
           <li className={s.li}>
             <NavLink

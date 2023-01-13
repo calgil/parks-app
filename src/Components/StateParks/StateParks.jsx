@@ -9,11 +9,6 @@ export const StateParks = () => {
   const { user } = useAuth();
   const { visited } = useVisited();
 
-  console.log({
-    user,
-    visited,
-  });
-
   return (
     <div className={s.parksContainer}>
       {parks &&

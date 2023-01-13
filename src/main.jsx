@@ -18,18 +18,23 @@ import { UpNext } from "./Components/UpNext/UpNext";
 import { Visited } from "./Components/Visited/Visited";
 import { VisitedProvider } from "./providers/visited.provider";
 import { getAllVisitedAPI } from "./fetch/parks/visited/getAllVisitedAPI";
+import { filterById } from "./utils/filterById";
+import { getParksData } from "./fetch/parks/getParksData";
 
 export const parksLoader = async ({ params }) => {
   const parks = await getParksFromAPI(params.stateCode);
   return parks;
 };
 
-export const visitedLoader = async () => {
-  return await getAllVisitedAPI();
-  // const visited = await getAllVisitedAPI();
+export const visitedLoader = async ({ params }) => {
+  const { userId } = params;
+  const allVisitedParks = await getAllVisitedAPI();
+  const userParks = filterById(allVisitedParks, +userId);
+  return await getParksData(userParks);
   // return await Promise.all(
   //   visited.map(async (park) => await getParkByParkCode(park.parkCode))
   // );
+  // return null;
 };
 
 export const parkDetailsLoader = async ({ params }) => {
@@ -73,7 +78,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "visited",
+        path: "visited/:userId",
         element: (
           <ProtectedRoute>
             <Visited />
