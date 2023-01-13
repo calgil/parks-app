@@ -1,16 +1,17 @@
+import { replace } from "lodash-es";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../providers/auth.provider";
 import { useVisited } from "../../providers/visited.provider";
 import s from "./Park.module.css";
 export const Park = ({
-  park: { id, description, designation, fullName, name, images, parkCode },
+  park: { id, description, designation, fullName, images, parkCode },
   isVisited,
 }) => {
   const { user } = useAuth();
   const { toggleVisited } = useVisited();
   const navigate = useNavigate();
   const openDetails = () => {
-    navigate(`park/${parkCode}`);
+    navigate(`/park/${parkCode}`);
   };
 
   const handleVisitedClick = (e) => {

@@ -31,10 +31,6 @@ export const visitedLoader = async ({ params }) => {
   const allVisitedParks = await getAllVisitedAPI();
   const userParks = filterById(allVisitedParks, +userId);
   return await getParksData(userParks);
-  // return await Promise.all(
-  //   visited.map(async (park) => await getParkByParkCode(park.parkCode))
-  // );
-  // return null;
 };
 
 export const parkDetailsLoader = async ({ params }) => {
@@ -65,7 +61,7 @@ const router = createBrowserRouter([
         loader: parksLoader,
       },
       {
-        path: "state/:stateCode/park/:parkCode",
+        path: "park/:parkCode",
         element: <ParkDetails />,
         loader: parkDetailsLoader,
       },
