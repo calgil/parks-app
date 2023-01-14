@@ -5,7 +5,9 @@ import "font-awesome/css/font-awesome.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./Components/Layout/Layout";
 import { StatesMap } from "./Components/StatesMap/StatesMap";
-import { LoginForm } from "./Components/LoginForm/LoginForm";
+import LoginForm, {
+  action as loginAction,
+} from "./Components/LoginForm/LoginForm";
 import { SignUpForm } from "./Components/SignUpForm/SignUpForm";
 import { StateParks } from "./Components/StateParks/StateParks";
 import { Toaster } from "react-hot-toast";
@@ -26,12 +28,12 @@ export const parksLoader = async ({ params }) => {
   return parks;
 };
 
-// export const visitedLoader = async ({ params }) => {
-//   const { userId } = params;
-//   const allVisitedParks = await getAllVisitedAPI();
-//   const userParks = filterById(allVisitedParks, +userId);
-//   return await getParksData(userParks);
-// };
+export const visitedLoader = async ({ params }) => {
+  const { userId } = params;
+  const allVisitedParks = await getAllVisitedAPI();
+  const userParks = filterById(allVisitedParks, +userId);
+  return await getParksData(userParks);
+};
 
 export const parkDetailsLoader = async ({ params }) => {
   const parkDetails = await getParkByParkCode(params.parkCode);
@@ -50,6 +52,7 @@ const router = createBrowserRouter([
       {
         path: "login",
         element: <LoginForm />,
+        action: loginAction,
       },
       {
         path: "register",
@@ -80,7 +83,7 @@ const router = createBrowserRouter([
             <Visited />
           </ProtectedRoute>
         ),
-        // loader: visitedLoader,
+        loader: visitedLoader,
       },
     ],
   },

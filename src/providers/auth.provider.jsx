@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
     }
     const storedUser = JSON.parse(potentialUser);
     const { username } = storedUser;
-    getUserFetch({ username })
+    getUserFetch(username)
       .then(setUser)
       .catch((err) => {
         localStorage.removeItem("user");

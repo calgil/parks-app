@@ -2,7 +2,7 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../providers/auth.provider";
-import { Form } from "../Form/Form";
+import { FormComponent } from "../Form/Form";
 import s from "./UserLogin.module.css";
 
 export const SignUpForm = () => {
@@ -49,7 +49,7 @@ export const SignUpForm = () => {
   };
 
   return (
-    <Form
+    <FormComponent
       inputs={inputData}
       onSubmit={signUpUser}
       title="Create Account"
