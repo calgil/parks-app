@@ -1,42 +1,55 @@
-import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
+import { registerFetch } from "../../fetch/user/registerFetch";
 import { FormComponent } from "../Form/Form";
-import s from "./UserLogin.module.css";
 
-export const SignUpForm = () => {
-  const [usernameInput, setUsernameInput] = useState("");
-  const [passwordInput, setPasswordInput] = useState("");
-  const navigate = useNavigate();
-
-  const signUpUser = async (e) => {
-    e.preventDefault();
-    if (!usernameInput || !passwordInput) {
-      return toast.error("Please input username or password");
-    }
-    try {
-      register({ username: usernameInput, password: passwordInput });
+export async function action({ request }) {
+  return Promise.resolve()
+    .then(async () => {
+      const formData = await request.formData();
+      return formData;
+    })
+    .then((formData) => {
+      const newUserData = Object.fromEntries(formData);
+      return newUserData;
+    })
+    .then(({ username, password }) => {
+      if (!username || !password) {
+        throw new Error("No Username or Password");
+      }
+      return { username, password };
+    })
+    .then(async ({ username, password }) => {
+      const user = await registerFetch({ username, password });
+      if (!user) {
+        throw new Error("Could not create user");
+      }
+      console.log({ user });
+      return user;
+    })
+    .then((user) => {
+      localStorage.setItem("user", JSON.stringify(user));
+    })
+    .then(() => {
       toast.success("Created new User");
-      navigate("/");
-    } catch (error) {
-      toast.error("Cannot create user");
-    }
-    setUsernameInput("");
-    setPasswordInput("");
-  };
+      return redirect("/");
+    })
+    .catch((error) => {
+      return toast.error(error.message);
+    });
+}
 
+export default function SignUpForm() {
   const inputData = [
     {
       labelText: "Username",
-      value: usernameInput,
+      name: "username",
       type: "text",
-      onChange: (e) => setUsernameInput(e.target.value),
     },
     {
       labelText: "Password",
-      value: passwordInput,
+      name: "password",
       type: "password",
-      onChange: (e) => setPasswordInput(e.target.value),
     },
   ];
 
@@ -48,10 +61,9 @@ export const SignUpForm = () => {
   return (
     <FormComponent
       inputs={inputData}
-      // onSubmit={signUpUser}
       title="Create Account"
       buttonText="Sign Up"
       link={link}
     />
   );
-};
+}

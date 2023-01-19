@@ -8,7 +8,9 @@ import { StatesMap } from "./Components/StatesMap/StatesMap";
 import LoginForm, {
   action as loginAction,
 } from "./Components/LoginForm/LoginForm";
-import { SignUpForm } from "./Components/SignUpForm/SignUpForm";
+import SignUpForm, {
+  action as registerAction,
+} from "./Components/SignUpForm/SignUpForm";
 import { StateParks } from "./Components/StateParks/StateParks";
 import { Toaster } from "react-hot-toast";
 import { getParksFromAPI } from "./fetch/parks/getParksFromAPI";
@@ -70,6 +72,7 @@ const router = createBrowserRouter([
                 <SignUpForm />
               </UnProtectedRoute>
             ),
+            action: registerAction,
           },
           {
             path: "state/:stateCode",

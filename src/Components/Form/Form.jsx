@@ -3,13 +3,7 @@ import { InputBase } from "../InputBase/InputBase";
 import { SubmitBtn } from "../SumbitBtn/SubmitBtn";
 import s from "./Form.module.css";
 
-export const FormComponent = ({
-  inputs,
-  onSubmit,
-  title,
-  buttonText,
-  link,
-}) => {
+export const FormComponent = ({ inputs, title, buttonText, link }) => {
   return (
     <section>
       <div className={s.formContainer}>

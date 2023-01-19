@@ -1,18 +1,18 @@
-import { useState } from "react";
 import { toast } from "react-hot-toast";
-import { redirect, useNavigate } from "react-router-dom";
+import { redirect } from "react-router-dom";
 import { getUserFetch } from "../../fetch/user/getUserFetch";
 import { FormComponent } from "../Form/Form";
-import { useRootLoaderData } from "../Layout/Layout";
 
 export async function action({ request }) {
   return Promise.resolve()
     .then(async () => {
       const formData = await request.formData();
+      console.log({ formData });
       return formData;
     })
     .then((formData) => {
       const userData = Object.fromEntries(formData);
+      console.log({ userData });
       return userData;
     })
     .then(({ username, password }) => {
@@ -32,6 +32,7 @@ export async function action({ request }) {
       localStorage.setItem("user", JSON.stringify(user));
     })
     .then(() => {
+      toast.success("Logged In!");
       return redirect("/");
     })
     .catch((error) => {
