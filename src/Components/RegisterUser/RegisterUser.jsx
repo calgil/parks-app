@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { redirect } from "react-router-dom";
+import { API_CONFIG } from "../../fetch/config";
 import { registerFetch } from "../../fetch/user/registerFetch";
 import { FormContainer as FormContainer } from "../FormContainer/FormContainer";
 
@@ -20,11 +22,19 @@ export async function action({ request }) {
       return { username, password };
     })
     .then(async ({ username, password }) => {
+      const getAllUsers = await fetch(`${API_CONFIG.baseUrl}/users`);
+      const allUsers = await getAllUsers.json();
+      const existingUser = allUsers.find((user) => user.username === username);
+      if (existingUser) {
+        throw new Error("User already exists");
+      }
+      return { username, password };
+    })
+    .then(async ({ username, password }) => {
       const user = await registerFetch({ username, password });
       if (!user) {
         throw new Error("Could not create user");
       }
-      console.log({ user });
       return user;
     })
     .then((user) => {
@@ -35,16 +45,20 @@ export async function action({ request }) {
       return redirect("/");
     })
     .catch((error) => {
+      // reset inputs
       return toast.error(error.message);
     });
 }
 
 export default function RegisterUser() {
+  const [usernameInput, setUsernameInput] = useState("");
   const inputData = [
     {
       labelText: "Username",
       name: "username",
       type: "text",
+      value: usernameInput,
+      onChange: (e) => setUsernameInput(e.target.value),
     },
     {
       labelText: "Password",

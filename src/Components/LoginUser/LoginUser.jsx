@@ -7,12 +7,10 @@ export async function action({ request }) {
   return Promise.resolve()
     .then(async () => {
       const formData = await request.formData();
-      console.log({ formData });
       return formData;
     })
     .then((formData) => {
       const userData = Object.fromEntries(formData);
-      console.log({ userData });
       return userData;
     })
     .then(({ username, password }) => {

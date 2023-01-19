@@ -26,6 +26,7 @@ export async function loader() {
       return { user };
     })
     .catch((error) => {
+      localStorage.removeItem("user");
       console.error(error.message);
       return {
         user: null,
