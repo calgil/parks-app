@@ -6,43 +6,50 @@ import { FormComponent } from "../Form/Form";
 import { useRootLoaderData } from "../Layout/Layout";
 
 export async function action({ request }) {
-  const formData = await request.formData();
-  console.log({ formData });
-  const userData = Object.fromEntries(formData);
-  console.log({ userData });
-  const user = await getUserFetch(userData.username);
-  if (!user) {
-    return console.log("no user");
-  }
-  if (user.password !== userData.password) {
-    return console.log("password not match");
-    // throw new Error("Invalid Password");
-  }
-  localStorage.setItem("user", JSON.stringify(user));
-  // setUser(user);
-  return redirect("/");
+  return Promise.resolve()
+    .then(async () => {
+      const formData = await request.formData();
+      return formData;
+    })
+    .then((formData) => {
+      const userData = Object.fromEntries(formData);
+      return userData;
+    })
+    .then(({ username, password }) => {
+      if (!username || !password) {
+        throw new Error("No Username or Password");
+      }
+      return { username, password };
+    })
+    .then(async ({ username, password }) => {
+      const user = await getUserFetch({ username, password });
+      if (!user) {
+        throw new Error("User not Found");
+      }
+      if (user.password !== password) {
+        throw new Error("Passwords do not match");
+      }
+      localStorage.setItem("user", JSON.stringify(user));
+    })
+    .then(() => {
+      return redirect("/");
+    })
+    .catch((error) => {
+      return toast.error(error.message);
+    });
 }
 
 export default function LoginForm() {
-  const [usernameInput, setUsernameInput] = useState("");
-  const [passwordInput, setPasswordInput] = useState("");
-  const navigate = useNavigate();
-  const { user } = useRootLoaderData();
-
   const inputData = [
     {
       labelText: "Username",
-      value: usernameInput,
       name: "username",
       type: "text",
-      onChange: (e) => setUsernameInput(e.target.value),
     },
     {
       labelText: "Password",
-      value: passwordInput,
       name: "password",
       type: "password",
-      onChange: (e) => setPasswordInput(e.target.value),
     },
   ];
 
@@ -54,7 +61,6 @@ export default function LoginForm() {
   return (
     <FormComponent
       inputs={inputData}
-      // onSubmit={loginUser}
       title="Login"
       buttonText="Login"
       link={link}
