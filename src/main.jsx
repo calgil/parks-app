@@ -21,6 +21,7 @@ import { getAllVisitedAPI } from "./fetch/parks/visited/getAllVisitedAPI";
 import { filterById } from "./utils/filterById";
 import { getParksData } from "./fetch/parks/getParksData";
 import ErrorPage from "./Components/ErrorPage";
+import { UnProtectedRoute } from "./Components/UnProtectedRoute";
 
 export const parksLoader = async ({ params }) => {
   const parks = await getParksFromAPI(params.stateCode);
@@ -55,12 +56,20 @@ const router = createBrowserRouter([
           },
           {
             path: "login",
-            element: <LoginForm />,
+            element: (
+              <UnProtectedRoute>
+                <LoginForm />
+              </UnProtectedRoute>
+            ),
             action: loginAction,
           },
           {
             path: "register",
-            element: <SignUpForm />,
+            element: (
+              <UnProtectedRoute>
+                <SignUpForm />
+              </UnProtectedRoute>
+            ),
           },
           {
             path: "state/:stateCode",
