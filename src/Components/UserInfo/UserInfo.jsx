@@ -21,10 +21,10 @@ export const UserInfo = ({ userId }) => {
       <li className={s.li}>
         <NavLink
           className={s.link}
-          to="/up-next"
+          to={`/next-adventure/${userId}`}
           style={({ isActive }) => (isActive ? activeStyle : undefined)}
         >
-          Up Next
+          Next Adventure
         </NavLink>
       </li>
       <UserActions />

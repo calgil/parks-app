@@ -5,9 +5,11 @@ export const LogoutButton = () => {
   return (
     <button
       onClick={(e) => {
-        e.stopPropagation();
+        // console.log("logout", localStorage.getItem("user"));
         localStorage.removeItem("user");
         navigate("/");
+        // console.log("logout end", localStorage.getItem("user"));
+        // e.stopPropagation();
       }}
     >
       Logout

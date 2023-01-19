@@ -5,6 +5,7 @@ import { useRootLoaderData } from "../Layout/Layout";
 
 export const Navbar = () => {
   const { user } = useRootLoaderData();
+  // console.log({ user });
   const activeStyle = {
     color: "darkGreen",
     textDecoration: "underline",

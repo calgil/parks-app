@@ -6,7 +6,6 @@ import { filterById } from "../../utils/filterById";
 import s from "./Visited.module.css";
 
 export const loader = async ({ params }) => {
-  // const { userId } = params;
   const allVisitedParks = await getAllVisitedAPI();
   const userParks = filterById(allVisitedParks, +params.userId);
   return await getParksData(userParks);

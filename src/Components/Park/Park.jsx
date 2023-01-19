@@ -14,11 +14,12 @@ export const Park = ({
 
   const handleVisitedClick = (e) => {
     e.stopPropagation();
-    toggleVisited({ userId: user.id, parkId: id, parkCode });
+    console.log(" add to visited", id);
   };
 
   const addToUpNext = (e) => {
     e.stopPropagation();
+    console.log(" add to next adventure", id);
   };
   return (
     <div onClick={openDetails} className={s.parkBody}>
@@ -34,7 +35,7 @@ export const Park = ({
       </div>
       <div className={s.btnContainer}>
         <button onClick={addToUpNext} className={s.actionBtn}>
-          Add to Up Next
+          Add to Next Adventure
         </button>
         {isVisited && user ? (
           <button onClick={handleVisitedClick} className={s.actionBtn}>

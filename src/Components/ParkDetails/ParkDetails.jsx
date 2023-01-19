@@ -8,7 +8,7 @@ export const ParkDetails = () => {
 
   return (
     <div className={s.parkContainer}>
-      <h4>{fullName}</h4>
+      <h4 className={s.name}>{fullName}</h4>
       <ImageCarousel images={images} />
       <p className={s.description}>{description}</p>
     </div>
