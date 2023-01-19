@@ -1,10 +1,10 @@
 import s from "./Navbar.module.css";
-import { useAuth } from "../../providers/auth.provider";
 import { NavLink } from "react-router-dom";
 import { UserInfo } from "../UserInfo/UserInfo";
+import { useRootLoaderData } from "../Layout/Layout";
 
 export const Navbar = () => {
-  const { user } = useAuth();
+  const { user } = useRootLoaderData();
   const activeStyle = {
     color: "darkGreen",
     textDecoration: "underline",

@@ -1,13 +1,11 @@
-import { replace } from "lodash-es";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../providers/auth.provider";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { useVisited } from "../../providers/visited.provider";
 import s from "./Park.module.css";
 export const Park = ({
   park: { id, description, designation, fullName, images, parkCode },
   isVisited,
 }) => {
-  const { user } = useAuth();
+  const { user } = useLoaderData();
   const { toggleVisited } = useVisited();
   const navigate = useNavigate();
   const openDetails = () => {

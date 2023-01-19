@@ -1,10 +1,10 @@
-import { useAuth } from "../../providers/auth.provider";
+import { useLoaderData } from "react-router-dom";
 import { useVisited } from "../../providers/visited.provider";
 import { Park } from "../Park/Park";
 import s from "./Parks.module.css";
 
 export const Parks = ({ parks }) => {
-  const { user } = useAuth();
+  const { user } = useLoaderData();
   const { visited } = useVisited();
   return (
     <section className={s.parksContainer}>

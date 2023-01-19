@@ -1,13 +1,13 @@
-import { useCallback, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../providers/auth.provider";
+import { useRootLoaderData } from "./Layout/Layout";
 
 const redirectToLogin = (navigate) => {
   navigate("/login");
 };
 
 export const ProtectedRoute = ({ children }) => {
-  const { user } = useAuth();
+  const { user } = useRootLoaderData();
   const navigate = useNavigate();
 
   useEffect(() => {

@@ -1,13 +1,10 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../providers/auth.provider";
 import { FormComponent } from "../Form/Form";
 import s from "./UserLogin.module.css";
 
 export const SignUpForm = () => {
-  const { register } = useAuth();
-
   const [usernameInput, setUsernameInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const navigate = useNavigate();
@@ -51,7 +48,7 @@ export const SignUpForm = () => {
   return (
     <FormComponent
       inputs={inputData}
-      onSubmit={signUpUser}
+      // onSubmit={signUpUser}
       title="Create Account"
       buttonText="Sign Up"
       link={link}

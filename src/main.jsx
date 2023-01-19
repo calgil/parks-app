@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "font-awesome/css/font-awesome.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Layout } from "./Components/Layout/Layout";
+import Layout, { loader as layoutLoader } from "./Components/Layout/Layout";
 import { StatesMap } from "./Components/StatesMap/StatesMap";
 import LoginForm, {
   action as loginAction,
@@ -12,13 +12,11 @@ import { SignUpForm } from "./Components/SignUpForm/SignUpForm";
 import { StateParks } from "./Components/StateParks/StateParks";
 import { Toaster } from "react-hot-toast";
 import { getParksFromAPI } from "./fetch/parks/getParksFromAPI";
-import { AuthProvider } from "./providers/auth.provider";
 import { ParkDetails } from "./Components/ParkDetails/ParkDetails";
 import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { UpNext } from "./Components/UpNext/UpNext";
 import { Visited } from "./Components/Visited/Visited";
-import { VisitedProvider } from "./providers/visited.provider";
 import { getAllVisitedAPI } from "./fetch/parks/visited/getAllVisitedAPI";
 import { filterById } from "./utils/filterById";
 import { getParksData } from "./fetch/parks/getParksData";
@@ -44,6 +42,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    loader: layoutLoader,
     children: [
       {
         path: "/",
@@ -91,11 +90,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <AuthProvider>
-      <VisitedProvider>
-        <RouterProvider router={router} />
-      </VisitedProvider>
-    </AuthProvider>
+    <RouterProvider router={router} />
     <Toaster />
   </React.StrictMode>
 );

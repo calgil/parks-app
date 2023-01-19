@@ -1,11 +1,11 @@
 import s from "./UserActions.module.css";
-import { useAuth } from "../../providers/auth.provider";
 import { useEffect, useRef, useState } from "react";
 import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
+import { useRootLoaderData } from "../Layout/Layout";
 
 export const UserActions = () => {
-  const { user } = useAuth();
+  const { user } = useRootLoaderData();
   const [showActions, setShowActions] = useState(false);
   const actionContainerRef = useRef(null);
 
