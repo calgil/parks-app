@@ -11,9 +11,10 @@ import LoginUser, {
 import RegisterUser, {
   action as registerAction,
 } from "./Components/RegisterUser/RegisterUser";
-import { StateParks } from "./Components/StateParks/StateParks";
+import StateParks, {
+  loader as parksLoader,
+} from "./Components/StateParks/StateParks";
 import { Toaster } from "react-hot-toast";
-import { getParksFromAPI } from "./fetch/parks/getParksFromAPI";
 import { ParkDetails } from "./Components/ParkDetails/ParkDetails";
 import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
@@ -24,11 +25,6 @@ import { filterById } from "./utils/filterById";
 import { getParksData } from "./fetch/parks/getParksData";
 import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
-
-export const parksLoader = async ({ params }) => {
-  const parks = await getParksFromAPI(params.stateCode);
-  return parks;
-};
 
 export const visitedLoader = async ({ params }) => {
   const { userId } = params;
