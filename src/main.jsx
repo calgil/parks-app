@@ -18,7 +18,9 @@ import { Toaster } from "react-hot-toast";
 import { ParkDetails } from "./Components/ParkDetails/ParkDetails";
 import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
-import NextAdventure from "./Components/NextAdventure/NextAdventure";
+import NextAdventure, {
+  loader as nextAdventureLoader,
+} from "./Components/NextAdventure/NextAdventure";
 import Visited, { loader as visitedLoader } from "./Components/Visited/Visited";
 import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
@@ -77,6 +79,7 @@ const router = createBrowserRouter([
                 <NextAdventure />
               </ProtectedRoute>
             ),
+            loader: nextAdventureLoader,
           },
           {
             path: "visited/:userId",
