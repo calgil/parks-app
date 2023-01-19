@@ -39,7 +39,7 @@ export async function action({ request }) {
     });
 }
 
-export default function SignUpForm() {
+export default function RegisterUser() {
   const inputData = [
     {
       labelText: "Username",

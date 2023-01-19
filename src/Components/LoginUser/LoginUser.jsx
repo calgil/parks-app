@@ -40,7 +40,7 @@ export async function action({ request }) {
     });
 }
 
-export default function LoginForm() {
+export default function LoginUser() {
   const inputData = [
     {
       labelText: "Username",

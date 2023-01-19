@@ -5,12 +5,12 @@ import "font-awesome/css/font-awesome.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout, { loader as layoutLoader } from "./Components/Layout/Layout";
 import { StatesMap } from "./Components/StatesMap/StatesMap";
-import LoginForm, {
+import LoginUser, {
   action as loginAction,
-} from "./Components/LoginForm/LoginForm";
-import SignUpForm, {
+} from "./Components/LoginUser/LoginUser";
+import RegisterUser, {
   action as registerAction,
-} from "./Components/SignUpForm/SignUpForm";
+} from "./Components/RegisterUser/RegisterUser";
 import { StateParks } from "./Components/StateParks/StateParks";
 import { Toaster } from "react-hot-toast";
 import { getParksFromAPI } from "./fetch/parks/getParksFromAPI";
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
             path: "login",
             element: (
               <UnProtectedRoute>
-                <LoginForm />
+                <LoginUser />
               </UnProtectedRoute>
             ),
             action: loginAction,
@@ -69,7 +69,7 @@ const router = createBrowserRouter([
             path: "register",
             element: (
               <UnProtectedRoute>
-                <SignUpForm />
+                <RegisterUser />
               </UnProtectedRoute>
             ),
             action: registerAction,
