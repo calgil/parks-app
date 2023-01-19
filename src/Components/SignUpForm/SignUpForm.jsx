@@ -1,7 +1,7 @@
 import { toast } from "react-hot-toast";
 import { redirect } from "react-router-dom";
 import { registerFetch } from "../../fetch/user/registerFetch";
-import { FormComponent } from "../Form/Form";
+import { FormContainer as FormContainer } from "../FormContainer/FormContainer";
 
 export async function action({ request }) {
   return Promise.resolve()
@@ -59,7 +59,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <FormComponent
+    <FormContainer
       inputs={inputData}
       title="Create Account"
       buttonText="Sign Up"

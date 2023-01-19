@@ -1,7 +1,7 @@
 import { toast } from "react-hot-toast";
 import { redirect } from "react-router-dom";
 import { getUserFetch } from "../../fetch/user/getUserFetch";
-import { FormComponent } from "../Form/Form";
+import { FormContainer } from "../FormContainer/FormContainer";
 
 export async function action({ request }) {
   return Promise.resolve()
@@ -60,7 +60,7 @@ export default function LoginForm() {
   };
 
   return (
-    <FormComponent
+    <FormContainer
       inputs={inputData}
       title="Login"
       buttonText="Login"
