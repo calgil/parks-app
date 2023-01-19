@@ -20,6 +20,7 @@ import { Visited } from "./Components/Visited/Visited";
 import { getAllVisitedAPI } from "./fetch/parks/visited/getAllVisitedAPI";
 import { filterById } from "./utils/filterById";
 import { getParksData } from "./fetch/parks/getParksData";
+import ErrorPage from "./Components/ErrorPage";
 
 export const parksLoader = async ({ params }) => {
   const parks = await getParksFromAPI(params.stateCode);
@@ -42,47 +43,53 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement: <ErrorPage />,
     loader: layoutLoader,
     children: [
       {
-        path: "/",
-        element: <StatesMap />,
-      },
-      {
-        path: "login",
-        element: <LoginForm />,
-        action: loginAction,
-      },
-      {
-        path: "register",
-        element: <SignUpForm />,
-      },
-      {
-        path: "state/:stateCode",
-        element: <StateParks />,
-        loader: parksLoader,
-      },
-      {
-        path: "park/:parkCode",
-        element: <ParkDetails />,
-        loader: parkDetailsLoader,
-      },
-      {
-        path: "up-next",
-        element: (
-          <ProtectedRoute>
-            <UpNext />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "visited/:userId",
-        element: (
-          <ProtectedRoute>
-            <Visited />
-          </ProtectedRoute>
-        ),
-        loader: visitedLoader,
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            path: "/",
+            element: <StatesMap />,
+          },
+          {
+            path: "login",
+            element: <LoginForm />,
+            action: loginAction,
+          },
+          {
+            path: "register",
+            element: <SignUpForm />,
+          },
+          {
+            path: "state/:stateCode",
+            element: <StateParks />,
+            loader: parksLoader,
+          },
+          {
+            path: "park/:parkCode",
+            element: <ParkDetails />,
+            loader: parkDetailsLoader,
+          },
+          {
+            path: "up-next",
+            element: (
+              <ProtectedRoute>
+                <UpNext />
+              </ProtectedRoute>
+            ),
+          },
+          {
+            path: "visited/:userId",
+            element: (
+              <ProtectedRoute>
+                <Visited />
+              </ProtectedRoute>
+            ),
+            loader: visitedLoader,
+          },
+        ],
       },
     ],
   },
