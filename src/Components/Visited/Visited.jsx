@@ -1,23 +1,29 @@
 import { useLoaderData } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { getParksData } from "../../fetch/parks/getParksData";
-import { useVisited } from "../../providers/visited.provider";
 import { Parks } from "../Parks/Parks";
+import { getAllVisitedAPI } from "../../fetch/parks/visited/getAllVisitedAPI";
+import { filterById } from "../../utils/filterById";
+import s from "./Visited.module.css";
 
-export const Visited = () => {
-  const visitedParks = useLoaderData();
-  // const [parks, setParks] = useState([]);
-  // const { visited } = useVisited();
-
-  // const getUserVisitedParks = async () => {
-  //   const userParks = visited.filter((park) => park.userId === user.id);
-  //   await getParksData(userParks).then(setParks);
-  // };
-
-  // useEffect(() => {
-  //   console.log("use effect");
-  //   getUserVisitedParks();
-  // }, [visited]);
-
-  return <Parks parks={visitedParks} />;
+export const loader = async ({ params }) => {
+  // const { userId } = params;
+  const allVisitedParks = await getAllVisitedAPI();
+  const userParks = filterById(allVisitedParks, +params.userId);
+  return await getParksData(userParks);
 };
+
+export default function Visited() {
+  const visitedParks = useLoaderData();
+  return (
+    <>
+      {visitedParks.length ? (
+        <Parks parks={visitedParks} />
+      ) : (
+        <div className={s.noParks}>
+          <p>You haven't visited any parks yet.</p>
+          <p>Looks like it's time to head outside and see some parks!</p>
+        </div>
+      )}
+    </>
+  );
+}

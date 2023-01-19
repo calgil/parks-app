@@ -19,19 +19,9 @@ import { ParkDetails } from "./Components/ParkDetails/ParkDetails";
 import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import { UpNext } from "./Components/UpNext/UpNext";
-import { Visited } from "./Components/Visited/Visited";
-import { getAllVisitedAPI } from "./fetch/parks/visited/getAllVisitedAPI";
-import { filterById } from "./utils/filterById";
-import { getParksData } from "./fetch/parks/getParksData";
+import Visited, { loader as visitedLoader } from "./Components/Visited/Visited";
 import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
-
-export const visitedLoader = async ({ params }) => {
-  const { userId } = params;
-  const allVisitedParks = await getAllVisitedAPI();
-  const userParks = filterById(allVisitedParks, +userId);
-  return await getParksData(userParks);
-};
 
 export const parkDetailsLoader = async ({ params }) => {
   const parkDetails = await getParkByParkCode(params.parkCode);
