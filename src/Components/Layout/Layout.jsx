@@ -23,6 +23,7 @@ export async function loader() {
       if (password !== user.password) {
         throw new Error("passwords do not match");
       }
+      toast.success("Welcome back");
       return { user };
     })
     .catch((error) => {
