@@ -32,18 +32,21 @@ export const Park = ({
         />
       </div>
       <div className={s.btnContainer}>
-        <button onClick={addToUpNext} className={s.actionBtn}>
+        <button onClick={addToUpNext} className={`${s.actionBtn} ${s.nextBtn}`}>
           Add to Next Adventure
         </button>
-        {visited && user ? (
+        {/* {visited && user ? (
           <button onClick={handleVisitedClick} className={s.actionBtn}>
             Remove from Visited
           </button>
-        ) : (
-          <button onClick={handleVisitedClick} className={s.actionBtn}>
-            Add to Visited
-          </button>
-        )}
+        ) : ( */}
+        <button
+          onClick={handleVisitedClick}
+          className={`${s.actionBtn} ${s.visitedBtn}`}
+        >
+          Add to Visited
+        </button>
+        {/* // )} */}
       </div>
     </div>
   );

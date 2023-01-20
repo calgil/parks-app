@@ -30,13 +30,30 @@
 }
 
 .btnContainer {
-  padding: 10px;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .actionBtn {
-  margin: 0 5px;
+  margin: 5px 0;
+  max-width: 180px;
   border: none;
-  padding: 5px 8px;
+  padding: 10px;
   border-radius: 5px;
-  background-color: grey;
+  transition: all 200ms ease-in-out;
+}
+
+.nextBtn {
+  background-color: green;
+}
+
+.visitedBtn {
+  background-color: brown;
+}
+
+.actionBtn:hover {
+  transform: scale(1.1);
+  outline: 1px solid white;
 }
