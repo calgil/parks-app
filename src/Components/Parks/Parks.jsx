@@ -1,12 +1,13 @@
 import { useRootLoaderData } from "../Layout/Layout";
 import { Park } from "../Park/Park";
-import { useVisitedData } from "../Visited/Visited";
+// import { useVisitedData } from "../Visited/Visited";
 import s from "./Parks.module.css";
 
 export const Parks = ({ parks }) => {
-  const { user } = useRootLoaderData();
-  const { visited } = useVisitedData();
-  console.log({ visited });
+  // const { user } = useRootLoaderData();
+  // console.log({ user });
+  // const { visited } = useVisitedData();
+  // console.log({ visited });
   return (
     <section className={s.parksContainer}>
       {parks &&

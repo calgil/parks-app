@@ -15,20 +15,16 @@ import StateParks, {
   loader as parksLoader,
 } from "./Components/StateParks/StateParks";
 import { Toaster } from "react-hot-toast";
-import { ParkDetails } from "./Components/ParkDetails/ParkDetails";
-import { getParkByParkCode } from "./fetch/parks/getParkByParkCode";
+import ParkDetails, {
+  loader as parkDetailsLoader,
+} from "./Components/ParkDetails/ParkDetails";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import NextAdventure, {
   loader as nextAdventureLoader,
 } from "./Components/NextAdventure/NextAdventure";
-import Visited, { loader as visitedLoader } from "./Components/Visited/Visited";
+import Visited from "./Components/Visited/Visited";
 import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
-
-export const parkDetailsLoader = async ({ params }) => {
-  const parkDetails = await getParkByParkCode(params.parkCode);
-  return parkDetails;
-};
 
 const router = createBrowserRouter([
   {
@@ -88,7 +84,7 @@ const router = createBrowserRouter([
                 <Visited />
               </ProtectedRoute>
             ),
-            loader: visitedLoader,
+            // loader: visitedLoader,
           },
         ],
       },

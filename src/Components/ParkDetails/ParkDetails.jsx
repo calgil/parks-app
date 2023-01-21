@@ -1,10 +1,17 @@
 import { useLoaderData } from "react-router-dom";
+import { getParkByParkCode } from "../../fetch/parks/getParkByParkCode";
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
 import s from "./ParkDetails.module.css";
-export const ParkDetails = () => {
-  const park = useLoaderData();
+
+export const loader = async ({ params }) => {
+  const parkDetails = await getParkByParkCode(params.parkCode);
+  return { parkDetails };
+};
+
+export default function ParkDetails() {
+  const { parkDetails } = useLoaderData();
   const { id, description, designation, fullName, name, images, parkCode } =
-    park;
+    parkDetails;
 
   return (
     <div className={s.parkContainer}>
@@ -13,4 +20,4 @@ export const ParkDetails = () => {
       <p className={s.description}>{description}</p>
     </div>
   );
-};
+}

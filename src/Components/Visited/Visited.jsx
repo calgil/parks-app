@@ -1,32 +1,17 @@
-import { useLoaderData, useMatches } from "react-router-dom";
-import { getParksData } from "../../fetch/parks/getParksData";
 import { Parks } from "../Parks/Parks";
-import { getAllVisitedAPI } from "../../fetch/parks/visited/getAllVisitedAPI";
-import { filterById } from "../../utils/filterById";
 import s from "./Visited.module.css";
 import { useRootLoaderData } from "../Layout/Layout";
 
-export const loader = async ({ params }) => {
-  // const { user } = useRootLoaderData();
-  // console.log({ user });
-  const allVisitedParks = await getAllVisitedAPI();
-  const userParks = filterById(allVisitedParks, +params.userId);
-  const userVisitedParks = await getParksData(userParks);
-  return { userVisitedParks };
-};
-
-export const useVisitedData = () => {
-  const matches = useMatches();
-  const visitedLoaderData = matches.find((match) => match.id === "0-0-6");
-  return {
-    visited: visitedLoaderData.data.userVisitedParks,
-  };
-};
+// export const loader = async ({ params }) => {
+//   const allVisitedParks = await getAllVisitedAPI();
+//   const userParks = filterById(allVisitedParks, +params.userId);
+//   const userVisitedParks = await getParksData(userParks);
+//   return { userVisitedParks };
+// };
 
 export default function Visited() {
-  const { userVisitedParks } = useLoaderData();
-  const { visited } = useVisitedData();
-  console.log({ visited });
+  const { userVisitedParks } = useRootLoaderData();
+  console.log({ userVisitedParks });
   return (
     <>
       {userVisitedParks ? (

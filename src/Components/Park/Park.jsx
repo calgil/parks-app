@@ -1,10 +1,11 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useRootLoaderData } from "../Layout/Layout";
 import s from "./Park.module.css";
 export const Park = ({
   park: { id, description, designation, fullName, images, parkCode },
   visited,
 }) => {
-  const { user } = useLoaderData();
+  const { user } = useRootLoaderData();
   const navigate = useNavigate();
   const openDetails = () => {
     navigate(`/park/${parkCode}`);

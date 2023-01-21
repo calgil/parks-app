@@ -7,15 +7,16 @@ import { Parks } from "../Parks/Parks";
 export const loader = async ({ params }) => {
   const allNextParks = await getAllNextAdventureParksAPI();
   const userParks = filterById(allNextParks, +params.userId);
-  return await getParksData(userParks);
+  const userNextParks = await getParksData(userParks);
+  return { userNextParks };
 };
 
 export default function NextAdventure() {
-  const nextAdventureParks = useLoaderData();
+  const { userNextParks } = useLoaderData();
   return (
     <>
-      {nextAdventureParks.length ? (
-        <Parks parks={nextAdventureParks} />
+      {userNextParks.length ? (
+        <Parks parks={userNextParks} />
       ) : (
         <div>
           <p>No parks yet</p>
