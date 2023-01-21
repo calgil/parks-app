@@ -19,9 +19,7 @@ import ParkDetails, {
   loader as parkDetailsLoader,
 } from "./Components/ParkDetails/ParkDetails";
 import { ProtectedRoute } from "./Components/ProtectedRoute";
-import NextAdventure, {
-  loader as nextAdventureLoader,
-} from "./Components/NextAdventure/NextAdventure";
+import NextAdventure from "./Components/NextAdventure/NextAdventure";
 import Visited from "./Components/Visited/Visited";
 import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
@@ -75,7 +73,6 @@ const router = createBrowserRouter([
                 <NextAdventure />
               </ProtectedRoute>
             ),
-            loader: nextAdventureLoader,
           },
           {
             path: "visited/:userId",

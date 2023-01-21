@@ -1,6 +1,7 @@
 import { toast } from "react-hot-toast";
 import { Outlet, useMatches } from "react-router-dom";
 import { getParksData } from "../../fetch/parks/getParksData";
+import { getAllNextAdventureParksAPI } from "../../fetch/parks/nextAdventure/getAllNextAdventureParksAPI";
 import { getAllVisitedAPI } from "../../fetch/parks/visited/getAllVisitedAPI";
 import { getUserFetch } from "../../fetch/user/getUserFetch";
 import { filterById } from "../../utils/filterById";
@@ -38,6 +39,12 @@ export async function loader() {
         userVisitedParks,
       };
     })
+    .then(async ({ user, userVisitedParks }) => {
+      const allNextParks = await getAllNextAdventureParksAPI();
+      const userParks = filterById(allNextParks, user.id);
+      const userNextParks = await getParksData(userParks);
+      return { user, userVisitedParks, userNextParks };
+    })
     .catch((error) => {
       localStorage.removeItem("user");
       console.error(error.message);
@@ -47,22 +54,13 @@ export async function loader() {
     });
 }
 
-// export const useVisitedData = () => {
-//   const matches = useMatches();
-//   console.log({ matches });
-//   const visitedLoaderData = matches.find((match) => match.id === "visited");
-//   console.log({ visitedLoaderData });
-//   return {
-//     visited: visitedLoaderData.data.userVisitedParks,
-//   };
-// };
-
 export const useRootLoaderData = () => {
   const matches = useMatches();
   const rootLoaderData = matches.find((match) => match.id === "0");
   return {
     user: rootLoaderData.data.user,
     userVisitedParks: rootLoaderData.data.userVisitedParks,
+    userNextParks: rootLoaderData.data.userNextParks,
   };
 };
 
