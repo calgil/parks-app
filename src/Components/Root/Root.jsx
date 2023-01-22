@@ -32,18 +32,26 @@ export async function loader() {
     })
     .then(async ({ user }) => {
       const allVisitedParks = await getAllVisitedAPI();
-      const userParks = filterById(allVisitedParks, user.id);
-      const userVisitedParks = await getParksData(userParks);
+      const userVisited = filterById(allVisitedParks, user.id);
+      console.log({ userVisited });
+      const userVisitedParks = await getParksData(userVisited);
       return {
         user,
+        userVisited,
         userVisitedParks,
       };
     })
-    .then(async ({ user, userVisitedParks }) => {
+    .then(async ({ user, userVisitedParks, userVisited }) => {
       const allNextParks = await getAllNextAdventureParksAPI();
-      const userParks = filterById(allNextParks, user.id);
-      const userNextParks = await getParksData(userParks);
-      return { user, userVisitedParks, userNextParks };
+      const userNextAdventure = filterById(allNextParks, user.id);
+      const userNextParks = await getParksData(userNextAdventure);
+      return {
+        user,
+        userVisitedParks,
+        userVisited,
+        userNextParks,
+        userNextAdventure,
+      };
     })
     .catch((error) => {
       localStorage.removeItem("user");
@@ -60,7 +68,9 @@ export const useRootLoaderData = () => {
   return {
     user: rootLoaderData.data.user,
     userVisitedParks: rootLoaderData.data.userVisitedParks,
+    userVisited: rootLoaderData.data.userVisited,
     userNextParks: rootLoaderData.data.userNextParks,
+    userNextAdventure: rootLoaderData.data.userNextAdventure,
   };
 };
 
@@ -68,7 +78,7 @@ export default function Root() {
   return (
     <>
       <Navbar />
-      <LogoutButton />
+      {/* <LogoutButton /> */}
       <Outlet />
     </>
   );

@@ -45,15 +45,23 @@
   transition: all 200ms ease-in-out;
 }
 
+.actionBtn:hover {
+  transform: scale(1.1);
+  outline: 1px solid white;
+}
+
 .nextBtn {
   background-color: green;
 }
 
-.visitedBtn {
-  background-color: brown;
+.nextBtn.next {
+  background-color: rgb(15, 77, 15);
 }
 
-.actionBtn:hover {
-  transform: scale(1.1);
-  outline: 1px solid white;
+.visitedBtn {
+  background-color: rgb(71, 71, 154);
+}
+
+.visitedBtn.visited {
+  background-color: rgb(28, 28, 75);
 }

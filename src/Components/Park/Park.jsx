@@ -4,8 +4,8 @@ import s from "./Park.module.css";
 export const Park = ({
   park: { id, description, designation, fullName, images, parkCode },
   visited,
+  nextAdventure,
 }) => {
-  const { user } = useRootLoaderData();
   const navigate = useNavigate();
   const openDetails = () => {
     navigate(`/park/${parkCode}`);
@@ -33,21 +33,37 @@ export const Park = ({
         />
       </div>
       <div className={s.btnContainer}>
-        <button onClick={addToUpNext} className={`${s.actionBtn} ${s.nextBtn}`}>
-          Add to Next Adventure
-        </button>
-        {/* {visited && user ? (
-          <button onClick={handleVisitedClick} className={s.actionBtn}>
+        {nextAdventure ? (
+          <button
+            onClick={addToUpNext}
+            className={`${s.actionBtn} ${s.nextBtn} ${s.next}`}
+          >
+            Remove from Next Adventure
+          </button>
+        ) : (
+          <button
+            onClick={addToUpNext}
+            className={`${s.actionBtn} ${s.nextBtn}`}
+          >
+            Add to Next Adventure
+          </button>
+        )}
+
+        {visited ? (
+          <button
+            onClick={handleVisitedClick}
+            className={`${s.actionBtn} ${s.visitedBtn} ${s.visited}`}
+          >
             Remove from Visited
           </button>
-        ) : ( */}
-        <button
-          onClick={handleVisitedClick}
-          className={`${s.actionBtn} ${s.visitedBtn}`}
-        >
-          Add to Visited
-        </button>
-        {/* // )} */}
+        ) : (
+          <button
+            onClick={handleVisitedClick}
+            className={`${s.actionBtn} ${s.visitedBtn}`}
+          >
+            Add to Visited
+          </button>
+        )}
       </div>
     </div>
   );

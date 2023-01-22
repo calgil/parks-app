@@ -4,7 +4,7 @@ import { useRootLoaderData } from "../Root/Root";
 
 export default function Visited() {
   const { userVisitedParks } = useRootLoaderData();
-  console.log({ userVisitedParks });
+  // console.log({ userVisitedParks });
   return (
     <>
       {userVisitedParks ? (
