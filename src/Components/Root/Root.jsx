@@ -5,6 +5,7 @@ import { getAllNextAdventureParksAPI } from "../../fetch/parks/nextAdventure/get
 import { getAllVisitedAPI } from "../../fetch/parks/visited/getAllVisitedAPI";
 import { getUserFetch } from "../../fetch/user/getUserFetch";
 import { filterById } from "../../utils/filterById";
+import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 import { Navbar } from "../Navbar/Navbar";
 
 export async function loader() {
@@ -27,7 +28,6 @@ export async function loader() {
       if (password !== user.password) {
         throw new Error("passwords do not match");
       }
-      toast.success("Welcome back");
       return { user };
     })
     .then(async ({ user }) => {
@@ -68,6 +68,7 @@ export default function Root() {
   return (
     <>
       <Navbar />
+      <LogoutButton />
       <Outlet />
     </>
   );
