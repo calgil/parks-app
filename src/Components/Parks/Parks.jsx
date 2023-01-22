@@ -1,4 +1,4 @@
-import { useRootLoaderData } from "../Layout/Layout";
+import { useRootLoaderData } from "../Root/Root";
 import { Park } from "../Park/Park";
 // import { useVisitedData } from "../Visited/Visited";
 import s from "./Parks.module.css";

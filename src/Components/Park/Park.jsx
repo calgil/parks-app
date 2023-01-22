@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useRootLoaderData } from "../Layout/Layout";
+import { useRootLoaderData } from "../Root/Root";
 import s from "./Park.module.css";
 export const Park = ({
   park: { id, description, designation, fullName, images, parkCode },

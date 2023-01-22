@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import "font-awesome/css/font-awesome.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout, { loader as layoutLoader } from "./Components/Layout/Layout";
+import Root, { loader as rootLoader } from "./Components/Root/Root";
 import { StatesMap } from "./Components/StatesMap/StatesMap";
 import LoginUser, {
   action as loginAction,
@@ -27,9 +27,9 @@ import { UnProtectedRoute } from "./Components/UnProtectedRoute";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <Root />,
     errorElement: <ErrorPage />,
-    loader: layoutLoader,
+    loader: rootLoader,
     children: [
       {
         errorElement: <ErrorPage />,
@@ -81,7 +81,6 @@ const router = createBrowserRouter([
                 <Visited />
               </ProtectedRoute>
             ),
-            // loader: visitedLoader,
           },
         ],
       },

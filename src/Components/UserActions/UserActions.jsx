@@ -2,7 +2,7 @@ import s from "./UserActions.module.css";
 import { useEffect, useRef, useState } from "react";
 import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
-import { useRootLoaderData } from "../Layout/Layout";
+import { useRootLoaderData } from "../Root/Root";
 
 export const UserActions = () => {
   const { user } = useRootLoaderData();

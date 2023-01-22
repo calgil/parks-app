@@ -64,7 +64,7 @@ export const useRootLoaderData = () => {
   };
 };
 
-export default function Layout() {
+export default function Root() {
   return (
     <>
       <Navbar />

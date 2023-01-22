@@ -1,6 +1,6 @@
 import { Parks } from "../Parks/Parks";
 import s from "./Visited.module.css";
-import { useRootLoaderData } from "../Layout/Layout";
+import { useRootLoaderData } from "../Root/Root";
 
 export default function Visited() {
   const { userVisitedParks } = useRootLoaderData();

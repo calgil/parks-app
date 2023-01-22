@@ -1,4 +1,4 @@
-import { useRootLoaderData } from "../Layout/Layout";
+import { useRootLoaderData } from "../Root/Root";
 import { Parks } from "../Parks/Parks";
 
 export default function NextAdventure() {
