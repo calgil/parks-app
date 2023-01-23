@@ -17,6 +17,5 @@ export const findAndDeleteVisited = async ({ userId, parkId }) => {
   const visitedToDelete = allVisitedParks.find(
     (visited) => visited.parkId === parkId && visited.userId === userId
   );
-  console.log({ visitedToDelete });
   return deleteVisitedAPI(visitedToDelete.id);
 };

@@ -53,12 +53,10 @@ const visitedAction = async ({ request, params }) => {
   const parkCode = params.parkCode;
   let formData = await request.formData();
   const addVisited = formData.get("visited") === "true";
-  console.log({ userId, parkId, parkCode, addVisited });
   if (addVisited) {
     return createVisitedAPI({ userId, parkId, parkCode });
   }
   if (!addVisited) {
-    console.log("remove from visited");
     findAndDeleteVisited({ userId, parkId });
   }
   return null;

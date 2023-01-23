@@ -1,7 +1,6 @@
 import { API_CONFIG } from "../../config";
 
 export const createVisitedAPI = ({ userId, parkId, parkCode }) => {
-  console.log({ userId, parkId, parkCode });
   return fetch(`${API_CONFIG.baseUrl}/visited`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

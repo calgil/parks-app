@@ -9,34 +9,6 @@ import { filterById } from "../../utils/filterById";
 import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 import { Navbar } from "../Navbar/Navbar";
 
-// export async function action({ request, params }) {
-//   console.log({ request, params });
-//   // I want to make a post or delete request to either "/visited"" or 'nextAdventure'
-//   // remove/add visited
-//   // remove/add up-next
-//   // return Promise.resolve().then(() => console.log("action called"));
-//   return createVisitedAPI();
-// }
-
-// export const useRootLoaderData = () => {
-//   const matches = useMatches();
-//   const rootLoaderData = matches.find((match) => match.id === "0");
-//   return {
-//     user: rootLoaderData.data.user,
-//     userVisitedParks: rootLoaderData.data.userVisitedParks,
-//     userVisited: rootLoaderData.data.userVisited,
-//     userNextParks: rootLoaderData.data.userNextParks,
-//     userNextAdventure: rootLoaderData.data.userNextAdventure,
-//   };
-// };
-
-// export const useRootAction = () => {
-//   const matches = useMatches();
-//   console.log({ matches });
-//   const rootAction = matches.find((match) => match.id === "0-0");
-//   console.log({ rootAction });
-// };
-
 export async function loader() {
   return Promise.resolve()
     .then(() => localStorage.getItem("user"))
