@@ -26,6 +26,7 @@ import { UnProtectedRoute } from "./Components/UnProtectedRoute";
 import { createVisitedAPI } from "./fetch/parks/visited/createVisitedAPI";
 import { createNextAdventureAPI } from "./fetch/parks/nextAdventure/createNextAdventureAPI";
 import { findAndDeleteNextAdventure } from "./fetch/parks/nextAdventure/findAndDeleteNext";
+import { findAndDeleteVisited } from "./fetch/parks/visited/deleteVisitedAPI";
 
 const nextAdventureAction = async ({ request, params }) => {
   const userId = params.userId;
@@ -34,15 +35,31 @@ const nextAdventureAction = async ({ request, params }) => {
   let formData = await request.formData();
   const isNext = formData.get("next-adventure") === "true";
   if (isNext) {
-    createNextAdventureAPI({
+    return createNextAdventureAPI({
       userId,
       parkId,
       parkCode,
     });
   }
   if (!isNext) {
-    console.log("delete");
     findAndDeleteNextAdventure({ userId, parkId });
+  }
+  return null;
+};
+
+const visitedAction = async ({ request, params }) => {
+  const userId = params.userId;
+  const parkId = params.parkId;
+  const parkCode = params.parkCode;
+  let formData = await request.formData();
+  const addVisited = formData.get("visited") === "true";
+  console.log({ userId, parkId, parkCode, addVisited });
+  if (addVisited) {
+    return createVisitedAPI({ userId, parkId, parkCode });
+  }
+  if (!addVisited) {
+    console.log("remove from visited");
+    findAndDeleteVisited({ userId, parkId });
   }
   return null;
 };
@@ -90,13 +107,7 @@ const router = createBrowserRouter([
           },
           {
             path: "visited/:parkId/:userId/:parkCode",
-            action: async ({ request, params }) => {
-              console.log("visited action", params.parkCode);
-              console.log({ request, params });
-              let formData = await request.formData();
-              console.log({ formData });
-              return null;
-            },
+            action: visitedAction,
           },
           {
             path: "park/:parkCode",

@@ -5,7 +5,6 @@ import { UNSAFE_convertRoutesToDataRoutes } from "@remix-run/router";
 
 export const Parks = ({ parks }) => {
   const { user, userVisited, userNextAdventure } = useRootLoaderData();
-  // console.log({ user, userNextAdventure });
   return (
     <section className={s.parksContainer}>
       {parks &&
@@ -14,7 +13,7 @@ export const Parks = ({ parks }) => {
             userVisited &&
             !!userVisited.find(
               (visited) =>
-                visited.userId === user?.id && visited.parkId === park.id
+                +visited.userId === user?.id && visited.parkId === park.id
             );
           const isNextAdventure =
             userNextAdventure &&

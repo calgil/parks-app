@@ -90,12 +90,6 @@
   ],
   "visited": [
     {
-      "id": 1,
-      "userId": "1",
-      "parkId": "C4E1A9A4-D121-4734-94FA-7788A93C2AAA",
-      "parkCode": "alag"
-    },
-    {
       "id": 2,
       "userId": "2",
       "parkId": "7D6098F9-3F75-4775-A56D-CD9C7F9A9488",
@@ -142,6 +136,24 @@
       "parkId": "A0125F49-080E-4292-BD91-C1FA1657F547",
       "parkCode": "poex",
       "id": 13
+    },
+    {
+      "userId": "1",
+      "parkId": "EE1F4878-00FB-4760-A77F-EA76DB8DEFD9",
+      "parkCode": "bela",
+      "id": 15
+    },
+    {
+      "userId": "1",
+      "parkId": "7D6098F9-3F75-4775-A56D-CD9C7F9A9488",
+      "parkCode": "anch",
+      "id": 17
+    },
+    {
+      "userId": "1",
+      "parkId": "C0BF2A42-E353-4FAE-B4C4-AA0676B58100",
+      "parkCode": "dena",
+      "id": 18
     }
   ]
 }

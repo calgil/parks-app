@@ -1,4 +1,5 @@
 import { API_CONFIG } from "../../config";
+import { getAllVisitedAPI } from "./getAllVisitedAPI";
 
 export const deleteVisitedAPI = (id) => {
   fetch(`${API_CONFIG.baseUrl}/visited/${id}`, {
@@ -9,4 +10,13 @@ export const deleteVisitedAPI = (id) => {
     }
     return response;
   });
+};
+
+export const findAndDeleteVisited = async ({ userId, parkId }) => {
+  const allVisitedParks = await getAllVisitedAPI();
+  const visitedToDelete = allVisitedParks.find(
+    (visited) => visited.parkId === parkId && visited.userId === userId
+  );
+  console.log({ visitedToDelete });
+  return deleteVisitedAPI(visitedToDelete.id);
 };
