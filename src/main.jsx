@@ -23,6 +23,30 @@ import NextAdventure from "./Components/NextAdventure/NextAdventure";
 import Visited from "./Components/Visited/Visited";
 import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
+import { createVisitedAPI } from "./fetch/parks/visited/createVisitedAPI";
+
+const nextAdventureAction = async ({ request, params }) => {
+  const userId = params.userId;
+  const parkId = params.parkId;
+  const parkCode = params.parkCode;
+  let formData = await request.formData();
+  const isNext = formData.get("next-adventure") === "true";
+  if (isNext) {
+    // createNextAdventureAPI needs to be built
+    // return await createVisitedAPI({ userId, parkId, parkCode });
+    console.log("add to next");
+  }
+  if (!isNext) {
+    console.log("delete");
+    // find in upNext and delete with the id
+    // return await deleteVisited()
+  }
+  console.log({ userId, parkId, parkCode, isNext });
+  // from here get all nex-adventure parks
+  // find park with parkId and userId === params
+  // either delete or post new up next to nest
+  return null;
+};
 
 const router = createBrowserRouter([
   {
@@ -60,6 +84,20 @@ const router = createBrowserRouter([
             path: "state/:stateCode",
             element: <StateParks />,
             loader: parksLoader,
+          },
+          {
+            path: "next-adventure/:parkId/:userId/:parkCode",
+            action: nextAdventureAction,
+          },
+          {
+            path: "visited/:parkCode",
+            action: async ({ request, params }) => {
+              console.log("visited action", params.parkCode);
+              console.log({ request, params });
+              let formData = await request.formData();
+              console.log({ formData });
+              return null;
+            },
           },
           {
             path: "park/:parkCode",

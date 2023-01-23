@@ -8,13 +8,17 @@ export const Parks = ({ parks }) => {
     <section className={s.parksContainer}>
       {parks &&
         parks.map((park) => {
-          const isVisited = !!userVisited.find(
-            (visited) =>
-              visited.userId === user?.id && visited.parkId === park.id
-          );
-          const isNextAdventure = !!userNextAdventure.find(
-            (next) => next.userId === user?.id && next.parkId === park.id
-          );
+          const isVisited =
+            userVisited &&
+            !!userVisited.find(
+              (visited) =>
+                visited.userId === user?.id && visited.parkId === park.id
+            );
+          const isNextAdventure =
+            userNextAdventure &&
+            !!userNextAdventure.find(
+              (next) => next.userId === user?.id && next.parkId === park.id
+            );
           return (
             <Park
               key={park.id}

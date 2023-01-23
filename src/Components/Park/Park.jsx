@@ -1,25 +1,17 @@
-import { useNavigate } from "react-router-dom";
+import { useFetcher, useNavigate } from "react-router-dom";
 import { useRootLoaderData } from "../Root/Root";
 import s from "./Park.module.css";
-export const Park = ({
-  park: { id, description, designation, fullName, images, parkCode },
-  visited,
-  nextAdventure,
-}) => {
+
+export const Park = ({ park, visited, nextAdventure }) => {
+  const { user } = useRootLoaderData();
+  const { id, description, designation, fullName, images, parkCode } = park;
   const navigate = useNavigate();
   const openDetails = () => {
     navigate(`/park/${parkCode}`);
   };
 
-  const handleVisitedClick = (e) => {
-    e.stopPropagation();
-    // console.log(" add to visited", id);
-  };
-
-  const addToUpNext = (e) => {
-    e.stopPropagation();
-    // console.log(" add to next adventure", id);
-  };
+  const fetcher = useFetcher();
+  // let isVisited = visited
   return (
     <div onClick={openDetails} className={s.parkBody}>
       <div className={s.nameContainer}>
@@ -32,39 +24,45 @@ export const Park = ({
           alt={images[0].altText}
         />
       </div>
-      <div className={s.btnContainer}>
-        {nextAdventure ? (
-          <button
-            onClick={addToUpNext}
-            className={`${s.actionBtn} ${s.nextBtn} ${s.next}`}
-          >
-            Remove from Next Adventure
-          </button>
-        ) : (
-          <button
-            onClick={addToUpNext}
-            className={`${s.actionBtn} ${s.nextBtn}`}
-          >
-            Add to Next Adventure
-          </button>
-        )}
-
-        {visited ? (
-          <button
-            onClick={handleVisitedClick}
-            className={`${s.actionBtn} ${s.visitedBtn} ${s.visited}`}
-          >
-            Remove from Visited
-          </button>
-        ) : (
-          <button
-            onClick={handleVisitedClick}
-            className={`${s.actionBtn} ${s.visitedBtn}`}
-          >
-            Add to Visited
-          </button>
-        )}
-      </div>
+      <fetcher.Form
+        method="post"
+        action={`/next-adventure/${id}/${user.id}/${parkCode}`}
+        className={s.btnContainer}
+      >
+        <button
+          name="next-adventure"
+          value={nextAdventure ? false : true}
+          // value={nextAdventure ? `${nextAdventure.id}` : true}
+          onClick={(e) => e.stopPropagation()}
+          className={
+            nextAdventure
+              ? `${s.actionBtn} ${s.nextBtn} ${s.next}`
+              : `${s.actionBtn} ${s.nextBtn}`
+          }
+        >
+          {nextAdventure
+            ? "Remove from Next Adventure"
+            : "Add to Next Adventure"}
+        </button>
+      </fetcher.Form>
+      <fetcher.Form
+        method="post"
+        action={`/visited/${parkCode}`}
+        className={s.btnContainer}
+      >
+        <button
+          name="visited"
+          value={visited ? false : true}
+          onClick={(e) => e.stopPropagation()}
+          className={
+            visited
+              ? `${s.actionBtn} ${s.visitedBtn} ${s.visited}`
+              : `${s.actionBtn} ${s.visitedBtn}`
+          }
+        >
+          {visited ? "Remove from Visited" : "Add to Visited"}
+        </button>
+      </fetcher.Form>
     </div>
   );
 };
