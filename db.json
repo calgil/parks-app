@@ -24,6 +24,11 @@
       "username": "new12",
       "password": "pass",
       "id": 5
+    },
+    {
+      "username": "kuhtellin",
+      "password": "123",
+      "id": 6
     }
   ],
   "next-adventure": [
@@ -86,6 +91,24 @@
       "parkId": "5595FC7A-F218-4439-8D2E-F47449838820",
       "parkCode": "chis",
       "id": 12
+    },
+    {
+      "userId": "6",
+      "parkId": "F7EB51F0-240D-49BC-968C-792756A3B1A0",
+      "parkCode": "glca",
+      "id": 13
+    },
+    {
+      "userId": "6",
+      "parkId": "B7FF43E5-3A95-4C8E-8DBE-72D8608D6588",
+      "parkCode": "grca",
+      "id": 14
+    },
+    {
+      "userId": "6",
+      "parkId": "F614E6C5-1283-431A-AF44-15FC849D65FE",
+      "parkCode": "para",
+      "id": 15
     }
   ],
   "visited": [
@@ -154,6 +177,24 @@
       "parkId": "C0BF2A42-E353-4FAE-B4C4-AA0676B58100",
       "parkCode": "dena",
       "id": 18
+    },
+    {
+      "userId": "6",
+      "parkId": "D84122DD-1B0E-4D13-927C-5D6D2A0D200E",
+      "parkCode": "apis",
+      "id": 19
+    },
+    {
+      "userId": "6",
+      "parkId": "DED290D0-879A-4134-BBC3-54980D80959E",
+      "parkCode": "iatr",
+      "id": 20
+    },
+    {
+      "userId": "6",
+      "parkId": "4BE453C2-6527-484F-90D6-98057901EBDF",
+      "parkCode": "noco",
+      "id": 21
     }
   ]
 }

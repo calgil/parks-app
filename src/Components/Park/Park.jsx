@@ -76,8 +76,19 @@ export const Park = ({ park, visited, nextAdventure }) => {
         </>
       )}
       {!user && (
-        <div>
-          <button onClick={navigateToLogin}>Login to Visit Parks</button>
+        <div className={s.btnContainer}>
+          <button
+            className={`${s.actionBtn} ${s.nextBtn}`}
+            onClick={navigateToLogin}
+          >
+            Login to Add to Next Adventure
+          </button>
+          <button
+            className={`${s.actionBtn} ${s.visitedBtn}`}
+            onClick={navigateToLogin}
+          >
+            Login to Add to Visited
+          </button>
         </div>
       )}
     </div>
