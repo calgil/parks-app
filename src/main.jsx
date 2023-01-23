@@ -24,6 +24,8 @@ import Visited from "./Components/Visited/Visited";
 import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
 import { createVisitedAPI } from "./fetch/parks/visited/createVisitedAPI";
+import { createNextAdventureAPI } from "./fetch/parks/nextAdventure/createNextAdventureAPI";
+import { findAndDeleteNextAdventure } from "./fetch/parks/nextAdventure/findAndDeleteNext";
 
 const nextAdventureAction = async ({ request, params }) => {
   const userId = params.userId;
@@ -32,19 +34,16 @@ const nextAdventureAction = async ({ request, params }) => {
   let formData = await request.formData();
   const isNext = formData.get("next-adventure") === "true";
   if (isNext) {
-    // createNextAdventureAPI needs to be built
-    // return await createVisitedAPI({ userId, parkId, parkCode });
-    console.log("add to next");
+    createNextAdventureAPI({
+      userId,
+      parkId,
+      parkCode,
+    });
   }
   if (!isNext) {
     console.log("delete");
-    // find in upNext and delete with the id
-    // return await deleteVisited()
+    findAndDeleteNextAdventure({ userId, parkId });
   }
-  console.log({ userId, parkId, parkCode, isNext });
-  // from here get all nex-adventure parks
-  // find park with parkId and userId === params
-  // either delete or post new up next to nest
   return null;
 };
 
@@ -90,7 +89,7 @@ const router = createBrowserRouter([
             action: nextAdventureAction,
           },
           {
-            path: "visited/:parkCode",
+            path: "visited/:parkId/:userId/:parkCode",
             action: async ({ request, params }) => {
               console.log("visited action", params.parkCode);
               console.log({ request, params });

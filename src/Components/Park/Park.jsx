@@ -7,11 +7,21 @@ export const Park = ({ park, visited, nextAdventure }) => {
   const { id, description, designation, fullName, images, parkCode } = park;
   const navigate = useNavigate();
   const openDetails = () => {
-    navigate(`/park/${parkCode}`);
+    navigate(`/park/${park.parkCode}`);
+  };
+
+  const navigateToLogin = (e) => {
+    e.stopPropagation();
+    navigate("/login");
   };
 
   const fetcher = useFetcher();
-  // let isVisited = visited
+  let isNext = nextAdventure;
+  let isVisited = visited;
+  if (fetcher.formData) {
+    isNext = fetcher.formData.get("next-adventure") === "true";
+    isVisited = fetcher.formData.get("visited") === "true";
+  }
   return (
     <div onClick={openDetails} className={s.parkBody}>
       <div className={s.nameContainer}>
@@ -24,45 +34,52 @@ export const Park = ({ park, visited, nextAdventure }) => {
           alt={images[0].altText}
         />
       </div>
-      <fetcher.Form
-        method="post"
-        action={`/next-adventure/${id}/${user.id}/${parkCode}`}
-        className={s.btnContainer}
-      >
-        <button
-          name="next-adventure"
-          value={nextAdventure ? false : true}
-          // value={nextAdventure ? `${nextAdventure.id}` : true}
-          onClick={(e) => e.stopPropagation()}
-          className={
-            nextAdventure
-              ? `${s.actionBtn} ${s.nextBtn} ${s.next}`
-              : `${s.actionBtn} ${s.nextBtn}`
-          }
-        >
-          {nextAdventure
-            ? "Remove from Next Adventure"
-            : "Add to Next Adventure"}
-        </button>
-      </fetcher.Form>
-      <fetcher.Form
-        method="post"
-        action={`/visited/${parkCode}`}
-        className={s.btnContainer}
-      >
-        <button
-          name="visited"
-          value={visited ? false : true}
-          onClick={(e) => e.stopPropagation()}
-          className={
-            visited
-              ? `${s.actionBtn} ${s.visitedBtn} ${s.visited}`
-              : `${s.actionBtn} ${s.visitedBtn}`
-          }
-        >
-          {visited ? "Remove from Visited" : "Add to Visited"}
-        </button>
-      </fetcher.Form>
+      {user && (
+        <>
+          <fetcher.Form
+            method="post"
+            action={`/next-adventure/${id}/${user.id}/${parkCode}`}
+            className={s.btnContainer}
+          >
+            <button
+              name="next-adventure"
+              value={isNext ? false : true}
+              // value={nextAdventure ? `${nextAdventure.id}` : true}
+              onClick={(e) => e.stopPropagation()}
+              className={
+                isNext
+                  ? `${s.actionBtn} ${s.nextBtn} ${s.next}`
+                  : `${s.actionBtn} ${s.nextBtn}`
+              }
+            >
+              {isNext ? "Remove from Next Adventure" : "Add to Next Adventure"}
+            </button>
+          </fetcher.Form>
+          <fetcher.Form
+            method="post"
+            action={`/visited/${id}/${user.id}/${parkCode}`}
+            className={s.btnContainer}
+          >
+            <button
+              name="visited"
+              value={isVisited ? false : true}
+              onClick={(e) => e.stopPropagation()}
+              className={
+                isVisited
+                  ? `${s.actionBtn} ${s.visitedBtn} ${s.visited}`
+                  : `${s.actionBtn} ${s.visitedBtn}`
+              }
+            >
+              {isVisited ? "Remove from Visited" : "Add to Visited"}
+            </button>
+          </fetcher.Form>
+        </>
+      )}
+      {!user && (
+        <div>
+          <button onClick={navigateToLogin}>Login to Visit Parks</button>
+        </div>
+      )}
     </div>
   );
 };

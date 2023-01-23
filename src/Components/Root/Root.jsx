@@ -61,7 +61,7 @@ export async function loader() {
     })
     .then(async ({ user }) => {
       const allVisitedParks = await getAllVisitedAPI();
-      const userVisited = filterById(allVisitedParks, user.id);
+      const userVisited = filterById(allVisitedParks, +user.id);
       const userVisitedParks = await getParksData(userVisited);
       return {
         user,

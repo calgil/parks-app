@@ -1,9 +1,11 @@
 import { useRootLoaderData } from "../Root/Root";
 import { Park } from "../Park/Park";
 import s from "./Parks.module.css";
+import { UNSAFE_convertRoutesToDataRoutes } from "@remix-run/router";
 
 export const Parks = ({ parks }) => {
   const { user, userVisited, userNextAdventure } = useRootLoaderData();
+  // console.log({ user, userNextAdventure });
   return (
     <section className={s.parksContainer}>
       {parks &&
@@ -17,7 +19,7 @@ export const Parks = ({ parks }) => {
           const isNextAdventure =
             userNextAdventure &&
             !!userNextAdventure.find(
-              (next) => next.userId === user?.id && next.parkId === park.id
+              (next) => +next.userId === user?.id && next.parkId === park.id
             );
           return (
             <Park
