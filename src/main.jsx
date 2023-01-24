@@ -5,12 +5,12 @@ import "font-awesome/css/font-awesome.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root, { loader as rootLoader } from "./Components/Root/Root";
 import { StatesMap } from "./Components/StatesMap/StatesMap";
-import LoginUser, {
+import UserLogin, {
   action as loginAction,
-} from "./Components/LoginUser/LoginUser";
-import RegisterUser, {
+} from "./Components/UserLogin/UserLogin";
+import UserRegister, {
   action as registerAction,
-} from "./Components/RegisterUser/RegisterUser";
+} from "./Components/UserRegister/UserRegister";
 import StateParks, {
   loader as parksLoader,
 } from "./Components/StateParks/StateParks";
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
             path: "login",
             element: (
               <UnProtectedRoute>
-                <LoginUser />
+                <UserLogin />
               </UnProtectedRoute>
             ),
             action: loginAction,
@@ -89,7 +89,7 @@ const router = createBrowserRouter([
             path: "register",
             element: (
               <UnProtectedRoute>
-                <RegisterUser />
+                <UserRegister />
               </UnProtectedRoute>
             ),
             action: registerAction,

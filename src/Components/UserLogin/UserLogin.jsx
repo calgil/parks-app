@@ -38,7 +38,7 @@ export async function action({ request }) {
     });
 }
 
-export default function LoginUser() {
+export default function UserLogin() {
   const inputData = [
     {
       labelText: "Username",

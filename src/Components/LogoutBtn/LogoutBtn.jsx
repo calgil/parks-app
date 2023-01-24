@@ -3,18 +3,17 @@ import { Form, useNavigate } from "react-router-dom";
 export const LogoutButton = () => {
   const navigate = useNavigate();
   return (
-    <Form method="post">
-      <button
-        name="logout"
-        type="submit"
-        onClick={(e) => {
-          e.preventDefault();
-          localStorage.removeItem("user");
-          navigate("/");
-        }}
-      >
-        Logout
-      </button>
-    </Form>
+    <button
+      name="logout"
+      type="submit"
+      onClick={() => {
+        // TODO: fix bug! Double navigate isn't cool
+        localStorage.removeItem("user");
+        navigate("/");
+        navigate("/");
+      }}
+    >
+      Logout
+    </button>
   );
 };

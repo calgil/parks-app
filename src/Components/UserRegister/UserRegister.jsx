@@ -50,7 +50,7 @@ export async function action({ request }) {
     });
 }
 
-export default function RegisterUser() {
+export default function UserRegister() {
   const [usernameInput, setUsernameInput] = useState("");
   const inputData = [
     {
