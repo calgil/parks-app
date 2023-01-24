@@ -78,7 +78,6 @@ export default function Root() {
   return (
     <>
       <Navbar />
-      {/* <LogoutButton /> */}
       <Outlet />
     </>
   );

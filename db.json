@@ -76,12 +76,6 @@
     },
     {
       "userId": "1",
-      "parkId": "C08AD828-98FF-478E-A63C-614E7534274B",
-      "parkCode": "alca",
-      "id": 10
-    },
-    {
-      "userId": "1",
       "parkId": "D1EAA1D1-E855-42FF-9D06-8E983413BDE5",
       "parkCode": "cech",
       "id": 11
@@ -109,6 +103,24 @@
       "parkId": "F614E6C5-1283-431A-AF44-15FC849D65FE",
       "parkCode": "para",
       "id": 15
+    },
+    {
+      "userId": "1",
+      "parkId": "4930BAEB-A3BF-4825-9796-DCD0FD1C3BD5",
+      "parkCode": "hale",
+      "id": 16
+    },
+    {
+      "userId": "1",
+      "parkId": "3B8307B3-54AB-4E5F-ACBC-8DECB98AD5F1",
+      "parkCode": "alka",
+      "id": 17
+    },
+    {
+      "userId": "1",
+      "parkId": "3C869976-DF2E-4D99-9918-366DFE637846",
+      "parkCode": "kala",
+      "id": 18
     }
   ],
   "visited": [
@@ -195,6 +207,30 @@
       "parkId": "4BE453C2-6527-484F-90D6-98057901EBDF",
       "parkCode": "noco",
       "id": 21
+    },
+    {
+      "userId": "1",
+      "parkId": "D9BF4288-9AC3-4526-9598-BE8920839ACC",
+      "parkCode": "havo",
+      "id": 22
+    },
+    {
+      "userId": "1",
+      "parkId": "88F37F00-EAD0-44C4-88D1-F42D52BF661B",
+      "parkCode": "hono",
+      "id": 23
+    },
+    {
+      "userId": "1",
+      "parkId": "C8B7FCAD-0176-4ABC-8774-90A264E646F1",
+      "parkCode": "kaho",
+      "id": 24
+    },
+    {
+      "userId": "1",
+      "parkId": "C08AD828-98FF-478E-A63C-614E7534274B",
+      "parkCode": "alca",
+      "id": 25
     }
   ]
 }
