@@ -3,22 +3,21 @@ import { useEffect, useRef, useState } from "react";
 import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 import { useRootLoaderData } from "../Root/Root";
+import { useNavigate } from "react-router-dom";
 
 export const UserActions = () => {
   const { user } = useRootLoaderData();
   const [showActions, setShowActions] = useState(false);
   const actionContainerRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleClickOutside = (e) => {
-    // console.log("click");
     if (
       actionContainerRef.current &&
       !actionContainerRef.current.contains(e.target)
     ) {
-      // console.log("click inside");
       setShowActions(false);
     }
-    // console.log("click outside");
   };
 
   useEffect(() => {
@@ -43,7 +42,9 @@ export const UserActions = () => {
       </button>
       {showActions && (
         <div className={s.actionsDropdown}>
-          <button>Edit User</button>
+          <button onClick={() => navigate(`/edit/${user.id}`)}>
+            Edit User
+          </button>
           <LogoutButton />
           <button>Delete User</button>
         </div>

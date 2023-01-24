@@ -44,11 +44,13 @@ export default function UserLogin() {
       labelText: "Username",
       name: "username",
       type: "text",
+      placeholder: "username",
     },
     {
       labelText: "Password",
       name: "password",
       type: "password",
+      placeholder: "password",
     },
   ];
 

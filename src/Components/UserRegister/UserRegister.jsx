@@ -51,19 +51,18 @@ export async function action({ request }) {
 }
 
 export default function UserRegister() {
-  const [usernameInput, setUsernameInput] = useState("");
   const inputData = [
     {
       labelText: "Username",
       name: "username",
       type: "text",
-      value: usernameInput,
-      onChange: (e) => setUsernameInput(e.target.value),
+      placeholder: "username",
     },
     {
       labelText: "Password",
       name: "password",
       type: "password",
+      placeholder: "password",
     },
   ];
 

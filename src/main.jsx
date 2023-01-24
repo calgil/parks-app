@@ -27,6 +27,7 @@ import { createVisitedAPI } from "./fetch/parks/visited/createVisitedAPI";
 import { createNextAdventureAPI } from "./fetch/parks/nextAdventure/createNextAdventureAPI";
 import { findAndDeleteNextAdventure } from "./fetch/parks/nextAdventure/findAndDeleteNext";
 import { findAndDeleteVisited } from "./fetch/parks/visited/deleteVisitedAPI";
+import UserEdit, { action as editAction } from "./Components/UserEdit/UserEdit";
 
 const nextAdventureAction = async ({ request, params }) => {
   const userId = params.userId;
@@ -93,6 +94,15 @@ const router = createBrowserRouter([
               </UnProtectedRoute>
             ),
             action: registerAction,
+          },
+          {
+            path: "/edit/:userId",
+            element: (
+              <ProtectedRoute>
+                <UserEdit />
+              </ProtectedRoute>
+            ),
+            action: editAction,
           },
           {
             path: "state/:stateCode",
