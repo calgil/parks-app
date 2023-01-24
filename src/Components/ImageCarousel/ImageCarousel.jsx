@@ -20,11 +20,19 @@ export const ImageCarousel = ({ images }) => {
 
   return (
     <div className={s.carouselContainer}>
-      <button onClick={prevImg}>Prev</button>
+      <button className={`${s.imgBtn} ${s.prevBtn}`} onClick={prevImg}>
+        <i className="fa fa-chevron-left"></i>
+      </button>
       <div className={s.imgContainer}>
-        <img src={images[imageIndex].url} alt={images[imageIndex].altText} />
+        <img
+          className={s.selectedImg}
+          src={images[imageIndex].url}
+          alt={images[imageIndex].altText}
+        />
       </div>
-      <button onClick={nextImg}>Next</button>
+      <button className={`${s.imgBtn} ${s.nextBtn}`} onClick={nextImg}>
+        <i className="fa fa-chevron-right"></i>
+      </button>
     </div>
   );
 };

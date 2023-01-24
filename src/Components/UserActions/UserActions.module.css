@@ -18,7 +18,7 @@
 
 .actionsDropdown {
   position: absolute;
-  background-color: rgba(107, 106, 106, 0.6);
+  background-color: rgb(107, 106, 106);
   border-radius: 10px;
   text-align: left;
   padding: 10px;

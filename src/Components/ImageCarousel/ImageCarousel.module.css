@@ -3,10 +3,49 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
 }
 
 .imgContainer {
   max-width: 600px;
+  max-height: 500px;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.imgBtn {
+  width: 50px;
+  height: 50px;
+  padding: 30px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 100ms ease-in-out;
+  background-color: transparent;
+  color: rgb(215, 215, 215);
+  font-size: 1.5rem;
+}
+
+.imgBtn:hover {
+  background-color: rgba(61, 61, 61, 1);
+  color: rgb(255, 254, 255);
+}
+
+/* .imgBtn i {
+  font-size: 2rem;
+}
+
+.prevBtn i {
+  margin-right: 8px;
+}
+
+.nextBtn i {
+  margin-left: 8px;
+} */
+
+.selectedImg {
+  object-fit: cover;
+  object-position: center;
 }
