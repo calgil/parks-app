@@ -33,6 +33,8 @@ import {
   logoutAction,
 } from "./Components/UserActions/UserActions";
 
+// TODO: Can I move these two actions to another file? This one seems busy
+
 const nextAdventureAction = async ({ request, params }) => {
   const userId = params.userId;
   const parkId = params.parkId;
@@ -102,6 +104,7 @@ const router = createBrowserRouter([
           {
             path: "/logout",
             action: logoutAction,
+            errorElement: <ErrorPage />,
           },
           {
             path: "/edit/:userId",
@@ -111,23 +114,28 @@ const router = createBrowserRouter([
               </ProtectedRoute>
             ),
             action: editAction,
+            errorElement: <ErrorPage />,
           },
           {
             path: "/delete/:userId",
             action: deleteAction,
+            errorElement: <ErrorPage />,
           },
           {
             path: "state/:stateCode",
             element: <StateParks />,
             loader: parksLoader,
+            errorElement: <ErrorPage />,
           },
           {
             path: "next-adventure/:parkId/:userId/:parkCode",
             action: nextAdventureAction,
+            errorElement: <ErrorPage />,
           },
           {
             path: "visited/:parkId/:userId/:parkCode",
             action: visitedAction,
+            errorElement: <ErrorPage />,
           },
           {
             path: "park/:parkCode",
