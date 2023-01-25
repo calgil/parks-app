@@ -9,6 +9,11 @@
       "id": 3,
       "username": "user3",
       "password": "password"
+    },
+    {
+      "username": "calvin",
+      "password": "password",
+      "id": 4
     }
   ],
   "nextAdventure": [

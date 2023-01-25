@@ -47,7 +47,10 @@ export const UserActions = () => {
       </button>
       {showActions && (
         <div className={s.actionsDropdown}>
-          <button onClick={() => navigate(`/edit/${user.id}`)}>
+          <button
+            className={s.editBtn}
+            onClick={() => navigate(`/edit/${user.id}`)}
+          >
             Edit User
           </button>
           <LogoutButton />
@@ -55,11 +58,14 @@ export const UserActions = () => {
             method="post"
             action={`delete/${user.id}`}
             onSubmit={(e) => {
-              console.log("delete");
-              // e.preventDefault();
+              if (!confirm("Do you want to delete this user?")) {
+                e.preventDefault();
+              }
             }}
           >
-            <button type="submit">Delete User</button>
+            <button className={s.deleteBtn} type="submit">
+              Delete User
+            </button>
           </Form>
         </div>
       )}
