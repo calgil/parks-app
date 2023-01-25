@@ -10,6 +10,7 @@
   max-height: 500px;
   margin: 0 auto;
   overflow: hidden;
+  transition: all 200ms ease-in-out;
 }
 
 .imgBtn {
@@ -33,19 +34,8 @@
   color: rgb(255, 254, 255);
 }
 
-/* .imgBtn i {
-  font-size: 2rem;
-}
-
-.prevBtn i {
-  margin-right: 8px;
-}
-
-.nextBtn i {
-  margin-left: 8px;
-} */
-
 .selectedImg {
   object-fit: cover;
   object-position: center;
+  border-radius: 5px;
 }

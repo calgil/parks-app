@@ -5,6 +5,7 @@
   border-radius: 10px;
   box-shadow: rgb(81, 81, 81) 5px 5px 8px;
   margin: 10px 15px;
+  padding: 10px;
   transition: all 150ms ease-in-out;
 }
 
