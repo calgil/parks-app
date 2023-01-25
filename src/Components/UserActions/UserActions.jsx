@@ -21,7 +21,6 @@ export const UserActions = () => {
   };
 
   useEffect(() => {
-    // console.log("use effect triggered");
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [setShowActions, actionContainerRef]);

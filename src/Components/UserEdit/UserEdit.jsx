@@ -1,8 +1,7 @@
+import { redirect } from "react-router-dom";
 import { patchUser } from "../../fetch/user/patchUser";
 import { FormContainer } from "../FormContainer/FormContainer";
 import { useRootLoaderData } from "../Root/Root";
-
-// TODO: finish edit action
 
 export async function action({ request, params }) {
   return Promise.resolve()
@@ -13,21 +12,21 @@ export async function action({ request, params }) {
       console.log({ data, userId });
       return { data, userId };
     })
-    .then(({ data, userId }) => {
-      console.log({ userId, data });
+    .then(async ({ data, userId }) => {
+      console.log(userId, data);
       // patch user
-      return patchUser(userId, data);
+      const user = await patchUser(userId, data);
+      console.log({ user });
+      return { user };
     })
-    .then((response) => {
-      console.log(response);
-      return null;
+    .then(({ user }) => {
+      localStorage.setItem("user", JSON.stringify(user));
+      return redirect("/");
     })
     .catch((err) => {
       console.error(err);
       return null;
     });
-  //   console.log({ request });
-  //   return null;
 }
 
 export default function UserEdit() {
