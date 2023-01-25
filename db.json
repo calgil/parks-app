@@ -6,11 +6,6 @@
       "password": "password"
     },
     {
-      "id": 2,
-      "username": "change",
-      "password": "password"
-    },
-    {
       "id": 3,
       "username": "user3",
       "password": "password"
@@ -22,12 +17,6 @@
       "userId": 1,
       "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C",
       "parkCode": "amch"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2",
-      "parkCode": "beol"
     },
     {
       "id": 3,
@@ -54,12 +43,6 @@
       "parkCode": "alca"
     },
     {
-      "id": 8,
-      "userId": 2,
-      "parkId": "2DB09FB7-0408-44C9-8083-8F50039BD6DA",
-      "parkCode": "cabr"
-    },
-    {
       "id": 9,
       "userId": 3,
       "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB",
@@ -70,12 +53,6 @@
       "userId": 1,
       "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
       "parkCode": "camo"
-    },
-    {
-      "userId": "2",
-      "parkId": "FBF9F793-5114-4B61-A5BA-6F9ADDFDF459",
-      "parkCode": "bisc",
-      "id": 11
     }
   ],
   "visited": [
@@ -98,12 +75,6 @@
       "parkCode": "ania"
     },
     {
-      "id": 5,
-      "userId": 2,
-      "parkId": "EE1F4878-00FB-4760-A77F-EA76DB8DEFD9",
-      "parkCode": "bela"
-    },
-    {
       "id": 6,
       "userId": 3,
       "parkId": "3262234F-A56A-447D-AE6C-F5C734ABD3A4",
@@ -116,12 +87,6 @@
       "parkCode": "bica"
     },
     {
-      "id": 8,
-      "userId": 2,
-      "parkId": "60B1534B-5C3A-402A-ABC6-700B756F69A2",
-      "parkCode": "fous"
-    },
-    {
       "id": 9,
       "userId": 3,
       "parkId": "2B5178C6-2446-488C-AC31-47E3CEBF7159",
@@ -132,18 +97,6 @@
       "userId": 1,
       "parkId": "72A30002-12FA-4738-BCA7-1FA8062214CB",
       "parkCode": "grko"
-    },
-    {
-      "userId": "2",
-      "parkId": "E2F59F29-1F3A-43B9-A361-7E74E5FDDEB1",
-      "parkCode": "brvb",
-      "id": 11
-    },
-    {
-      "userId": "2",
-      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB",
-      "parkCode": "cali",
-      "id": 12
     }
   ]
 }

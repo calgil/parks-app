@@ -3,7 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 import { useRootLoaderData } from "../Root/Root";
-import { useNavigate } from "react-router-dom";
+import { Form, redirect, useNavigate } from "react-router-dom";
+import { deleteUser } from "../../fetch/user/deleteUser";
+
+export const deleteAction = async ({ params }) => {
+  await deleteUser(params.userId);
+  return redirect("/");
+};
 
 export const UserActions = () => {
   const { user } = useRootLoaderData();
@@ -45,7 +51,16 @@ export const UserActions = () => {
             Edit User
           </button>
           <LogoutButton />
-          <button>Delete User</button>
+          <Form
+            method="post"
+            action={`delete/${user.id}`}
+            onSubmit={(e) => {
+              console.log("delete");
+              // e.preventDefault();
+            }}
+          >
+            <button type="submit">Delete User</button>
+          </Form>
         </div>
       )}
     </div>
