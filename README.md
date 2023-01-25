@@ -1,4 +1,4 @@
-# Parks
+# Parks App
 
 Parks is a web app that uses the national parks api
 API documentation can be found here https://www.nps.gov/subjects/developer/api-documentation.htm
