@@ -1,3 +1,5 @@
+import { Tooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 import s from "./InputBase.module.css";
 export const InputBase = ({
   data: { labelText, value, onChange, type, name, placeholder },
@@ -6,6 +8,7 @@ export const InputBase = ({
     <div className={s.inputContainer}>
       <label className={s.label}>{labelText}</label>
       <input
+        id={type}
         placeholder={placeholder}
         className={s.input}
         name={name}
@@ -14,6 +17,13 @@ export const InputBase = ({
         onChange={onChange}
         autoComplete="off"
       />
+      {type === "password" && (
+        <Tooltip
+          anchorId="password"
+          content="Database not secure use generic non-important passwords"
+          place="top"
+        />
+      )}
     </div>
   );
 };
