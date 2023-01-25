@@ -20,9 +20,11 @@ export async function action({ request, params }) {
     })
     .then((response) => {
       console.log(response);
+      return null;
     })
     .catch((err) => {
       console.error(err);
+      return null;
     });
   //   console.log({ request });
   //   return null;
