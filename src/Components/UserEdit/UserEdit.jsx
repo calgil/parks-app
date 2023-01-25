@@ -9,14 +9,10 @@ export async function action({ request, params }) {
       const formData = await request.formData();
       const data = Object.fromEntries(formData);
       const userId = params.userId;
-      console.log({ data, userId });
       return { data, userId };
     })
     .then(async ({ data, userId }) => {
-      console.log(userId, data);
-      // patch user
       const user = await patchUser(userId, data);
-      console.log({ user });
       return { user };
     })
     .then(({ user }) => {
