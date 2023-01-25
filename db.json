@@ -2,18 +2,18 @@
   "users": [
     {
       "id": 1,
-      "username": "new name",
+      "username": "new user",
+      "password": "password"
+    },
+    {
+      "id": 2,
+      "username": "user2",
       "password": "password"
     },
     {
       "id": 3,
       "username": "user3",
       "password": "password"
-    },
-    {
-      "username": "calvin",
-      "password": "password",
-      "id": 4
     }
   ],
   "nextAdventure": [
@@ -22,6 +22,12 @@
       "userId": 1,
       "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C",
       "parkCode": "amch"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2",
+      "parkCode": "beol"
     },
     {
       "id": 3,
@@ -36,6 +42,12 @@
       "parkCode": "bicy"
     },
     {
+      "id": 5,
+      "userId": 2,
+      "parkId": "FBF9F793-5114-4B61-A5BA-6F9ADDFDF459",
+      "parkCode": "bisc"
+    },
+    {
       "id": 6,
       "userId": 3,
       "parkId": "FFD294C0-8027-42EC-B395-9C3BF2B80F49",
@@ -46,6 +58,12 @@
       "userId": 1,
       "parkId": "C08AD828-98FF-478E-A63C-614E7534274B",
       "parkCode": "alca"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "parkId": "2DB09FB7-0408-44C9-8083-8F50039BD6DA",
+      "parkCode": "cabr"
     },
     {
       "id": 9,
@@ -68,6 +86,12 @@
       "parkCode": "alag"
     },
     {
+      "id": 2,
+      "userId": 2,
+      "parkId": "7D6098F9-3F75-4775-A56D-CD9C7F9A9488",
+      "parkCode": "anch"
+    },
+    {
       "id": 3,
       "userId": 3,
       "parkId": "94B046DC-2AFD-4ECB-A60D-CE210A8550B1",
@@ -80,6 +104,12 @@
       "parkCode": "ania"
     },
     {
+      "id": 5,
+      "userId": 2,
+      "parkId": "EE1F4878-00FB-4760-A77F-EA76DB8DEFD9",
+      "parkCode": "bela"
+    },
+    {
       "id": 6,
       "userId": 3,
       "parkId": "3262234F-A56A-447D-AE6C-F5C734ABD3A4",
@@ -90,6 +120,12 @@
       "userId": 1,
       "parkId": "7568A0D8-73B1-44E6-82C7-E10BA1872209",
       "parkCode": "bica"
+    },
+    {
+      "id": 8,
+      "userId": 2,
+      "parkId": "60B1534B-5C3A-402A-ABC6-700B756F69A2",
+      "parkCode": "fous"
     },
     {
       "id": 9,

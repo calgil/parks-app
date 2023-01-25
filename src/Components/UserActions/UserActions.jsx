@@ -1,9 +1,8 @@
 import s from "./UserActions.module.css";
 import { useEffect, useRef, useState } from "react";
-import { LogoutButton } from "../LogoutBtn/LogoutBtn";
 import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 import { useRootLoaderData } from "../Root/Root";
-import { Form, redirect, useNavigate } from "react-router-dom";
+import { Form, redirect } from "react-router-dom";
 import { deleteUser } from "../../fetch/user/deleteUser";
 
 export const deleteAction = async ({ params }) => {
@@ -11,11 +10,19 @@ export const deleteAction = async ({ params }) => {
   return redirect("/");
 };
 
+export const logoutAction = () => {
+  console.log("logout");
+  localStorage.removeItem("user");
+  return redirect("/");
+};
+
 export const UserActions = () => {
   const { user } = useRootLoaderData();
   const [showActions, setShowActions] = useState(false);
   const actionContainerRef = useRef(null);
-  const navigate = useNavigate();
+
+  // TODO: Refactor click outside function
+  // This works to close the 'user actions' dropdown, but I am sure there is a better way
 
   const handleClickOutside = (e) => {
     if (
@@ -47,13 +54,23 @@ export const UserActions = () => {
       </button>
       {showActions && (
         <div className={s.actionsDropdown}>
-          <button
-            className={s.editBtn}
-            onClick={() => navigate(`/edit/${user.id}`)}
+          <Form action={`/edit/${user.id}`}>
+            <button className={s.editBtn} type="submit">
+              {" "}
+              Edit User
+            </button>
+          </Form>
+          <Form
+            method="post"
+            action="/logout"
+            onSubmit={(e) => {
+              if (!confirm("Do you want to logout?")) {
+                e.preventDefault();
+              }
+            }}
           >
-            Edit User
-          </button>
-          <LogoutButton />
+            <button type="submit">Logout</button>
+          </Form>
           <Form
             method="post"
             action={`delete/${user.id}`}
