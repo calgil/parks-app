@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import { getParkByParkCode } from "../../fetch/parks/getParkByParkCode";
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
 import s from "./ParkDetails.module.css";
@@ -12,9 +12,13 @@ export default function ParkDetails() {
   const { parkDetails } = useLoaderData();
   const { id, description, designation, fullName, name, images, parkCode } =
     parkDetails;
+  const navigate = useNavigate();
 
   return (
     <div className={s.parkContainer}>
+      <button className={s.backBtn} onClick={() => navigate(-1)}>
+        Back
+      </button>
       <h4 className={s.name}>{fullName}</h4>
       <ImageCarousel images={images} />
       <p className={s.description}>{description}</p>

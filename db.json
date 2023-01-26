@@ -14,6 +14,11 @@
       "id": 3,
       "username": "user3",
       "password": "password"
+    },
+    {
+      "username": "greg",
+      "password": "123",
+      "id": 4
     }
   ],
   "nextAdventure": [
@@ -76,6 +81,24 @@
       "userId": 1,
       "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
       "parkCode": "camo"
+    },
+    {
+      "userId": "4",
+      "parkId": "E84B1E08-CCE8-4FFF-8DB6-B92F40953225",
+      "parkCode": "arho",
+      "id": 11
+    },
+    {
+      "userId": "4",
+      "parkId": "307BE169-345D-472C-8128-20F1D59864A7",
+      "parkCode": "asis",
+      "id": 12
+    },
+    {
+      "userId": "4",
+      "parkId": "16CCCC56-1DC1-47D6-AE91-E939955BFC53",
+      "parkCode": "apco",
+      "id": 13
     }
   ],
   "visited": [
@@ -138,6 +161,24 @@
       "userId": 1,
       "parkId": "72A30002-12FA-4738-BCA7-1FA8062214CB",
       "parkCode": "grko"
+    },
+    {
+      "userId": "4",
+      "parkId": "3A2AEA7C-8896-4445-9763-932B4A74CF34",
+      "parkCode": "came",
+      "id": 11
+    },
+    {
+      "userId": "4",
+      "parkId": "481CEBB8-1942-4FAE-8D89-9902E7B9EECA",
+      "parkCode": "cajo",
+      "id": 12
+    },
+    {
+      "userId": "4",
+      "parkId": "6278FE68-139E-4758-A6DE-9A0437F777B5",
+      "parkCode": "bowa",
+      "id": 13
     }
   ]
 }
