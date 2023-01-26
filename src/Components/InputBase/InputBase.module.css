@@ -10,11 +10,12 @@
   line-height: 2.5;
   width: 100%;
   margin-top: 5px;
-  background-color: rgb(161, 158, 158);
+  background-color: rgb(221, 221, 221);
   border: none;
   border-radius: 5px;
   transition: all 200ms ease-in-out;
   color: black;
+  padding-left: 10px;
 }
 
 .input:active,
