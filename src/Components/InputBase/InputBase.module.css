@@ -14,13 +14,13 @@
   border: none;
   border-radius: 5px;
   transition: all 200ms ease-in-out;
-  color: black;
+  color: #4a4a4a;
   padding-left: 10px;
 }
 
 .input:active,
 .input:focus,
 .input:hover {
-  outline: 2px solid darkgreen;
-  transform: scale(1.05);
+  outline: 3px solid rgb(125, 132, 145);
+  transform: scale(1.1);
 }

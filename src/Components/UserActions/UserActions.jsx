@@ -44,7 +44,9 @@ export const UserActions = () => {
       className={s.actionContainer}
       onClick={() => setShowActions(true)}
     >
-      Hi, {capitalizeFirstLetter(user.username)}!
+      <h3 className={s.username}>
+        Hi, {capitalizeFirstLetter(user.username)}!
+      </h3>
       <button className={s.actionBtn}>
         {showActions ? (
           <i className="fa fa-caret-up"></i>

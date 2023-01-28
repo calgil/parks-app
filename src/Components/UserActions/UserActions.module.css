@@ -8,6 +8,11 @@
   text-decoration: underline;
 }
 
+.username {
+  display: inline;
+  font-size: 1.1rem;
+}
+
 .actionBtn {
   background-color: transparent;
   border: none;
@@ -36,14 +41,6 @@
   font-size: 1.01rem;
   border-radius: 5px;
   font-weight: 600;
-}
-
-.actionsDropdown button.editBtn {
-  color: rgb(65, 65, 250);
-}
-
-.actionsDropdown button.deleteBtn {
-  color: rgb(168, 12, 12);
 }
 
 .actionsDropdown button:hover {

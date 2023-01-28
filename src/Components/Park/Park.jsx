@@ -52,7 +52,15 @@ export const Park = ({ park, visited, nextAdventure }) => {
                   : `${s.actionBtn} ${s.nextBtn}`
               }
             >
-              {isNext ? "Remove from Next Adventure" : "Add to Next Adventure"}
+              {isNext ? (
+                <span>
+                  <i class="fa fa-minus "></i> Remove from Next Adventure
+                </span>
+              ) : (
+                <span>
+                  <i class="fa fa-check"></i> Add To Next Adventure
+                </span>
+              )}
             </button>
           </fetcher.Form>
           <fetcher.Form
@@ -70,7 +78,15 @@ export const Park = ({ park, visited, nextAdventure }) => {
                   : `${s.actionBtn} ${s.visitedBtn}`
               }
             >
-              {isVisited ? "Remove from Visited" : "Add to Visited"}
+              {isVisited ? (
+                <span>
+                  <i className="fa fa-times"></i> Remove From Visited
+                </span>
+              ) : (
+                <span>
+                  <i className="fa fa-plus"></i> Add To Visited
+                </span>
+              )}
             </button>
           </fetcher.Form>
         </>

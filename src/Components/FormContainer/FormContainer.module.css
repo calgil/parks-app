@@ -27,7 +27,13 @@
 .link:visited {
   color: white;
 }
-.link:hover {
+.link:hover,
+.link:focus {
   text-decoration: underline;
-  color: darkgreen;
+  color: rgb(75, 165, 66);
+}
+
+.link:focus {
+  border: none;
+  outline: none;
 }
