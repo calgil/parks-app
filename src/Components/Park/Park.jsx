@@ -54,11 +54,11 @@ export const Park = ({ park, visited, nextAdventure }) => {
             >
               {isNext ? (
                 <span>
-                  <i class="fa fa-minus "></i> Remove from Next Adventure
+                  <i className="fa fa-minus "></i> Remove from Next Adventure
                 </span>
               ) : (
                 <span>
-                  <i class="fa fa-check"></i> Add To Next Adventure
+                  <i className="fa fa-check"></i> Add To Next Adventure
                 </span>
               )}
             </button>

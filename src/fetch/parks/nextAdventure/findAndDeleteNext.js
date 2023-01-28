@@ -16,7 +16,7 @@ const deleteNextAdventure = (id) => {
 export const findAndDeleteNextAdventure = async ({ userId, parkId }) => {
   const allNextParks = await getAllNextAdventureParksAPI();
   const parkToDelete = allNextParks.find(
-    (next) => next.parkId === parkId && next.userId === +userId
+    (next) => next.parkId === parkId && +next.userId === +userId
   );
   console.log({ parkToDelete });
   if (!parkToDelete) {

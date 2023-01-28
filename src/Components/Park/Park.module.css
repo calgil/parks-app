@@ -46,7 +46,8 @@
   transition: all 200ms ease-in-out;
 }
 
-.actionBtn:hover {
+.actionBtn:hover,
+.actionBtn:focus {
   transform: scale(1.1);
   outline: 1px solid white;
 }
@@ -61,7 +62,7 @@
 }
 
 .nextBtn.next {
-  background-color: rgba(24, 58, 55, 0.6);
+  background-color: rgba(24, 58, 55, 0.4);
 }
 
 .visitedBtn {
