@@ -1,13 +1,21 @@
 import { useLoaderData } from "react-router-dom";
 import { getParksFromAPI } from "../../fetch/parks/getParksFromAPI";
 import { Parks } from "../Parks/Parks";
+import statesFullName from "../../../data/statesFullName.json";
 
 export const loader = async ({ params }) => {
   const parks = await getParksFromAPI(params.stateCode);
-  return { parks };
+  const stateName = statesFullName.find(
+    (state) => state.abbreviation.toLowerCase() === params.stateCode
+  ).name;
+  return { parks, stateName };
 };
 
 export default function StateParks() {
-  const { parks } = useLoaderData();
-  return <Parks parks={parks} />;
+  const { parks, stateName } = useLoaderData();
+  return (
+    <>
+      <h2>{stateName}</h2> <Parks parks={parks} />
+    </>
+  );
 }
