@@ -41,6 +41,7 @@
   font-size: 1.01rem;
   border-radius: 5px;
   font-weight: 600;
+  padding-left: 15px;
 }
 
 .actionsDropdown button:hover {

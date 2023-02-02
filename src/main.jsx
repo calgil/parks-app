@@ -32,7 +32,6 @@ import {
   deleteAction,
   logoutAction,
 } from "./Components/UserActions/UserActions";
-import { ThemeProvider } from "./providers/theme.provider";
 
 // TODO: Can I move these two actions to another file? This one seems busy
 
@@ -167,9 +166,7 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ThemeProvider>
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <RouterProvider router={router} />
     <Toaster />
   </React.StrictMode>
 );
