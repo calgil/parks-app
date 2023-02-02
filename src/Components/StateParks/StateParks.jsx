@@ -1,3 +1,4 @@
+import s from "./StateParks.module.css";
 import { useLoaderData } from "react-router-dom";
 import { getParksFromAPI } from "../../fetch/parks/getParksFromAPI";
 import { Parks } from "../Parks/Parks";
@@ -15,7 +16,7 @@ export default function StateParks() {
   const { parks, stateName } = useLoaderData();
   return (
     <>
-      <h2>{stateName}</h2> <Parks parks={parks} />
+      <h2 className={s.stateName}>{stateName}</h2> <Parks parks={parks} />
     </>
   );
 }
