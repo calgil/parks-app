@@ -3,7 +3,7 @@
   text-align: center;
   background-color: rgb(55, 55, 55);
   border-radius: 10px;
-  box-shadow: rgb(81, 81, 81) 5px 5px 8px;
+  box-shadow: black 5px 5px 8px;
   margin: 10px 15px;
   padding: 10px;
   transition: all 150ms ease-in-out;
@@ -11,7 +11,7 @@
 
 .parkBody:hover {
   transform: scale(1.03);
-  box-shadow: rgb(172, 170, 170) 5px 5px 8px;
+  box-shadow: rgb(87, 87, 87) 8px 8px 10px;
 }
 
 .nameContainer {

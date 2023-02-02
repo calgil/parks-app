@@ -24,9 +24,6 @@ export const Park = ({ park, visited, nextAdventure }) => {
   }
   return (
     <div onClick={openDetails} className={s.parkBody}>
-      <div className={s.nameContainer}>
-        <h3>{fullName}</h3>
-      </div>
       <div className={s.imgContainer}>
         <img
           className={s.parkImg}
@@ -34,6 +31,7 @@ export const Park = ({ park, visited, nextAdventure }) => {
           alt={images[0].altText}
         />
       </div>
+      <h3>{fullName}</h3>
       {user && (
         <>
           <fetcher.Form
