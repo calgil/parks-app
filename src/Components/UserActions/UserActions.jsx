@@ -58,7 +58,6 @@ export const UserActions = () => {
         <div className={s.actionsDropdown}>
           <Form action={`/edit/${user.id}`}>
             <button className={s.editBtn} type="submit">
-              {" "}
               Edit User
             </button>
           </Form>

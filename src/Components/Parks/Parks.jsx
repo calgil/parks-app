@@ -1,7 +1,6 @@
 import { useRootLoaderData } from "../Root/Root";
 import { Park } from "../Park/Park";
 import s from "./Parks.module.css";
-import { UNSAFE_convertRoutesToDataRoutes } from "@remix-run/router";
 
 export const Parks = ({ parks }) => {
   const { user, userVisited, userNextAdventure } = useRootLoaderData();
