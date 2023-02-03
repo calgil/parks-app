@@ -16,7 +16,12 @@ export default function StateParks() {
   const { parks, stateName } = useLoaderData();
   return (
     <>
-      <h2 className={s.stateName}>{stateName}</h2> <Parks parks={parks} />
+      <div className={s.nameContainer}>
+        <h2 className={s.stateName}>{stateName} Public Lands</h2>
+        <div className={s.nameBorder}></div>
+      </div>
+
+      <Parks parks={parks} />
     </>
   );
 }

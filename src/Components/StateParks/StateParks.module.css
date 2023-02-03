@@ -1,3 +1,18 @@
-.stateName {
-  margin-top: 40px;
+.nameContainer {
+  position: relative;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  text-align: left;
+  margin-left: 56px;
+  margin-right: 80px;
+  height: 80px;
+}
+
+.nameBorder {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  width: 75vw;
+  background-color: #a18276;
 }
