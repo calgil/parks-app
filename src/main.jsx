@@ -143,7 +143,7 @@ const router = createBrowserRouter([
             loader: parkDetailsLoader,
           },
           {
-            path: "next-adventure/:userId",
+            path: "next-adventure",
             element: (
               <ProtectedRoute>
                 <NextAdventure />
@@ -151,7 +151,7 @@ const router = createBrowserRouter([
             ),
           },
           {
-            path: "visited/:userId",
+            path: "visited",
             element: (
               <ProtectedRoute>
                 <Visited />

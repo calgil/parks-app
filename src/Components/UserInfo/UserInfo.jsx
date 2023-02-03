@@ -1,31 +1,34 @@
 import s from "./UserInfo.module.css";
 import { NavLink } from "react-router-dom";
 import { UserActions } from "../UserActions/UserActions";
+import { useRootLoaderData } from "../Root/Root";
 
-export const UserInfo = ({ userId }) => {
+export const UserInfo = () => {
   return (
-    <ul className={s.navbar}>
-      <li className={s.li}>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? `${s.link} ${s.active}` : `${s.link}`
-          }
-          to={`/visited/${userId}`}
-        >
-          Visited
-        </NavLink>
-      </li>
-      <li className={s.li}>
-        <NavLink
-          className={({ isActive }) =>
-            isActive ? `${s.link} ${s.active}` : `${s.link}`
-          }
-          to={`/next-adventure/${userId}`}
-        >
-          Next Adventure
-        </NavLink>
-      </li>
+    <div className={s.userLinks}>
+      <ul className={s.navbar}>
+        <li className={s.linkContainer}>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `${s.link} ${s.active}` : `${s.link}`
+            }
+            to={"/visited"}
+          >
+            Visited
+          </NavLink>
+        </li>
+        <li className={s.linkContainer}>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? `${s.link} ${s.active}` : `${s.link}`
+            }
+            to={"/next-adventure"}
+          >
+            Next Adventure
+          </NavLink>
+        </li>
+      </ul>
       <UserActions />
-    </ul>
+    </div>
   );
 };

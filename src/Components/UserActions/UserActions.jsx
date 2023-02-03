@@ -11,7 +11,6 @@ export const deleteAction = async ({ params }) => {
 };
 
 export const logoutAction = () => {
-  console.log("logout");
   localStorage.removeItem("user");
   return redirect("/");
 };
@@ -20,9 +19,6 @@ export const UserActions = () => {
   const { user } = useRootLoaderData();
   const [showActions, setShowActions] = useState(false);
   const actionContainerRef = useRef(null);
-
-  // TODO: Refactor click outside function
-  // This works to close the 'user actions' dropdown, but I am sure there is a better way
 
   const handleClickOutside = (e) => {
     if (
@@ -44,7 +40,10 @@ export const UserActions = () => {
       className={s.actionContainer}
       onClick={() => setShowActions(true)}
     >
-      <h3 className={s.username}>
+      {/* <h3 className={s.username}> */}
+      <h3
+        className={showActions ? `${s.username} ${s.active}` : `${s.username}`}
+      >
         Hi, {capitalizeFirstLetter(user.username)}!
       </h3>
       <button className={s.actionBtn}>
