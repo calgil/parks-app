@@ -10,12 +10,12 @@
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Lato", Arial, sans-serif;
   font-size: 1rem;
   line-height: 24px;
   font-weight: 400;
 
-  color: rgba(255, 255, 255, 0.87);
+  color: #e5f4e3;
   background-color: #242424;
 
   font-synthesis: none;

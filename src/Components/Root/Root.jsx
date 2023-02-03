@@ -76,11 +76,9 @@ export const useRootLoaderData = () => {
 
 export default function Root() {
   return (
-    <>
-      <div className={s.root}>
-        <Navbar />
-        <Outlet />
-      </div>
-    </>
+    <div className={s.root}>
+      <Navbar />
+      <Outlet />
+    </div>
   );
 }
