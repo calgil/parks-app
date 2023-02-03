@@ -13,7 +13,7 @@ import UserRegister, {
 import StateParks, {
   loader as parksLoader,
 } from "./Components/StateParks/StateParks";
-import { Toaster } from "react-hot-toast";
+import { toast, Toaster } from "react-hot-toast";
 import ParkDetails, {
   loader as parkDetailsLoader,
 } from "./Components/ParkDetails/ParkDetails";
@@ -31,16 +31,19 @@ import {
   logoutAction,
 } from "./Components/UserActions/UserActions";
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
-
-// TODO: Can I move these two actions to another file? This one seems busy
+import { getParkNameByParkCode } from "./fetch/parks/getParkName";
 
 const nextAdventureAction = async ({ request, params }) => {
   const userId = params.userId;
   const parkId = params.parkId;
   const parkCode = params.parkCode;
+  const parkName = await getParkNameByParkCode(parkCode);
+  console.log({ parkName });
   let formData = await request.formData();
   const isNext = formData.get("next-adventure") === "true";
   if (isNext) {
+    //  TODO: get park name and display here
+    toast.success(`${parkName} is added to Next Adventure`);
     return createNextAdventureAPI({
       userId,
       parkId,
@@ -48,6 +51,7 @@ const nextAdventureAction = async ({ request, params }) => {
     });
   }
   if (!isNext) {
+    toast.success(`${parkName} is removed from Next Adventure`);
     findAndDeleteNextAdventure({ userId, parkId });
   }
   return null;
