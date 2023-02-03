@@ -1,18 +1,17 @@
 import { useFetcher, useNavigate } from "react-router-dom";
 import { useRootLoaderData } from "../Root/Root";
 import s from "./Park.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { toast } from "react-hot-toast";
 
 export const Park = ({ park, visited, nextAdventure }) => {
   const { user } = useRootLoaderData();
   const { id, description, designation, fullName, images, parkCode } = park;
   const navigate = useNavigate();
+
   const openDetails = () => {
     navigate(`/park/${park.parkCode}`);
-  };
-
-  const navigateToLogin = (e) => {
-    e.stopPropagation();
-    navigate("/login");
   };
 
   const fetcher = useFetcher();
@@ -23,16 +22,54 @@ export const Park = ({ park, visited, nextAdventure }) => {
     isVisited = fetcher.formData.get("visited") === "true";
   }
   return (
-    <div onClick={openDetails} className={s.parkBody}>
+    <div tabIndex="0" onClick={openDetails} className={s.parkBody}>
       <div className={s.imgContainer}>
         <img
           className={s.parkImg}
           src={images[0].url}
           alt={images[0].altText}
         />
+        {user && (
+          <fetcher.Form
+            method="post"
+            action={`/next-adventure/${id}/${user.id}/${parkCode}`}
+            className={s.bookmarkContainer}
+          >
+            <button
+              name="next-adventure"
+              value={isNext ? false : true}
+              onClick={(e) => e.stopPropagation()}
+              className={s.actionBtn}
+            >
+              <FontAwesomeIcon
+                size="2x"
+                icon={faBookmark}
+                className={isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`}
+              />
+            </button>
+          </fetcher.Form>
+        )}
+        {!user && (
+          <div className={s.bookmarkContainer}>
+            <button
+              className={s.actionBtn}
+              onClick={(e) => {
+                e.stopPropagation();
+                toast.error("Must login to start saving parks");
+              }}
+            >
+              <FontAwesomeIcon
+                size="lg"
+                icon={faBookmark}
+                className={isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`}
+              />
+            </button>
+          </div>
+        )}
       </div>
-      <h3>{fullName}</h3>
-      {user && (
+      <h3 className={s.parkName}>{fullName}</h3>
+
+      {/* {user && (
         <>
           <fetcher.Form
             method="post"
@@ -88,8 +125,8 @@ export const Park = ({ park, visited, nextAdventure }) => {
             </button>
           </fetcher.Form>
         </>
-      )}
-      {!user && (
+      )} */}
+      {/* {!user && (
         <div className={s.btnContainer}>
           <button
             className={`${s.actionBtn} ${s.nextBtn}`}
@@ -104,7 +141,7 @@ export const Park = ({ park, visited, nextAdventure }) => {
             Login to Add to Visited
           </button>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

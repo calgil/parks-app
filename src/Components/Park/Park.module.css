@@ -1,36 +1,110 @@
 .parkBody {
-  max-width: 250px;
+  max-width: 200px;
   text-align: center;
-  background-color: rgb(55, 55, 55);
-  border-radius: 10px;
-  box-shadow: black 5px 5px 8px;
+  background: linear-gradient(
+    180deg,
+    #a18276 80.21%,
+    rgba(161, 130, 118, 0) 100%
+  );
+  border: 1px solid #a18276;
+  border-radius: 4px;
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
   margin: 10px 15px;
-  padding: 10px;
+  padding: 0 5px;
+  padding-top: 16px;
   transition: all 150ms ease-in-out;
+  cursor: pointer;
 }
 
-.parkBody:hover {
-  transform: scale(1.03);
-  box-shadow: rgb(87, 87, 87) 8px 8px 10px;
+.parkBody:hover,
+.parkBody:focus {
+  background: linear-gradient(
+    180deg,
+    #a18276 84.37%,
+    rgba(161, 130, 118, 0) 100%
+  );
+
+  box-shadow: 4px 6px 4px rgba(105, 101, 101, 0.25);
 }
 
-.nameContainer {
-  height: 60px;
-  padding-bottom: 10px;
+.parkBody:focus {
+  outline: none;
 }
 
 .imgContainer {
-  width: 250px;
+  position: relative;
   height: 150px;
   overflow: hidden;
+  border-radius: 4px;
+  margin: 0 16px;
+  transition: all 200ms ease-in-out;
+}
+
+.parkBody:hover .imgContainer {
+  margin: 0;
+}
+
+img {
+  width: 100%;
 }
 
 .parkImg {
   object-fit: cover;
   object-position: center;
+  border-radius: 4px;
 }
 
-.btnContainer {
+.bookmarkContainer {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.actionBtn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: all 100ms ease-in-out;
+}
+
+.actionBtn:focus,
+.actionBtn:focus .bookmark {
+  transform: scale(1.5);
+}
+
+.bookmark {
+  /* width: fit-content; */
+  cursor: pointer;
+  color: #183a37;
+  transition: all 200ms ease-in-out;
+}
+
+.bookmark:hover {
+  color: rgba(24, 58, 55, 0.7);
+  transform: scale(1.5);
+}
+
+.bookmark.next,
+.bookmark.next:hover {
+  color: #2a9d8f;
+}
+
+.parkName {
+  margin-top: 22px;
+  margin-bottom: 45px;
+  color: #232323;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  transition: all 200ms ease-in-out;
+  padding: 0 5px;
+}
+
+.parkBody:hover .parkName {
+  font-weight: 600;
+}
+
+/* .btnContainer {
   padding: 10px 0;
   display: flex;
   flex-direction: column;
@@ -71,4 +145,4 @@
 
 .visitedBtn.visited {
   background-color: rgba(28, 28, 75, 0.6);
-}
+} */
