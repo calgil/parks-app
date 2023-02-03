@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
 import "font-awesome/css/font-awesome.min.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root, { loader as rootLoader } from "./Components/Root/Root";
@@ -21,7 +20,6 @@ import ParkDetails, {
 import { ProtectedRoute } from "./Components/ProtectedRoute";
 import NextAdventure from "./Components/NextAdventure/NextAdventure";
 import Visited from "./Components/Visited/Visited";
-import ErrorPage from "./Components/ErrorPage";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
 import { createVisitedAPI } from "./fetch/parks/visited/createVisitedAPI";
 import { createNextAdventureAPI } from "./fetch/parks/nextAdventure/createNextAdventureAPI";
@@ -32,6 +30,7 @@ import {
   deleteAction,
   logoutAction,
 } from "./Components/UserActions/UserActions";
+import ErrorPage from "./Components/ErrorPage/ErrorPage";
 
 // TODO: Can I move these two actions to another file? This one seems busy
 

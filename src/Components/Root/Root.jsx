@@ -1,3 +1,4 @@
+import s from "./Root.module.css";
 import { Outlet, useMatches } from "react-router-dom";
 import { getParksData } from "../../fetch/parks/getParksData";
 import { getAllNextAdventureParksAPI } from "../../fetch/parks/nextAdventure/getAllNextAdventureParksAPI";
@@ -76,8 +77,10 @@ export const useRootLoaderData = () => {
 export default function Root() {
   return (
     <>
-      <Navbar />
-      <Outlet />
+      <div className={s.root}>
+        <Navbar />
+        <Outlet />
+      </div>
     </>
   );
 }
