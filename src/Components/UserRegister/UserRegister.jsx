@@ -4,6 +4,7 @@ import { redirect } from "react-router-dom";
 import { API_CONFIG } from "../../fetch/config";
 import { registerFetch } from "../../fetch/user/registerFetch";
 import { FormContainer as FormContainer } from "../FormContainer/FormContainer";
+import registerBackground from "../../assets/registerBackground.webp";
 
 export async function action({ request }) {
   return Promise.resolve()
@@ -51,18 +52,19 @@ export async function action({ request }) {
 }
 
 export default function UserRegister() {
+  const backgroundImg = registerBackground;
   const inputData = [
     {
       labelText: "Username",
       name: "username",
       type: "text",
-      placeholder: "username",
+      placeholder: "Choose username",
     },
     {
       labelText: "Password",
       name: "password",
       type: "password",
-      placeholder: "password",
+      placeholder: "Create password",
     },
   ];
 
@@ -73,8 +75,9 @@ export default function UserRegister() {
 
   return (
     <FormContainer
+      backgroundImg={backgroundImg}
       inputs={inputData}
-      title="Create Account"
+      title="Sign Up and start exploring parks!"
       buttonText="Sign Up"
       link={link}
     />

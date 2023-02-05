@@ -102,27 +102,9 @@
     },
     {
       "userId": "4",
-      "parkId": "461D40CC-4379-4C1B-ADB8-3563147F61A1",
-      "parkCode": "grsa",
-      "id": 18
-    },
-    {
-      "userId": "4",
-      "parkId": "1F38885B-538E-499C-B5A6-30D76267AC7F",
-      "parkCode": "flfo",
-      "id": 23
-    },
-    {
-      "userId": "4",
       "parkId": "061D9754-B947-48FD-99BE-1FE1AAD1BB90",
       "parkCode": "dino",
       "id": 24
-    },
-    {
-      "userId": "4",
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2",
-      "parkCode": "beol",
-      "id": 27
     },
     {
       "userId": "4",
@@ -132,21 +114,21 @@
     },
     {
       "userId": "4",
-      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB",
-      "parkCode": "cali",
-      "id": 29
-    },
-    {
-      "userId": "4",
-      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C",
-      "parkCode": "amch",
-      "id": 30
-    },
-    {
-      "userId": "4",
       "parkId": "80E30980-1B26-4AE7-A039-FA7D8D119070",
       "parkCode": "cure",
       "id": 31
+    },
+    {
+      "userId": "4",
+      "parkId": "C0BF2A42-E353-4FAE-B4C4-AA0676B58100",
+      "parkCode": "dena",
+      "id": 35
+    },
+    {
+      "userId": "4",
+      "parkId": "7568A0D8-73B1-44E6-82C7-E10BA1872209",
+      "parkCode": "bica",
+      "id": 36
     }
   ],
   "visited": [

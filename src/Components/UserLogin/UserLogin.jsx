@@ -2,6 +2,7 @@ import { toast } from "react-hot-toast";
 import { redirect } from "react-router-dom";
 import { getUserFetch } from "../../fetch/user/getUserFetch";
 import { FormContainer } from "../FormContainer/FormContainer";
+import loginBackground from "../../assets/loginBackground.webp";
 
 export async function action({ request }) {
   return Promise.resolve()
@@ -39,18 +40,20 @@ export async function action({ request }) {
 }
 
 export default function UserLogin() {
+  const backgroundImg = loginBackground;
+
   const inputData = [
     {
       labelText: "Username",
       name: "username",
       type: "text",
-      placeholder: "username",
+      placeholder: "Username",
     },
     {
       labelText: "Password",
       name: "password",
       type: "password",
-      placeholder: "password",
+      placeholder: "Password",
     },
   ];
 
@@ -61,8 +64,9 @@ export default function UserLogin() {
 
   return (
     <FormContainer
+      backgroundImg={backgroundImg}
       inputs={inputData}
-      title="Login"
+      title="Pick up where you left off..."
       buttonText="Login"
       link={link}
     />

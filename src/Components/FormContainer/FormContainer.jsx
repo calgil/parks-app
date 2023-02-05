@@ -3,9 +3,20 @@ import { InputBase } from "../InputBase/InputBase";
 import { SubmitBtn } from "../SubmitBtn/SubmitBtn";
 import s from "./FormContainer.module.css";
 
-export const FormContainer = ({ inputs, title, buttonText, link }) => {
+export const FormContainer = ({
+  backgroundImg,
+  inputs,
+  title,
+  buttonText,
+  link,
+}) => {
   return (
-    <section>
+    <section
+      className={s.imgContainer}
+      style={{
+        backgroundImage: `url(${backgroundImg})`,
+      }}
+    >
       <div className={s.formContainer}>
         <Form method="post" className={s.form}>
           <h3 className={s.title}>{title}</h3>
