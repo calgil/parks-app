@@ -8,7 +8,6 @@ export default function NextAdventure() {
     <>
       {userNextParks.length ? (
         <>
-          {" "}
           <Title title={"Up Next"} /> <Parks parks={userNextParks} />
         </>
       ) : (

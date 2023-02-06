@@ -4,6 +4,7 @@ import s from "./Park.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-hot-toast";
+import { Tooltip } from "react-tooltip";
 
 export const Park = ({ park, visited, nextAdventure }) => {
   const { user } = useRootLoaderData();
@@ -36,6 +37,7 @@ export const Park = ({ park, visited, nextAdventure }) => {
             className={s.bookmarkContainer}
           >
             <button
+              id="next-adventure"
               name="next-adventure"
               value={isNext ? false : true}
               onClick={(e) => e.stopPropagation()}
@@ -47,6 +49,12 @@ export const Park = ({ park, visited, nextAdventure }) => {
                 className={isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`}
               />
             </button>
+            <Tooltip
+              anchorId="next-adventure"
+              content="Add to next adventure"
+              place="top"
+            />
+            {/* Tool tip here */}
           </fetcher.Form>
         )}
         {!user && (
@@ -59,7 +67,7 @@ export const Park = ({ park, visited, nextAdventure }) => {
               }}
             >
               <FontAwesomeIcon
-                size="lg"
+                size="2x"
                 icon={faBookmark}
                 className={isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`}
               />
