@@ -15,7 +15,6 @@ export const loader = async ({ params }) => {
 
 export default function StateParks() {
   const { parks, stateName } = useLoaderData();
-  // TODO: Make header component
   return (
     <>
       <Title title={`${stateName} Public Lands`} />

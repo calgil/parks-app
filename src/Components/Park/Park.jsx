@@ -37,7 +37,7 @@ export const Park = ({ park, visited, nextAdventure }) => {
             className={s.bookmarkContainer}
           >
             <button
-              id="next-adventure"
+              id={id}
               name="next-adventure"
               value={isNext ? false : true}
               onClick={(e) => e.stopPropagation()}
@@ -50,11 +50,10 @@ export const Park = ({ park, visited, nextAdventure }) => {
               />
             </button>
             <Tooltip
-              anchorId="next-adventure"
-              content="Add to next adventure"
+              anchorId={id}
+              content={isNext ? "Remove from Up Next" : "Add to Up Next"}
               place="top"
             />
-            {/* Tool tip here */}
           </fetcher.Form>
         )}
         {!user && (
