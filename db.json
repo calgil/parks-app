@@ -108,12 +108,6 @@
     },
     {
       "userId": "4",
-      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A",
-      "parkCode": "blca",
-      "id": 28
-    },
-    {
-      "userId": "4",
       "parkId": "80E30980-1B26-4AE7-A039-FA7D8D119070",
       "parkCode": "cure",
       "id": 31
@@ -153,6 +147,42 @@
       "parkId": "0265E5A4-576A-4626-882A-05971DEE9B76",
       "parkCode": "efmo",
       "id": 41
+    },
+    {
+      "userId": "4",
+      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C",
+      "parkCode": "amch",
+      "id": 42
+    },
+    {
+      "userId": "4",
+      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A",
+      "parkCode": "blca",
+      "id": 43
+    },
+    {
+      "userId": "4",
+      "parkId": "9854D136-AFC0-4966-BB40-FE9323B56A49",
+      "parkCode": "yuho",
+      "id": 44
+    },
+    {
+      "userId": "4",
+      "parkId": "67A56B17-F533-4A56-B2DA-26091C6AD295",
+      "parkCode": "romo",
+      "id": 45
+    },
+    {
+      "userId": "4",
+      "parkId": "BA84404E-743C-4841-9F83-87CEDA164E5B",
+      "parkCode": "hove",
+      "id": 46
+    },
+    {
+      "userId": "4",
+      "parkId": "BE3A981E-BB55-474D-8A0E-D711408682DC",
+      "parkCode": "meve",
+      "id": 47
     }
   ],
   "visited": [

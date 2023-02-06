@@ -21,7 +21,7 @@ export const Navbar = () => {
             className={({ isActive }) => (isActive ? `${s.active}` : undefined)}
             to="/"
           >
-            Pick a State
+            Home
           </NavLink>
         </li>
         {user && <UserInfo />}

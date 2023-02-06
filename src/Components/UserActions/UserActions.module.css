@@ -2,6 +2,7 @@
   position: relative;
   cursor: pointer;
   font-weight: 900;
+  min-width: 130px;
 }
 
 .username {
