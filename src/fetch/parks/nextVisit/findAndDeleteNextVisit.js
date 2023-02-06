@@ -1,9 +1,9 @@
 import { API_CONFIG } from "../../config";
-import { getAllNextAdventureParksAPI } from "./getAllNextAdventureParksAPI";
+import { getAllProjectParksAPI } from "./getAllNextVisitParksAPI";
 
-const deleteNextAdventure = (id) => {
+const deleteProject = (id) => {
   console.log({ id });
-  fetch(`${API_CONFIG.baseUrl}/nextAdventure/${id}`, {
+  fetch(`${API_CONFIG.baseUrl}/nextVisit/${id}`, {
     method: "DELETE",
   }).then((response) => {
     if (!response.ok) {
@@ -13,14 +13,13 @@ const deleteNextAdventure = (id) => {
   });
 };
 
-export const findAndDeleteNextAdventure = async ({ userId, parkId }) => {
-  const allNextParks = await getAllNextAdventureParksAPI();
+export const findAndDeleteProject = async ({ userId, parkId }) => {
+  const allNextParks = await getAllProjectParksAPI();
   const parkToDelete = allNextParks.find(
     (next) => next.parkId === parkId && +next.userId === +userId
   );
-  console.log({ parkToDelete });
   if (!parkToDelete) {
     throw new Error("No park to delete");
   }
-  return deleteNextAdventure(parkToDelete.id);
+  return deleteProject(parkToDelete.id);
 };

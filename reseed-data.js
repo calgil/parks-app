@@ -16,7 +16,7 @@ export const users = [
   },
 ];
 
-export const nextAdventure = [
+export const nextVisit = [
   {
     id: 1,
     userId: 1,

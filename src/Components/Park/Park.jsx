@@ -6,7 +6,7 @@ import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-hot-toast";
 import { Tooltip } from "react-tooltip";
 
-export const Park = ({ park, visited, nextAdventure }) => {
+export const Park = ({ park, visited, nextVisit }) => {
   const { user } = useRootLoaderData();
   const { id, description, designation, fullName, images, parkCode } = park;
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export const Park = ({ park, visited, nextAdventure }) => {
   };
 
   const fetcher = useFetcher();
-  let isNext = nextAdventure;
+  let isNext = nextVisit;
   let isVisited = visited;
   if (fetcher.formData) {
     isNext = fetcher.formData.get("next-adventure") === "true";
@@ -51,7 +51,7 @@ export const Park = ({ park, visited, nextAdventure }) => {
             </button>
             <Tooltip
               anchorId={id}
-              content={isNext ? "Remove from Up Next" : "Add to Up Next"}
+              content={isNext ? "Remove from Next Visit" : "Add to Next Visit"}
               place="top"
             />
           </fetcher.Form>

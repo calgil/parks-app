@@ -1,7 +1,6 @@
 import s from "./UserInfo.module.css";
 import { NavLink } from "react-router-dom";
 import { UserActions } from "../UserActions/UserActions";
-import { useRootLoaderData } from "../Root/Root";
 
 export const UserInfo = () => {
   return (
@@ -12,9 +11,9 @@ export const UserInfo = () => {
             className={({ isActive }) =>
               isActive ? `${s.link} ${s.active}` : `${s.link}`
             }
-            to={"/visited"}
+            to={"/next-visit"}
           >
-            Visited
+            Next Visit
           </NavLink>
         </li>
         <li className={s.linkContainer}>
@@ -22,9 +21,9 @@ export const UserInfo = () => {
             className={({ isActive }) =>
               isActive ? `${s.link} ${s.active}` : `${s.link}`
             }
-            to={"/next-adventure"}
+            to={"/visited"}
           >
-            Next Adventure
+            Visited
           </NavLink>
         </li>
       </ul>

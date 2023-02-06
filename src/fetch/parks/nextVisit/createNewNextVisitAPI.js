@@ -1,7 +1,7 @@
 import { API_CONFIG } from "../../config";
 
-export const createNextAdventureAPI = async ({ userId, parkId, parkCode }) => {
-  return fetch(`${API_CONFIG.baseUrl}/nextAdventure`, {
+export const createNewProjectAPI = async ({ userId, parkId, parkCode }) => {
+  return fetch(`${API_CONFIG.baseUrl}/nextVisit`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ userId, parkId, parkCode }),

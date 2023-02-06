@@ -14,7 +14,6 @@ export const getParkNameByParkCode = async (parkCode) => {
     const park = data.data.map(({ fullName }) => ({
       fullName,
     }));
-    console.log({ park });
     return park[0].fullName;
   } catch (error) {
     throw new Error("Error fetching park" + parkCode);
