@@ -60,18 +60,6 @@
       "parkCode": "cali"
     },
     {
-      "id": 10,
-      "userId": 1,
-      "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
-      "parkCode": "camo"
-    },
-    {
-      "userId": "1",
-      "parkId": "FF73E2AA-E274-44E1-A8F5-9DD998B0F579",
-      "parkCode": "grte",
-      "id": 13
-    },
-    {
       "userId": "1",
       "parkId": "54DC5EA0-2635-4154-BBD0-AF0F38D76933",
       "parkCode": "fosm",
@@ -88,6 +76,24 @@
       "parkId": "58BCDB2B-5A91-4892-8470-76D802313884",
       "parkCode": "peri",
       "id": 16
+    },
+    {
+      "userId": "1",
+      "parkId": "7568A0D8-73B1-44E6-82C7-E10BA1872209",
+      "parkCode": "bica",
+      "id": 17
+    },
+    {
+      "userId": "1",
+      "parkId": "53C5C818-EB7C-4FEB-B94F-892588205D64",
+      "parkCode": "fola",
+      "id": 18
+    },
+    {
+      "userId": "1",
+      "parkId": "D84122DD-1B0E-4D13-927C-5D6D2A0D200E",
+      "parkCode": "apis",
+      "id": 20
     }
   ],
   "visited": [
@@ -180,6 +186,24 @@
       "parkId": "335368E4-B5CE-4370-8324-4A841AFA5025",
       "parkCode": "deto",
       "id": 15
+    },
+    {
+      "userId": "1",
+      "parkId": "FF73E2AA-E274-44E1-A8F5-9DD998B0F579",
+      "parkCode": "grte",
+      "id": 16
+    },
+    {
+      "userId": "1",
+      "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
+      "parkCode": "camo",
+      "id": 17
+    },
+    {
+      "userId": "1",
+      "parkId": "4BE453C2-6527-484F-90D6-98057901EBDF",
+      "parkCode": "noco",
+      "id": 18
     }
   ]
 }

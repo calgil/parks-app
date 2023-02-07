@@ -1,0 +1,33 @@
+.visitedContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visitBtn {
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.6;
+  cursor: pointer;
+  color: #e5f4e3;
+  border: 1px solid #e5f4e3;
+  border-radius: 4px;
+  background-color: rgba(28, 28, 75, 1);
+  transition: all 200ms ease-in-out;
+}
+
+.visitBtn:hover {
+  transform: scale(1.1);
+}
+
+.visitBtn .visitIcon {
+  width: fit-content;
+}
