@@ -1,8 +1,7 @@
 import { API_CONFIG } from "../../config";
 import { getAllProjectParksAPI } from "./getAllNextVisitParksAPI";
 
-const deleteProject = (id) => {
-  console.log({ id });
+const deleteNextVisit = (id) => {
   fetch(`${API_CONFIG.baseUrl}/nextVisit/${id}`, {
     method: "DELETE",
   }).then((response) => {
@@ -13,7 +12,7 @@ const deleteProject = (id) => {
   });
 };
 
-export const findAndDeleteProject = async ({ userId, parkId }) => {
+export const findAndDeleteNextVisit = async ({ userId, parkId }) => {
   const allNextParks = await getAllProjectParksAPI();
   const parkToDelete = allNextParks.find(
     (next) => next.parkId === parkId && +next.userId === +userId
@@ -21,5 +20,5 @@ export const findAndDeleteProject = async ({ userId, parkId }) => {
   if (!parkToDelete) {
     throw new Error("No park to delete");
   }
-  return deleteProject(parkToDelete.id);
+  return deleteNextVisit(parkToDelete.id);
 };

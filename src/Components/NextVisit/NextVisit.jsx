@@ -8,7 +8,8 @@ export default function Projects() {
     <>
       {userNextParks.length ? (
         <>
-          <Title title={"Next Visit"} /> <Parks parks={userNextParks} />
+          <Title title={"Next Visit"} />{" "}
+          <Parks parks={userNextParks} addVisitBtn={true} />
         </>
       ) : (
         <div>

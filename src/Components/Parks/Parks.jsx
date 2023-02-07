@@ -2,7 +2,7 @@ import { useRootLoaderData } from "../Root/Root";
 import { Park } from "../Park/Park";
 import s from "./Parks.module.css";
 
-export const Parks = ({ parks }) => {
+export const Parks = ({ parks, addVisitBtn }) => {
   const { user, userVisited, userNextVisits } = useRootLoaderData();
   return (
     <section className={s.parksContainer}>
@@ -25,6 +25,7 @@ export const Parks = ({ parks }) => {
               park={park}
               visited={isVisited}
               nextVisit={isNext}
+              addVisitBtn={addVisitBtn}
             />
           );
         })}

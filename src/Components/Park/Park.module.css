@@ -113,6 +113,10 @@ img {
   font-weight: 600;
 }
 
+.visitedContainer .actionBtn {
+  cursor: pointer;
+}
+
 /* .btnContainer {
   padding: 10px 0;
   display: flex;

@@ -24,7 +24,7 @@ import Visited from "./Components/Visited/Visited";
 import { UnProtectedRoute } from "./Components/UnProtectedRoute";
 import { createVisitedAPI } from "./fetch/parks/visited/createVisitedAPI";
 import { createNewProjectAPI } from "./fetch/parks/nextVisit/createNewNextVisitAPI";
-import { findAndDeleteProject } from "./fetch/parks/nextVisit/findAndDeleteNextVisit";
+import { findAndDeleteNextVisit as findAndDeleteNextVisit } from "./fetch/parks/nextVisit/findAndDeleteNextVisit";
 import { findAndDeleteVisited } from "./fetch/parks/visited/deleteVisitedAPI";
 import UserEdit, { action as editAction } from "./Components/UserEdit/UserEdit";
 import {
@@ -34,13 +34,13 @@ import {
 import ErrorPage from "./Components/ErrorPage/ErrorPage";
 import { getParkNameByParkCode } from "./fetch/parks/getParkName";
 
-const projectAction = async ({ request, params }) => {
+const nextVisitAction = async ({ request, params }) => {
   const userId = params.userId;
   const parkId = params.parkId;
   const parkCode = params.parkCode;
   const parkName = await getParkNameByParkCode(parkCode);
   let formData = await request.formData();
-  const isNext = formData.get("next-adventure") === "true";
+  const isNext = formData.get("next-visit") === "true";
   if (isNext) {
     toast.success(`${parkName} is added to Next Visit`);
     return createNewProjectAPI({
@@ -51,7 +51,7 @@ const projectAction = async ({ request, params }) => {
   }
   if (!isNext) {
     toast.success(`${parkName} is removed from Next Visit`);
-    findAndDeleteProject({ userId, parkId });
+    findAndDeleteNextVisit({ userId, parkId });
   }
   return null;
 };
@@ -60,10 +60,13 @@ const visitedAction = async ({ request, params }) => {
   const userId = params.userId;
   const parkId = params.parkId;
   const parkCode = params.parkCode;
+  const parkName = await getParkNameByParkCode(parkCode);
   let formData = await request.formData();
   const addVisited = formData.get("visited") === "true";
   if (addVisited) {
-    return createVisitedAPI({ userId, parkId, parkCode });
+    findAndDeleteNextVisit({ userId, parkId });
+    createVisitedAPI({ userId, parkId, parkCode });
+    return toast.success(`${parkName} added to Visited`);
   }
   if (!addVisited) {
     findAndDeleteVisited({ userId, parkId });
@@ -130,8 +133,8 @@ const router = createBrowserRouter([
             errorElement: <ErrorPage />,
           },
           {
-            path: "next-adventure/:parkId/:userId/:parkCode",
-            action: projectAction,
+            path: "next-visit/:parkId/:userId/:parkCode",
+            action: nextVisitAction,
             errorElement: <ErrorPage />,
           },
           {

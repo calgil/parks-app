@@ -4,12 +4,14 @@ import s from "./Park.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark as fasFaBookmark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as farFaBookmark } from "@fortawesome/free-regular-svg-icons";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import { toast } from "react-hot-toast";
 import { Tooltip } from "react-tooltip";
 
-export const Park = ({ park, visited, nextVisit }) => {
+export const Park = ({ park, visited, nextVisit, addVisitBtn }) => {
   const { user } = useRootLoaderData();
-  const { id, description, designation, fullName, images, parkCode } = park;
+  // Future: destructure designation to filter parks
+  const { id, fullName, images, parkCode } = park;
   const navigate = useNavigate();
 
   const openDetails = () => {
@@ -20,7 +22,7 @@ export const Park = ({ park, visited, nextVisit }) => {
   let isNext = nextVisit;
   let isVisited = visited;
   if (fetcher.formData) {
-    isNext = fetcher.formData.get("next-adventure") === "true";
+    isNext = fetcher.formData.get("next-visit") === "true";
     isVisited = fetcher.formData.get("visited") === "true";
   }
   return (
@@ -34,12 +36,12 @@ export const Park = ({ park, visited, nextVisit }) => {
         {user && (
           <fetcher.Form
             method="post"
-            action={`/next-adventure/${id}/${user.id}/${parkCode}`}
+            action={`/next-visit/${id}/${user.id}/${parkCode}`}
             className={s.bookmarkContainer}
           >
             <button
               id={id}
-              name="next-adventure"
+              name="next-visit"
               value={isNext ? false : true}
               onClick={(e) => e.stopPropagation()}
               className={s.actionBtn}
@@ -70,16 +72,36 @@ export const Park = ({ park, visited, nextVisit }) => {
                 toast.error("Must login to start saving parks");
               }}
             >
-              <FontAwesomeIcon
-                size="2x"
-                icon={faBookmark}
-                className={isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`}
-              />
+              <span className={`${s.iconContainer} fa-layers fa-fw fa-lg`}>
+                <FontAwesomeIcon className={s.outline} icon={farFaBookmark} />
+                <FontAwesomeIcon
+                  icon={fasFaBookmark}
+                  className={
+                    isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`
+                  }
+                />
+              </span>
             </button>
           </div>
         )}
       </div>
       <h3 className={s.parkName}>{fullName}</h3>
+      {user && addVisitBtn && (
+        <fetcher.Form
+          method="post"
+          action={`/visited/${id}/${user.id}/${parkCode}`}
+          className={s.visitedContainer}
+        >
+          <button
+            name="visited"
+            value={isVisited ? false : true}
+            onClick={(e) => e.stopPropagation()}
+            className={s.actionBtn}
+          >
+            <FontAwesomeIcon icon={faCheck} /> I visited
+          </button>
+        </fetcher.Form>
+      )}
 
       {/* {user && (
         <>
