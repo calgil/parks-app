@@ -56,7 +56,7 @@ img {
 
 .bookmarkContainer {
   position: absolute;
-  top: 0px;
+  top: 10px;
   right: 0px;
 }
 
@@ -67,24 +67,33 @@ img {
   transition: all 100ms ease-in-out;
 }
 
-.actionBtn:focus,
-.actionBtn:focus .bookmark {
-  transform: scale(1.5);
+.iconContainer {
+  font-size: 25px;
+  transition: all 200ms ease-in-out;
+}
+
+.iconContainer i {
+  cursor: pointer;
+}
+
+.outline {
+  color: white;
+  font-size: 30px;
 }
 
 .bookmark {
-  cursor: pointer;
   color: #183a37;
-  transition: all 200ms ease-in-out;
+}
+
+.iconContainer:hover {
+  transform: scale(1.5);
 }
 
 .bookmark:hover {
   color: rgba(24, 58, 55, 0.7);
-  transform: scale(1.5);
 }
 
-.bookmark.next,
-.bookmark.next:hover {
+.bookmark.next {
   color: #2a9d8f;
 }
 

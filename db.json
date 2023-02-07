@@ -83,12 +83,6 @@
       "id": 12
     },
     {
-      "userId": "1",
-      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB",
-      "parkCode": "cali",
-      "id": 14
-    },
-    {
       "userId": "4",
       "parkId": "A71EF659-5A33-4CCC-93CE-340F23A88E3E",
       "parkCode": "jeca",
@@ -105,6 +99,24 @@
       "parkId": "5590468F-2446-4B46-A8C1-42505177C298",
       "parkCode": "moru",
       "id": 17
+    },
+    {
+      "userId": "1",
+      "parkId": "76F87FF4-4BAD-453E-8013-2DA8924A5D94",
+      "parkCode": "tapr",
+      "id": 20
+    },
+    {
+      "userId": "1",
+      "parkId": "A0125F49-080E-4292-BD91-C1FA1657F547",
+      "parkCode": "poex",
+      "id": 21
+    },
+    {
+      "userId": "1",
+      "parkId": "4E072F12-3E85-4219-B456-A8F04C688879",
+      "parkCode": "oreg",
+      "id": 22
     }
   ],
   "visited": [

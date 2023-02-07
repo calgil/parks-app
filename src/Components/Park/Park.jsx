@@ -2,7 +2,8 @@ import { useFetcher, useNavigate } from "react-router-dom";
 import { useRootLoaderData } from "../Root/Root";
 import s from "./Park.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark as fasFaBookmark } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark as farFaBookmark } from "@fortawesome/free-regular-svg-icons";
 import { toast } from "react-hot-toast";
 import { Tooltip } from "react-tooltip";
 
@@ -43,11 +44,15 @@ export const Park = ({ park, visited, nextVisit }) => {
               onClick={(e) => e.stopPropagation()}
               className={s.actionBtn}
             >
-              <FontAwesomeIcon
-                size="2x"
-                icon={faBookmark}
-                className={isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`}
-              />
+              <span className={`${s.iconContainer} fa-layers fa-fw fa-lg`}>
+                <FontAwesomeIcon className={s.outline} icon={farFaBookmark} />
+                <FontAwesomeIcon
+                  icon={fasFaBookmark}
+                  className={
+                    isNext ? `${s.bookmark} ${s.next}` : `${s.bookmark}`
+                  }
+                />
+              </span>
             </button>
             <Tooltip
               anchorId={id}
