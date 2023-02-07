@@ -46,7 +46,7 @@ export const UserActions = () => {
       >
         Hi, {capitalizeFirstLetter(user.username)}!
       </h3>
-      <button className={s.actionBtn}>
+      <button className={s.dropdownBtn}>
         {showActions ? (
           <i className="fa fa-caret-up"></i>
         ) : (
@@ -55,12 +55,13 @@ export const UserActions = () => {
       </button>
       {showActions && (
         <div className={s.actionsDropdown}>
-          <Form action={`/edit/${user.id}`}>
-            <button className={s.editBtn} type="submit">
+          <Form className={s.actionForm} action={`/edit/${user.id}`}>
+            <button className={s.userActionBtn} type="submit">
               Edit User
             </button>
           </Form>
           <Form
+            className={s.actionForm}
             method="post"
             action="/logout"
             onSubmit={(e) => {
@@ -69,9 +70,12 @@ export const UserActions = () => {
               }
             }}
           >
-            <button type="submit">Logout</button>
+            <button className={s.userActionBtn} type="submit">
+              Logout
+            </button>
           </Form>
           <Form
+            className={s.actionForm}
             method="post"
             action={`delete/${user.id}`}
             onSubmit={(e) => {
@@ -80,7 +84,7 @@ export const UserActions = () => {
               }
             }}
           >
-            <button className={s.deleteBtn} type="submit">
+            <button className={s.userActionBtn} type="submit">
               Delete User
             </button>
           </Form>

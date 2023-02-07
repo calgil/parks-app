@@ -21,7 +21,6 @@
 
 .linkContainer {
   list-style: none;
-  min-width: 105px;
   margin: 0 20px;
 }
 .linkContainer a {
@@ -44,4 +43,10 @@
 .linkContainer .active {
   font-weight: 700;
   text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+  text-decoration: underline;
+  font-weight: 700;
 }

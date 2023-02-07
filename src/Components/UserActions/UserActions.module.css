@@ -26,7 +26,7 @@
   text-decoration: underline;
 }
 
-.actionBtn {
+.dropdownBtn {
   background-color: transparent;
   border: none;
   margin-left: 5px;
@@ -37,27 +37,33 @@
 
 .actionsDropdown {
   position: absolute;
-  left: -20px;
+  top: 35px;
+  /* left: -20px; */
   background-color: rgb(107, 106, 106);
   border-radius: 10px;
   text-align: left;
-  padding: 10px;
+  padding: 10px 0;
+  /* padding-left: 0; */
   width: 130px;
+  z-index: 1;
 }
 
-.actionsDropdown button {
+.actionForm .userActionBtn {
   display: block;
   width: 100%;
   text-align: left;
   background-color: transparent;
+  color: #e5f4e3;
   border: none;
   line-height: 1.5;
   font-size: 1.01rem;
-  border-radius: 5px;
+  /* border-radius: 5px; */
   font-weight: 600;
   padding-left: 15px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
-.actionsDropdown button:hover {
+.actionForm .userActionBtn:hover {
   background-color: rgb(38, 35, 35);
 }
