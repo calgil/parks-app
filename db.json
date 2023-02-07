@@ -64,6 +64,30 @@
       "userId": 1,
       "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
       "parkCode": "camo"
+    },
+    {
+      "userId": "1",
+      "parkId": "FF73E2AA-E274-44E1-A8F5-9DD998B0F579",
+      "parkCode": "grte",
+      "id": 13
+    },
+    {
+      "userId": "1",
+      "parkId": "54DC5EA0-2635-4154-BBD0-AF0F38D76933",
+      "parkCode": "fosm",
+      "id": 14
+    },
+    {
+      "userId": "1",
+      "parkId": "ED9C0322-68FB-4DE1-A884-61C623281C9D",
+      "parkCode": "hosp",
+      "id": 15
+    },
+    {
+      "userId": "1",
+      "parkId": "58BCDB2B-5A91-4892-8470-76D802313884",
+      "parkCode": "peri",
+      "id": 16
     }
   ],
   "visited": [
@@ -150,6 +174,12 @@
       "parkId": "0265E5A4-576A-4626-882A-05971DEE9B76",
       "parkCode": "efmo",
       "id": 14
+    },
+    {
+      "userId": "1",
+      "parkId": "335368E4-B5CE-4370-8324-4A841AFA5025",
+      "parkCode": "deto",
+      "id": 15
     }
   ]
 }

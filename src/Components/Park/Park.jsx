@@ -33,6 +33,8 @@ export const Park = ({ park, visited, nextVisit, addVisitBtn }) => {
           src={images[0].url}
           alt={images[0].altText}
         />
+        {/* TODO: Create component for this button */}
+        {/* Props: parkId userId parkCode nextVisit */}
         {user && (
           <fetcher.Form
             method="post"
@@ -102,80 +104,6 @@ export const Park = ({ park, visited, nextVisit, addVisitBtn }) => {
           </button>
         </fetcher.Form>
       )}
-
-      {/* {user && (
-        <>
-          <fetcher.Form
-            method="post"
-            action={`/next-adventure/${id}/${user.id}/${parkCode}`}
-            className={s.btnContainer}
-          >
-            <button
-              name="next-adventure"
-              value={isNext ? false : true}
-              // value={nextAdventure ? `${nextAdventure.id}` : true}
-              onClick={(e) => e.stopPropagation()}
-              className={
-                isNext
-                  ? `${s.actionBtn} ${s.nextBtn} ${s.next}`
-                  : `${s.actionBtn} ${s.nextBtn}`
-              }
-            >
-              {isNext ? (
-                <span>
-                  <i className="fa fa-minus "></i> Remove from Next Adventure
-                </span>
-              ) : (
-                <span>
-                  <i className="fa fa-check"></i> Add To Next Adventure
-                </span>
-              )}
-            </button>
-          </fetcher.Form>
-          <fetcher.Form
-            method="post"
-            action={`/visited/${id}/${user.id}/${parkCode}`}
-            className={s.btnContainer}
-          >
-            <button
-              name="visited"
-              value={isVisited ? false : true}
-              onClick={(e) => e.stopPropagation()}
-              className={
-                isVisited
-                  ? `${s.actionBtn} ${s.visitedBtn} ${s.visited}`
-                  : `${s.actionBtn} ${s.visitedBtn}`
-              }
-            >
-              {isVisited ? (
-                <span>
-                  <i className="fa fa-times"></i> Remove From Visited
-                </span>
-              ) : (
-                <span>
-                  <i className="fa fa-plus"></i> Add To Visited
-                </span>
-              )}
-            </button>
-          </fetcher.Form>
-        </>
-      )} */}
-      {/* {!user && (
-        <div className={s.btnContainer}>
-          <button
-            className={`${s.actionBtn} ${s.nextBtn}`}
-            onClick={navigateToLogin}
-          >
-            Login to Add to Next Adventure
-          </button>
-          <button
-            className={`${s.actionBtn} ${s.visitedBtn}`}
-            onClick={navigateToLogin}
-          >
-            Login to Add to Visited
-          </button>
-        </div>
-      )} */}
     </div>
   );
 };

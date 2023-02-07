@@ -54,6 +54,24 @@ img {
   border-radius: 4px;
 }
 
+.parkName {
+  max-width: 15ch;
+  margin: 0 auto;
+  margin-top: 22px;
+  margin-bottom: 45px;
+  color: #232323;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  transition: all 200ms ease-in-out;
+}
+
+.parkBody:hover .parkName {
+  font-weight: 600;
+}
+
+/* TODO: These styles go with button component */
+
 .bookmarkContainer {
   position: absolute;
   top: 10px;
@@ -68,7 +86,7 @@ img {
 }
 
 .iconContainer {
-  font-size: 25px;
+  font-size: 20px;
   transition: all 200ms ease-in-out;
 }
 
@@ -78,7 +96,7 @@ img {
 
 .outline {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
 }
 
 .bookmark {
@@ -95,22 +113,6 @@ img {
 
 .bookmark.next {
   color: #2a9d8f;
-}
-
-.parkName {
-  max-width: 15ch;
-  margin: 0 auto;
-  margin-top: 22px;
-  margin-bottom: 45px;
-  color: #232323;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 24px;
-  transition: all 200ms ease-in-out;
-}
-
-.parkBody:hover .parkName {
-  font-weight: 600;
 }
 
 .visitedContainer .actionBtn {
