@@ -1,6 +1,7 @@
 import { useLoaderData, useNavigate, useNavigation } from "react-router-dom";
 import { getParkByParkCode } from "../../fetch/parks/getParkByParkCode";
 import { ImageCarousel } from "../ImageCarousel/ImageCarousel";
+import { Title } from "../Title/Title";
 import s from "./ParkDetails.module.css";
 
 export const loader = async ({ params }) => {
@@ -16,10 +17,10 @@ export default function ParkDetails() {
 
   return (
     <div className={s.parkContainer}>
+      <Title title={fullName} />
       <button className={s.backBtn} onClick={() => navigate(-1)}>
         Back
       </button>
-      <h4 className={s.name}>{fullName}</h4>
       <ImageCarousel images={images} />
       <p className={s.description}>{description}</p>
     </div>
