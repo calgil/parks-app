@@ -29,10 +29,17 @@
 .dropdownBtn {
   background-color: transparent;
   border: none;
-  margin-left: 5px;
+  margin-left: 10px;
   font-size: 1rem;
   color: #2a9d8f;
   cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.dropdownBtn:hover,
+.dropdownBtn:focus {
+  transform: scale(2);
+  outline: none;
 }
 
 .actionsDropdown {

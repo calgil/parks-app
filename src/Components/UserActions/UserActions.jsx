@@ -40,7 +40,6 @@ export const UserActions = () => {
       className={s.actionContainer}
       onClick={() => setShowActions(true)}
     >
-      {/* <h3 className={s.username}> */}
       <h3
         className={showActions ? `${s.username} ${s.active}` : `${s.username}`}
       >
