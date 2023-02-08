@@ -1,6 +1,6 @@
 import { useFetcher } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faMinus } from "@fortawesome/free-solid-svg-icons";
 import s from "./VisitBtn.module.css";
 
 export const VisitBtn = ({ parkId, userId, parkCode, visited }) => {
@@ -21,8 +21,17 @@ export const VisitBtn = ({ parkId, userId, parkCode, visited }) => {
         onClick={(e) => e.stopPropagation()}
         className={s.visitBtn}
       >
-        <FontAwesomeIcon className={s.visitIcon} icon={faCheck} />
-        <span>I visited</span>
+        {isVisited ? (
+          <>
+            <FontAwesomeIcon className={s.visitIcon} icon={faMinus} />
+            <span>Remove from Visited</span>
+          </>
+        ) : (
+          <>
+            <FontAwesomeIcon className={s.visitIcon} icon={faCheck} />
+            <span>I visited</span>
+          </>
+        )}
       </button>
     </fetcher.Form>
   );

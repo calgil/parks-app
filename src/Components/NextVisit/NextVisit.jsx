@@ -9,7 +9,11 @@ export default function Projects() {
       {userNextParks.length ? (
         <>
           <Title title={"Next Visit"} />{" "}
-          <Parks parks={userNextParks} addVisitBtn={true} />
+          <Parks
+            parks={userNextParks}
+            showAddVisitBtn={true}
+            showAddNext={true}
+          />
         </>
       ) : (
         <div>

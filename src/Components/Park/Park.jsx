@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 import { NextVisitBtn } from "../NextVisitBtn/NextVisitBtn";
 import { VisitBtn } from "../VisitBtn/visitBtn";
 
-export const Park = ({ park, visited, nextVisit, addVisitBtn }) => {
+export const Park = ({ park, visited, nextVisit, showAddVisitBtn }) => {
   const { user } = useRootLoaderData();
   // Future: destructure designation to filter parks
   const { id, fullName, images, parkCode } = park;
@@ -27,7 +27,7 @@ export const Park = ({ park, visited, nextVisit, addVisitBtn }) => {
           alt={images[0].altText}
         />
 
-        {user && (
+        {user && !visited && (
           <NextVisitBtn
             parkId={id}
             userId={user.id}
@@ -58,7 +58,7 @@ export const Park = ({ park, visited, nextVisit, addVisitBtn }) => {
         )}
       </div>
       <h3 className={s.parkName}>{fullName}</h3>
-      {user && addVisitBtn && (
+      {user && showAddVisitBtn && (
         <VisitBtn
           parkId={id}
           userId={user.id}

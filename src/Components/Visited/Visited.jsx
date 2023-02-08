@@ -10,7 +10,11 @@ export default function Visited() {
       {userVisitedParks ? (
         <>
           <Title title={"Visited Parks"} />
-          <Parks parks={userVisitedParks} />
+          <Parks
+            parks={userVisitedParks}
+            showAddNext={false}
+            showAddVisitBtn={true}
+          />
         </>
       ) : (
         <div className={s.noParks}>
