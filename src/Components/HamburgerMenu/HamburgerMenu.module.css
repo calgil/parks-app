@@ -1,0 +1,38 @@
+.hamburgerBtn {
+  position: relative;
+  background-color: transparent;
+  font-size: 25px;
+  border: none;
+  color: #e5f4e3;
+  margin-left: 15px;
+  display: none;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: #242424;
+  z-index: 100;
+  list-style: none;
+  padding: 10px;
+  text-align: left;
+}
+
+.link {
+  color: #e5f4e3;
+  text-decoration: none;
+}
+
+.active,
+.link:active,
+.link:visited,
+.link:focus {
+  color: #e5f4e3;
+}
+
+@media only screen and (max-width: 650px) {
+  .hamburgerBtn {
+    display: block;
+  }
+}

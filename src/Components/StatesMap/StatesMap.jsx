@@ -10,6 +10,7 @@ import {
 import allStates from "../../../data/allStates.json";
 import { stateStyles } from "./stateStyles";
 import { useNavigate } from "react-router-dom";
+import { Title } from "../Title/Title";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -44,74 +45,77 @@ export const StatesMap = () => {
     getParks(id.toLowerCase());
   };
   return (
-    <div className={s.stateContainer}>
-      <ComposableMap projection="geoAlbersUsa">
-        <Geographies geography={geoUrl}>
-          {({ geographies }) => (
-            <>
-              {geographies.map((geo) => (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  className={s.state}
-                  style={stateStyles}
-                  onClick={() => handleStateClick(geo.id)}
-                />
-              ))}
-              {geographies.map((geo) => {
-                const centroid = geoCentroid(geo);
-                const cur = allStates.find((s) => s.val === geo.id);
-                return (
-                  <g className={s.state} key={geo.rsmKey + "-name"}>
-                    {cur &&
-                      centroid[0] > -160 &&
-                      centroid[0] < -67 &&
-                      (Object.keys(offsets).indexOf(cur.id) === -1 ? (
-                        <Marker
-                          coordinates={centroid}
-                          onClick={() => handleMarkerClick(cur.id)}
-                        >
-                          {cur.id === "HI" ? (
+    <>
+      <Title title="Pick a State" />
+      <div className={s.stateContainer}>
+        <ComposableMap projection="geoAlbersUsa">
+          <Geographies geography={geoUrl}>
+            {({ geographies }) => (
+              <>
+                {geographies.map((geo) => (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    className={s.state}
+                    style={stateStyles}
+                    onClick={() => handleStateClick(geo.id)}
+                  />
+                ))}
+                {geographies.map((geo) => {
+                  const centroid = geoCentroid(geo);
+                  const cur = allStates.find((s) => s.val === geo.id);
+                  return (
+                    <g className={s.state} key={geo.rsmKey + "-name"}>
+                      {cur &&
+                        centroid[0] > -160 &&
+                        centroid[0] < -67 &&
+                        (Object.keys(offsets).indexOf(cur.id) === -1 ? (
+                          <Marker
+                            coordinates={centroid}
+                            onClick={() => handleMarkerClick(cur.id)}
+                          >
+                            {cur.id === "HI" ? (
+                              <text
+                                y="2"
+                                fontSize={14}
+                                textAnchor="middle"
+                                fill="white"
+                              >
+                                {cur.id}
+                              </text>
+                            ) : (
+                              <text y="2" fontSize={14} textAnchor="middle">
+                                {cur.id}
+                              </text>
+                            )}
+                          </Marker>
+                        ) : (
+                          <Annotation
+                            subject={centroid}
+                            dx={offsets[cur.id][0]}
+                            dy={offsets[cur.id][1]}
+                            connectorProps={{
+                              stroke: "white",
+                            }}
+                          >
                             <text
-                              y="2"
+                              x={4}
                               fontSize={14}
-                              textAnchor="middle"
+                              alignmentBaseline="middle"
                               fill="white"
                             >
                               {cur.id}
                             </text>
-                          ) : (
-                            <text y="2" fontSize={14} textAnchor="middle">
-                              {cur.id}
-                            </text>
-                          )}
-                        </Marker>
-                      ) : (
-                        <Annotation
-                          subject={centroid}
-                          dx={offsets[cur.id][0]}
-                          dy={offsets[cur.id][1]}
-                          connectorProps={{
-                            stroke: "white",
-                          }}
-                        >
-                          <text
-                            x={4}
-                            fontSize={14}
-                            alignmentBaseline="middle"
-                            fill="white"
-                          >
-                            {cur.id}
-                          </text>
-                        </Annotation>
-                      ))}
-                  </g>
-                );
-              })}
-            </>
-          )}
-        </Geographies>
-      </ComposableMap>
-    </div>
+                          </Annotation>
+                        ))}
+                    </g>
+                  );
+                })}
+              </>
+            )}
+          </Geographies>
+        </ComposableMap>
+      </div>
+    </>
   );
 };

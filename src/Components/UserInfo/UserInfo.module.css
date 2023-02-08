@@ -1,29 +1,44 @@
+.userLinks {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   flex: 1;
 }
 
-.li {
+.linkContainer {
   list-style: none;
+  min-width: 105px;
+  text-align: left;
 }
-.link {
+.linkContainer a {
   text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  color: #2a9d8f;
+  transition: all 150ms ease-in-out;
+}
+
+.linkContainer a:hover {
+  text-decoration: underline;
   font-weight: 600;
 }
 
-.link:visited {
-  color: white;
-}
-
-.link:hover {
+.linkContainer a:active,
+.linkContainer .active {
+  font-weight: 700;
   text-decoration: underline;
 }
 
-.link.active {
-  color: rgb(136, 226, 220);
+a:focus {
+  outline: none;
   text-decoration: underline;
+  font-weight: 700;
 }

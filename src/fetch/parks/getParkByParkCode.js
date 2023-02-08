@@ -24,6 +24,6 @@ export const getParkByParkCode = async (parkCode) => {
     );
     return park[0];
   } catch (error) {
-    throw new Error("");
+    throw new Error("Error fetching park" + parkCode);
   }
 };

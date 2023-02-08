@@ -1,13 +1,21 @@
 import { Parks } from "../Parks/Parks";
 import s from "./Visited.module.css";
 import { useRootLoaderData } from "../Root/Root";
+import { Title } from "../Title/Title";
 
 export default function Visited() {
   const { userVisitedParks } = useRootLoaderData();
   return (
     <>
       {userVisitedParks ? (
-        <Parks parks={userVisitedParks} />
+        <>
+          <Title title={"Visited Parks"} />
+          <Parks
+            parks={userVisitedParks}
+            showAddNext={false}
+            showAddVisitBtn={true}
+          />
+        </>
       ) : (
         <div className={s.noParks}>
           <p>You haven't visited any parks yet.</p>

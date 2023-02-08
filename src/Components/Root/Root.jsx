@@ -1,6 +1,7 @@
+import s from "./Root.module.css";
 import { Outlet, useMatches } from "react-router-dom";
 import { getParksData } from "../../fetch/parks/getParksData";
-import { getAllNextAdventureParksAPI } from "../../fetch/parks/nextAdventure/getAllNextAdventureParksAPI";
+import { getAllProjectParksAPI } from "../../fetch/parks/nextVisit/getAllNextVisitParksAPI";
 import { getAllVisitedAPI } from "../../fetch/parks/visited/getAllVisitedAPI";
 import { getUserFetch } from "../../fetch/user/getUserFetch";
 import { filterById } from "../../utils/filterById";
@@ -41,15 +42,15 @@ export async function loader() {
       };
     })
     .then(async ({ user, userVisitedParks, userVisited }) => {
-      const allNextParks = await getAllNextAdventureParksAPI();
-      const userNextAdventure = filterById(allNextParks, user.id);
-      const userNextParks = await getParksData(userNextAdventure);
+      const allNextVisits = await getAllProjectParksAPI();
+      const userNextVisits = filterById(allNextVisits, user.id);
+      const userNextParks = await getParksData(userNextVisits);
       return {
         user,
         userVisitedParks,
         userVisited,
         userNextParks,
-        userNextAdventure,
+        userNextVisits,
       };
     })
     .catch((error) => {
@@ -69,15 +70,15 @@ export const useRootLoaderData = () => {
     userVisitedParks: rootLoaderData.data.userVisitedParks,
     userVisited: rootLoaderData.data.userVisited,
     userNextParks: rootLoaderData.data.userNextParks,
-    userNextAdventure: rootLoaderData.data.userNextAdventure,
+    userNextVisits: rootLoaderData.data.userNextVisits,
   };
 };
 
 export default function Root() {
   return (
-    <>
+    <div className={s.root}>
       <Navbar />
       <Outlet />
-    </>
+    </div>
   );
 }

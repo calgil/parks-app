@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 1,
-      "username": "one",
+      "username": "user1",
       "password": "password"
     },
     {
@@ -14,20 +14,9 @@
       "id": 3,
       "username": "user3",
       "password": "password"
-    },
-    {
-      "username": "kuhtellin",
-      "password": "123",
-      "id": 4
     }
   ],
-  "nextAdventure": [
-    {
-      "id": 1,
-      "userId": 1,
-      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C",
-      "parkCode": "amch"
-    },
+  "nextVisit": [
     {
       "id": 2,
       "userId": 2,
@@ -66,54 +55,30 @@
     },
     {
       "userId": "1",
-      "parkId": "4E072F12-3E85-4219-B456-A8F04C688879",
-      "parkCode": "oreg",
-      "id": 12
+      "parkId": "F7EB51F0-240D-49BC-968C-792756A3B1A0",
+      "parkCode": "glca",
+      "id": 23
     },
     {
       "userId": "1",
-      "parkId": "76F393BA-D39F-43E9-B0A3-F746E2FEAD85",
-      "parkCode": "hstr",
-      "id": 13
+      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2",
+      "parkCode": "beol",
+      "id": 24
     },
     {
       "userId": "1",
-      "parkId": "CD54150B-24F6-4B96-8D6F-B23AF92A70F2",
-      "parkCode": "azru",
-      "id": 14
-    },
-    {
-      "userId": "1",
-      "parkId": "E28CA30C-2D81-4394-81E9-67677C412115",
-      "parkCode": "band",
-      "id": 15
-    },
-    {
-      "userId": "1",
-      "parkId": "2EE542B6-3806-4E9C-ABBD-C4CC4C7E97C7",
-      "parkCode": "elca",
-      "id": 16
-    },
-    {
-      "userId": "4",
-      "parkId": "EC5A2653-4470-46E7-8B57-30B8ADE46445",
-      "parkCode": "colm",
-      "id": 17
-    },
-    {
-      "userId": "4",
-      "parkId": "461D40CC-4379-4C1B-ADB8-3563147F61A1",
-      "parkCode": "grsa",
-      "id": 18
-    },
-    {
-      "userId": "4",
-      "parkId": "061D9754-B947-48FD-99BE-1FE1AAD1BB90",
-      "parkCode": "dino",
-      "id": 19
+      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A",
+      "parkCode": "blca",
+      "id": 25
     }
   ],
   "visited": [
+    {
+      "id": 1,
+      "userId": 1,
+      "parkId": "C4E1A9A4-D121-4734-94FA-7788A93C2AAA",
+      "parkCode": "alag"
+    },
     {
       "id": 2,
       "userId": 2,
@@ -139,12 +104,6 @@
       "parkCode": "biho"
     },
     {
-      "id": 7,
-      "userId": 1,
-      "parkId": "7568A0D8-73B1-44E6-82C7-E10BA1872209",
-      "parkCode": "bica"
-    },
-    {
       "id": 8,
       "userId": 2,
       "parkId": "60B1534B-5C3A-402A-ABC6-700B756F69A2",
@@ -157,58 +116,52 @@
       "parkCode": "glac"
     },
     {
-      "id": 10,
-      "userId": 1,
-      "parkId": "72A30002-12FA-4738-BCA7-1FA8062214CB",
-      "parkCode": "grko"
+      "userId": "1",
+      "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
+      "parkCode": "camo",
+      "id": 14
+    },
+    {
+      "userId": "1",
+      "parkId": "913100E9-987E-4659-8124-DFCEE3158FCB",
+      "parkCode": "miss",
+      "id": 15
+    },
+    {
+      "userId": "1",
+      "parkId": "859727CB-2812-40DF-B8DB-D4AE9EA00089",
+      "parkCode": "voya",
+      "id": 16
+    },
+    {
+      "userId": "1",
+      "parkId": "5CB26B91-B888-46E0-95E1-0683A63C45B0",
+      "parkCode": "sacn",
+      "id": 17
+    },
+    {
+      "userId": "1",
+      "parkId": "E9A0608F-46D6-4072-939F-C81E27AAB236",
+      "parkCode": "libo",
+      "id": 18
     },
     {
       "userId": "1",
       "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB",
       "parkCode": "cali",
-      "id": 11
+      "id": 19
     },
     {
       "userId": "1",
-      "parkId": "56A5A3B1-4F49-4517-86B8-AE2F272D0C42",
-      "parkCode": "gwca",
-      "id": 12
+      "parkId": "6B1D053D-714F-46D1-B410-04BE868F14C1",
+      "parkCode": "brca",
+      "id": 20
     },
     {
       "userId": "1",
-      "parkId": "9C730246-CCB2-496F-AD0E-1D31D76C4C45",
-      "parkCode": "chcu",
-      "id": 13
-    },
-    {
-      "userId": "1",
-      "parkId": "6FDE39B1-AB4A-4C9A-A5CD-4AF67601CD78",
-      "parkCode": "cave",
-      "id": 14
-    },
-    {
-      "userId": "1",
-      "parkId": "93BB79F9-D700-4202-B21C-B2354617A729",
-      "parkCode": "cavo",
-      "id": 15
-    },
-    {
-      "userId": "4",
-      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2",
-      "parkCode": "beol",
-      "id": 16
-    },
-    {
-      "userId": "4",
-      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A",
-      "parkCode": "blca",
-      "id": 17
-    },
-    {
-      "userId": "4",
-      "parkId": "D35004EF-5F5A-4DA4-8716-5141BE5C933C",
-      "parkCode": "amch",
-      "id": 18
+      "parkId": "5D443C5F-19A0-4A06-9CE4-30534A3DD81A",
+      "parkCode": "lecl",
+      "id": 21
     }
   ]
 }

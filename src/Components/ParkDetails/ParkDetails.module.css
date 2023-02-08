@@ -6,25 +6,25 @@
 
 .backBtn {
   position: absolute;
-  top: 10px;
+  top: 50px;
   left: 80px;
-  border: 0.5px solid white;
-  padding: 5px 10px;
+  color: rgb(229, 244, 227);
+  background-color: rgb(24, 58, 55);
+  border: 1px solid rgb(229, 244, 227);
   border-radius: 5px;
+  line-height: 1.5;
+  padding: 0 10px;
+  font-size: 1rem;
   transition: all 200ms ease-in-out;
-  background-color: rgba(107, 106, 106, 0.5);
+  cursor: pointer;
 }
 
 .backBtn:hover,
+.backBtn:active,
 .backBtn:focus {
-  outline: 1px solid white;
-  transform: scale(1.1);
-  background-color: rgba(107, 106, 106, 1);
-}
-
-.name {
-  font-size: 1.5rem;
-  margin-top: 30px;
+  transform: scale(1.05);
+  border: 2px solid rgb(229, 244, 227);
+  outline: none;
 }
 
 .description {

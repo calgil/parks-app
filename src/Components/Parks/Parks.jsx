@@ -2,8 +2,8 @@ import { useRootLoaderData } from "../Root/Root";
 import { Park } from "../Park/Park";
 import s from "./Parks.module.css";
 
-export const Parks = ({ parks }) => {
-  const { user, userVisited, userNextAdventure } = useRootLoaderData();
+export const Parks = ({ parks, showAddVisitBtn, showAddNext }) => {
+  const { user, userVisited, userNextVisits } = useRootLoaderData();
   return (
     <section className={s.parksContainer}>
       {parks &&
@@ -14,9 +14,9 @@ export const Parks = ({ parks }) => {
               (visited) =>
                 +visited.userId === user?.id && visited.parkId === park.id
             );
-          const isNextAdventure =
-            userNextAdventure &&
-            !!userNextAdventure.find(
+          const isNext =
+            userNextVisits &&
+            !!userNextVisits.find(
               (next) => +next.userId === user?.id && next.parkId === park.id
             );
           return (
@@ -24,7 +24,9 @@ export const Parks = ({ parks }) => {
               key={park.id}
               park={park}
               visited={isVisited}
-              nextAdventure={isNextAdventure}
+              nextVisit={isNext}
+              showAddVisitBtn={showAddVisitBtn}
+              showAddNext={showAddNext}
             />
           );
         })}

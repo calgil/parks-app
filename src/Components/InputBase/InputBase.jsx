@@ -1,5 +1,4 @@
 import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
 import s from "./InputBase.module.css";
 export const InputBase = ({
   data: { labelText, value, onChange, type, name, placeholder },

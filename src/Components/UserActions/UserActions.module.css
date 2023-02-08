@@ -2,48 +2,72 @@
   position: relative;
   cursor: pointer;
   font-weight: 900;
-}
-
-.actionContainer:hover {
-  text-decoration: underline;
+  min-width: 130px;
 }
 
 .username {
   display: inline;
-  font-size: 1.1rem;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.25rem;
+  color: #2a9d8f;
+  cursor: pointer;
 }
 
-.actionBtn {
+.username:hover {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.username.active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.dropdownBtn {
   background-color: transparent;
   border: none;
-  margin-left: 5px;
+  margin-left: 10px;
   font-size: 1rem;
-  color: white;
+  color: #2a9d8f;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.dropdownBtn:hover,
+.dropdownBtn:focus {
+  transform: scale(2);
+  outline: none;
 }
 
 .actionsDropdown {
   position: absolute;
-  left: -20px;
+  top: 35px;
   background-color: rgb(107, 106, 106);
   border-radius: 10px;
   text-align: left;
-  padding: 10px;
+  padding: 10px 0;
   width: 130px;
+  z-index: 1;
 }
 
-.actionsDropdown button {
+.actionForm .userActionBtn {
   display: block;
   width: 100%;
   text-align: left;
   background-color: transparent;
+  color: #e5f4e3;
   border: none;
   line-height: 1.5;
   font-size: 1.01rem;
-  border-radius: 5px;
   font-weight: 600;
   padding-left: 15px;
+  cursor: pointer;
+  z-index: 1000;
 }
 
-.actionsDropdown button:hover {
+.actionForm .userActionBtn:hover {
   background-color: rgb(38, 35, 35);
 }

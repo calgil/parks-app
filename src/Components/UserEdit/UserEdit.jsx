@@ -2,6 +2,7 @@ import { redirect } from "react-router-dom";
 import { patchUser } from "../../fetch/user/patchUser";
 import { FormContainer } from "../FormContainer/FormContainer";
 import { useRootLoaderData } from "../Root/Root";
+import editBackground from "../../assets/editBackground.webp";
 
 export async function action({ request, params }) {
   return Promise.resolve()
@@ -27,6 +28,7 @@ export async function action({ request, params }) {
 
 export default function UserEdit() {
   const { user } = useRootLoaderData();
+  const backgroundImg = editBackground;
   const inputData = [
     {
       labelText: "Username",
@@ -43,8 +45,9 @@ export default function UserEdit() {
 
   return (
     <FormContainer
+      backgroundImg={backgroundImg}
       inputs={inputData}
-      title="Edit"
+      title="Edit your profile"
       buttonText="Edit"
       link={link}
     />

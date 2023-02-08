@@ -11,7 +11,6 @@ export const deleteAction = async ({ params }) => {
 };
 
 export const logoutAction = () => {
-  console.log("logout");
   localStorage.removeItem("user");
   return redirect("/");
 };
@@ -20,9 +19,6 @@ export const UserActions = () => {
   const { user } = useRootLoaderData();
   const [showActions, setShowActions] = useState(false);
   const actionContainerRef = useRef(null);
-
-  // TODO: Refactor click outside function
-  // This works to close the 'user actions' dropdown, but I am sure there is a better way
 
   const handleClickOutside = (e) => {
     if (
@@ -44,10 +40,12 @@ export const UserActions = () => {
       className={s.actionContainer}
       onClick={() => setShowActions(true)}
     >
-      <h3 className={s.username}>
+      <h3
+        className={showActions ? `${s.username} ${s.active}` : `${s.username}`}
+      >
         Hi, {capitalizeFirstLetter(user.username)}!
       </h3>
-      <button className={s.actionBtn}>
+      <button className={s.dropdownBtn}>
         {showActions ? (
           <i className="fa fa-caret-up"></i>
         ) : (
@@ -56,12 +54,13 @@ export const UserActions = () => {
       </button>
       {showActions && (
         <div className={s.actionsDropdown}>
-          <Form action={`/edit/${user.id}`}>
-            <button className={s.editBtn} type="submit">
+          <Form className={s.actionForm} action={`/edit/${user.id}`}>
+            <button className={s.userActionBtn} type="submit">
               Edit User
             </button>
           </Form>
           <Form
+            className={s.actionForm}
             method="post"
             action="/logout"
             onSubmit={(e) => {
@@ -70,9 +69,12 @@ export const UserActions = () => {
               }
             }}
           >
-            <button type="submit">Logout</button>
+            <button className={s.userActionBtn} type="submit">
+              Logout
+            </button>
           </Form>
           <Form
+            className={s.actionForm}
             method="post"
             action={`delete/${user.id}`}
             onSubmit={(e) => {
@@ -81,7 +83,7 @@ export const UserActions = () => {
               }
             }}
           >
-            <button className={s.deleteBtn} type="submit">
+            <button className={s.userActionBtn} type="submit">
               Delete User
             </button>
           </Form>

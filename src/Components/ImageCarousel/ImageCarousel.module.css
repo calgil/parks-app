@@ -1,6 +1,7 @@
 .carouselContainer {
   max-width: 1000px;
   margin: 0 auto;
+  margin-top: 30px;
   display: flex;
   align-items: center;
 }
@@ -29,9 +30,11 @@
   font-size: 1.5rem;
 }
 
-.imgBtn:hover {
+.imgBtn:hover,
+.imgBtn:focus {
   background-color: rgba(61, 61, 61, 1);
   color: rgb(255, 254, 255);
+  outline: none;
 }
 
 .selectedImg {

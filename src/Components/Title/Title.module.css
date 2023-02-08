@@ -1,0 +1,18 @@
+.titleContainer {
+  position: relative;
+  margin-top: 50px;
+
+  text-align: left;
+  margin-left: 56px;
+  margin-right: 80px;
+  height: 40px;
+}
+
+.titleBorder {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  width: 75vw;
+  background-color: #a18276;
+}

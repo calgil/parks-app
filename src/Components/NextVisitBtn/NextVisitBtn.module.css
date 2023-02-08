@@ -1,0 +1,42 @@
+.btnContainer {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+}
+
+.actionBtn {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  transition: all 100ms ease-in-out;
+}
+
+.iconContainer {
+  font-size: 20px;
+  transition: all 200ms ease-in-out;
+}
+
+.iconContainer i {
+  cursor: pointer;
+}
+
+.outline {
+  color: white;
+  font-size: 25px;
+}
+
+.bookmark {
+  color: #183a37;
+}
+
+.iconContainer:hover {
+  transform: scale(1.5);
+}
+
+.bookmark:hover {
+  color: rgba(24, 58, 55, 0.7);
+}
+
+.bookmark.next {
+  color: #2a9d8f;
+}
