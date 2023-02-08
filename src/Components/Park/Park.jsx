@@ -10,7 +10,6 @@ import { VisitBtn } from "../VisitBtn/visitBtn";
 
 export const Park = ({ park, visited, nextVisit, showAddVisitBtn }) => {
   const { user } = useRootLoaderData();
-  // Future: destructure designation to filter parks
   const { id, fullName, images, parkCode } = park;
   const navigate = useNavigate();
 

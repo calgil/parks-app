@@ -30,12 +30,6 @@
       "parkCode": "blca"
     },
     {
-      "id": 4,
-      "userId": 1,
-      "parkId": "E0F4D5E3-3E4A-4345-B86A-1B0CAD7461F1",
-      "parkCode": "bicy"
-    },
-    {
       "id": 5,
       "userId": 2,
       "parkId": "FBF9F793-5114-4B61-A5BA-6F9ADDFDF459",
@@ -61,27 +55,9 @@
     },
     {
       "userId": "1",
-      "parkId": "4BE453C2-6527-484F-90D6-98057901EBDF",
-      "parkCode": "noco",
-      "id": 11
-    },
-    {
-      "userId": "1",
-      "parkId": "913100E9-987E-4659-8124-DFCEE3158FCB",
-      "parkCode": "miss",
-      "id": 12
-    },
-    {
-      "userId": "1",
-      "parkId": "5CB26B91-B888-46E0-95E1-0683A63C45B0",
-      "parkCode": "sacn",
-      "id": 13
-    },
-    {
-      "userId": "1",
-      "parkId": "859727CB-2812-40DF-B8DB-D4AE9EA00089",
-      "parkCode": "voya",
-      "id": 14
+      "parkId": "F7EB51F0-240D-49BC-968C-792756A3B1A0",
+      "parkCode": "glca",
+      "id": 23
     }
   ],
   "visited": [
@@ -116,12 +92,6 @@
       "parkCode": "biho"
     },
     {
-      "id": 7,
-      "userId": 1,
-      "parkId": "7568A0D8-73B1-44E6-82C7-E10BA1872209",
-      "parkCode": "bica"
-    },
-    {
       "id": 8,
       "userId": 2,
       "parkId": "60B1534B-5C3A-402A-ABC6-700B756F69A2",
@@ -135,21 +105,51 @@
     },
     {
       "userId": "1",
-      "parkId": "C08AD828-98FF-478E-A63C-614E7534274B",
-      "parkCode": "alca",
-      "id": 12
-    },
-    {
-      "userId": "1",
-      "parkId": "E463E13F-FCD4-41B3-AEF3-BA3199E04399",
-      "parkCode": "grpo",
-      "id": 13
-    },
-    {
-      "userId": "1",
       "parkId": "872417E6-2F91-4FDA-89A7-865B51B22332",
       "parkCode": "camo",
       "id": 14
+    },
+    {
+      "userId": "1",
+      "parkId": "913100E9-987E-4659-8124-DFCEE3158FCB",
+      "parkCode": "miss",
+      "id": 15
+    },
+    {
+      "userId": "1",
+      "parkId": "859727CB-2812-40DF-B8DB-D4AE9EA00089",
+      "parkCode": "voya",
+      "id": 16
+    },
+    {
+      "userId": "1",
+      "parkId": "5CB26B91-B888-46E0-95E1-0683A63C45B0",
+      "parkCode": "sacn",
+      "id": 17
+    },
+    {
+      "userId": "1",
+      "parkId": "E9A0608F-46D6-4072-939F-C81E27AAB236",
+      "parkCode": "libo",
+      "id": 18
+    },
+    {
+      "userId": "1",
+      "parkId": "B39C368F-CB27-49EC-B2A9-E6C1552430FB",
+      "parkCode": "cali",
+      "id": 19
+    },
+    {
+      "userId": "1",
+      "parkId": "6B1D053D-714F-46D1-B410-04BE868F14C1",
+      "parkCode": "brca",
+      "id": 20
+    },
+    {
+      "userId": "1",
+      "parkId": "5D443C5F-19A0-4A06-9CE4-30534A3DD81A",
+      "parkCode": "lecl",
+      "id": 21
     }
   ]
 }

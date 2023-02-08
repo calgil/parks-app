@@ -4,6 +4,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark as fasFaBookmark } from "@fortawesome/free-solid-svg-icons";
 import { faBookmark as farFaBookmark } from "@fortawesome/free-regular-svg-icons";
 import { Tooltip } from "react-tooltip";
+import { getParkNameByParkCode } from "../../fetch/parks/getParkName";
+import { createNewNextVisitAPI } from "../../fetch/parks/nextVisit/createNewNextVisitAPI";
+import { toast } from "react-hot-toast";
+import { findAndDeleteNextVisit } from "../../fetch/parks/nextVisit/findAndDeleteNextVisit";
+
+export async function action({ request, params }) {
+  const userId = params.userId;
+  const parkId = params.parkId;
+  const parkCode = params.parkCode;
+  const parkName = await getParkNameByParkCode(parkCode);
+  let formData = await request.formData();
+  const isNext = formData.get("next-visit") === "true";
+  if (isNext) {
+    toast.success(`${parkName} is added to Next Visit`);
+    return createNewNextVisitAPI({
+      userId,
+      parkId,
+      parkCode,
+    });
+  }
+  if (!isNext) {
+    toast.success(`${parkName} is removed from Next Visit`);
+    findAndDeleteNextVisit({ userId, parkId });
+  }
+  return null;
+}
 
 export const NextVisitBtn = ({ parkId, userId, parkCode, nextVisit }) => {
   const fetcher = useFetcher();
