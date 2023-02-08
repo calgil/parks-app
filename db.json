@@ -58,6 +58,18 @@
       "parkId": "F7EB51F0-240D-49BC-968C-792756A3B1A0",
       "parkCode": "glca",
       "id": 23
+    },
+    {
+      "userId": "1",
+      "parkId": "87F9EFC7-1951-4250-A367-644EC5C4E6A2",
+      "parkCode": "beol",
+      "id": 24
+    },
+    {
+      "userId": "1",
+      "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A",
+      "parkCode": "blca",
+      "id": 25
     }
   ],
   "visited": [

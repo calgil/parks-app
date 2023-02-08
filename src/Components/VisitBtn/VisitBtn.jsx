@@ -52,7 +52,7 @@ export const VisitBtn = ({ parkId, userId, parkCode, visited }) => {
         ) : (
           <>
             <FontAwesomeIcon className={s.visitIcon} icon={faCheck} />
-            <span>I visited</span>
+            <span>I Visited</span>
           </>
         )}
       </button>
