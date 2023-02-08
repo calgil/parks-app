@@ -27,7 +27,6 @@ export const UserInfo = () => {
           </NavLink>
         </li>
       </ul>
-      <UserActions />
     </div>
   );
 };

@@ -9,6 +9,11 @@
   margin-right: 80px;
 }
 
+.leftContainer {
+  display: flex;
+  align-items: center;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -49,4 +54,16 @@ a:focus {
   outline: none;
   text-decoration: underline;
   font-weight: 700;
+}
+
+@media only screen and (max-width: 650px) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .logo {
+    display: none;
+  }
 }

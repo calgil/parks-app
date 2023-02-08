@@ -3,22 +3,28 @@ import { NavLink } from "react-router-dom";
 import { UserInfo } from "../UserInfo/UserInfo";
 import { useRootLoaderData } from "../Root/Root";
 import logo from "../../assets/logo.png";
-import classNames from "classnames";
+import { UserActions } from "../UserActions/UserActions";
+import { HamburgerMenu } from "../HamburgerMenu/HamburgerMenu";
 
 export const Navbar = () => {
   const { user } = useRootLoaderData();
 
   return (
     <nav className={s.nav}>
-      <div className={s.logo}>
-        <a href="/">
-          <img src={logo} alt="logo" />
-        </a>
+      <div className={s.leftContainer}>
+        <div className={s.logo}>
+          <a href="/">
+            <img src={logo} alt="logo" />
+          </a>
+        </div>
+        <HamburgerMenu />
       </div>
       <ul className={s.navbar}>
         <li className={s.linkContainer}>
           <NavLink
-            className={({ isActive }) => (isActive ? `${s.active}` : undefined)}
+            className={({ isActive }) =>
+              isActive ? `${s.active}` : `${s.link}`
+            }
             to="/"
           >
             Home
@@ -38,6 +44,7 @@ export const Navbar = () => {
           </NavLink>
         </div>
       )}
+      {user && <UserActions />}
     </nav>
   );
 };
