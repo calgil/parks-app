@@ -109,7 +109,6 @@ const router = createBrowserRouter([
           {
             path: "/logout",
             action: logoutAction,
-            errorElement: <ErrorPage />,
           },
           {
             path: "/edit/:userId",
@@ -119,28 +118,23 @@ const router = createBrowserRouter([
               </ProtectedRoute>
             ),
             action: editAction,
-            errorElement: <ErrorPage />,
           },
           {
             path: "/delete/:userId",
             action: deleteAction,
-            errorElement: <ErrorPage />,
           },
           {
             path: "state/:stateCode",
             element: <StateParks />,
             loader: parksLoader,
-            errorElement: <ErrorPage />,
           },
           {
             path: "next-visit/:parkId/:userId/:parkCode",
             action: nextVisitAction,
-            errorElement: <ErrorPage />,
           },
           {
             path: "visited/:parkId/:userId/:parkCode",
             action: visitedAction,
-            errorElement: <ErrorPage />,
           },
           {
             path: "park/:parkCode",

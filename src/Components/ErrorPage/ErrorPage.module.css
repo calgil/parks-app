@@ -4,4 +4,22 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 100vh;
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #e5f4e3;
+  background-color: #242424;
+}
+
+.errorHeader {
+  margin-bottom: 20px;
+}
+
+.homeLink,
+.homeLink:active,
+.homeLink:visited {
+  color: #e5f4e3;
 }
