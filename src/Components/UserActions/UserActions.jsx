@@ -4,6 +4,7 @@ import { capitalizeFirstLetter } from "../../utils/capitalizeFirstLetter";
 import { useRootLoaderData } from "../Root/Root";
 import { Form, redirect } from "react-router-dom";
 import { deleteUser } from "../../fetch/user/deleteUser";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 export const deleteAction = async ({ params }) => {
   await deleteUser(params.userId);
@@ -20,19 +21,13 @@ export const UserActions = () => {
   const [showActions, setShowActions] = useState(false);
   const actionContainerRef = useRef(null);
 
-  const handleClickOutside = (e) => {
-    if (
-      actionContainerRef.current &&
-      !actionContainerRef.current.contains(e.target)
-    ) {
+  useClickOutside({
+    containerRef: actionContainerRef,
+    dependencies: [setShowActions, actionContainerRef],
+    onClickOutside: () => {
       setShowActions(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [setShowActions, actionContainerRef]);
+    },
+  });
 
   return (
     <div

@@ -4,25 +4,20 @@ import { useEffect, useRef, useState } from "react";
 import s from "./HamburgerMenu.module.css";
 import { NavLink } from "react-router-dom";
 import { useRootLoaderData } from "../Root/Root";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 export const HamburgerMenu = () => {
   const { user } = useRootLoaderData();
   const [showLinks, setShowLinks] = useState(false);
   const menuContainerRef = useRef(null);
 
-  const handleClickOutside = (e) => {
-    if (
-      menuContainerRef.current &&
-      !menuContainerRef.current.contains(e.target)
-    ) {
+  useClickOutside({
+    containerRef: menuContainerRef,
+    dependencies: [setShowLinks, menuContainerRef],
+    onClickOutside: () => {
       setShowLinks(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [setShowLinks, menuContainerRef]);
+    },
+  });
 
   return (
     <div ref={menuContainerRef} className={s.hamburgerMenu}>
