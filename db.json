@@ -70,6 +70,18 @@
       "parkId": "BDBD573F-97EF-44E7-A579-471679F2C42A",
       "parkCode": "blca",
       "id": 25
+    },
+    {
+      "userId": "1",
+      "parkId": "1F38885B-538E-499C-B5A6-30D76267AC7F",
+      "parkCode": "flfo",
+      "id": 26
+    },
+    {
+      "userId": "1",
+      "parkId": "061D9754-B947-48FD-99BE-1FE1AAD1BB90",
+      "parkCode": "dino",
+      "id": 27
     }
   ],
   "visited": [

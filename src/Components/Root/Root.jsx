@@ -7,8 +7,6 @@ import { getUserFetch } from "../../fetch/user/getUserFetch";
 import { filterById } from "../../utils/filterById";
 import { Navbar } from "../Navbar/Navbar";
 
-// TODO: This loader function looks huge maybe lines 34-36 & 44-46 could be moved to a helper function
-
 export async function loader() {
   return Promise.resolve()
     .then(() => localStorage.getItem("user"))
